@@ -1,0 +1,1414 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc",
+    "name": "RG Event",
+    "title": "RG Event",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "no of attachments",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01FHQ2Z8BUQ906FyP2DHcwsdpRXiCnrVBXd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "string local",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01FG871VMVM1Q0A6i3ooMpGXODttux9waYw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "bool",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01FI4TEI2XGWR3VZUZ23Ml9Bnk1uS8L6tRk",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG Event",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01JNF2A5T8IM53dvEzWJ7qIGa9wNNxj9Bg7",
+          "run_on_all_targets": true,
+          "selected_target_types": [
+            "web-service.endpoint"
+          ]
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01FG86RNPPHMY14LWp5LQOV0DzJZV25Q4Uc",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc.local.variable_workflow_01FG871VMVM1Q0A6i3ooMpGXODttux9waYw$",
+              "variable_value_new": "$trigger.triggerevent_01FON7DJWBED545q2lJt72uaKQHKtXek073.output.attachments_count$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01KAN36ZHWUGL3SLnluBy8uGcyqVL7NnoEW",
+        "name": "Wait For Event",
+        "title": "Wait For Event",
+        "type": "task.wait_for_event",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Wait For Event",
+          "event_info": {
+            "add_event": true,
+            "event_definition": {
+              "action": "read",
+              "conditions": {
+                "operator": "eq"
+              },
+              "download_attachments": true,
+              "folder": "INBOX"
+            }
+          },
+          "event_type": "email.event",
+          "skip_execution": true
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FI4TFLXW87047fsE9YtDiw3CRiAWq8b8J",
+        "name": "Set Variables",
+        "title": "Set Variables - bool",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables - bool",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc.local.variable_workflow_01FI4TEI2XGWR3VZUZ23Ml9Bnk1uS8L6tRk$",
+              "variable_value_new": "$trigger.triggerevent_01FON7DJWBED545q2lJt72uaKQHKtXek073.input.download_attachments$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FIJEGZRY15A5GxCvrbuqDgNEvQESQqVJ6",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 20
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FIJEEJRL9165ifg3OvBuYAYvgLDywB5fI",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc.local.variable_workflow_01FI4TEI2XGWR3VZUZ23Ml9Bnk1uS8L6tRk$",
+              "variable_value_new": "$global.variable_017PH4E8OK3U22Oqw1dQb536dARpFMzbYZW.global.variable_017PH4E8OK3U22Oqw1dQb536dARpFMzbYZW$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FHQ0YWHH2926iEwEQTjbDdARNp3WodDUq",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01FHQ0Z010O2I418dtogQIqxW1yEHJyxCsh",
+            "name": "Condition Branch",
+            "title": "If no of attchment \u003e= 1",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$trigger.triggerevent_01FON7DJWBED545q2lJt72uaKQHKtXek073.output.attachments_count$",
+                "operator": "gte",
+                "right_operand": 1
+              },
+              "continue_on_failure": false,
+              "display_name": "If no of attchment \u003e= 1",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01FHQ1GTIJVB51v3lyUDCugJZBLuiN1lpnD",
+                "name": "Sleep",
+                "title": "Sleep - 120",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep - 120",
+                  "skip_execution": false,
+                  "sleep_interval": 20
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01FHQ0Z1RAU0B0Qr5a9xObcIf8enZtooH8n",
+            "name": "Condition Branch",
+            "title": "No attachment received",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$trigger.triggerevent_01FON7DJWBED545q2lJt72uaKQHKtXek073.output.attachments_count$",
+                "operator": "eq",
+                "right_operand": 0
+              },
+              "continue_on_failure": false,
+              "display_name": "No attachment received",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01FHQ2C7LWC9X62OVGiTXc206HV67zB1W4d",
+        "name": "For Each",
+        "title": "For Each attachment received",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "For Each attachment received",
+          "skip_execution": false,
+          "source_array": "$trigger.triggerevent_01FON7DJWBED545q2lJt72uaKQHKtXek073.output.attachments$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01FHQ2Q2W9S826OmyzXooksmU0aFOo8D9AK",
+            "name": "Set Variables",
+            "title": "Get the File Name",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Get the File Name",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc.local.variable_workflow_01FG871VMVM1Q0A6i3ooMpGXODttux9waYw$",
+                  "variable_value_new": "$activity.definition_activity_01FHQ2C7LWC9X62OVGiTXc206HV67zB1W4d.input.source_array[@].file_name$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01KQLGQN0DN5X0l75E8jiVccSRFUk7dqvCu",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc.local.variable_workflow_01FG871VMVM1Q0A6i3ooMpGXODttux9waYw$",
+                  "variable_value_new": "$trigger.triggerevent_01FON7DJWBED545q2lJt72uaKQHKtXek073.output.attachments[0].attachment_raw_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01KPW57T4LAR96RU9VL4rwTJB7oO8LD1pt1",
+            "name": "Set Variables",
+            "title": "Get the File Name",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Get the File Name",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc.local.variable_workflow_01FG871VMVM1Q0A6i3ooMpGXODttux9waYw$",
+                  "variable_value_new": "$activity.definition_activity_01FHQ2C7LWC9X62OVGiTXc206HV67zB1W4d.input.source_array[@].file_name$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FM1Y3TW8N3M5nH9doic9TmY6BllnyhPEK",
+            "name": "Sleep",
+            "title": "Sleep",
+            "type": "core.sleep",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Sleep",
+              "skip_execution": false,
+              "sleep_interval": 2
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FR6PMR8GWLH4pEYng5VRNpRGGW7wj5s3P",
+            "name": "RG child1",
+            "title": "RG child1",
+            "type": "workflow.sub_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "RG child1",
+              "input": {
+                "variable_workflow_01FLA9AHO81G31whSVWjr7h0VezKRo2wlTT": "$global.variable_01JQX3O724VP77SMoTx5qMzw3BciPGTg28x.global.variable_01JQX3O724VP77SMoTx5qMzw3BciPGTg28x$",
+                "variable_workflow_01FLAAMNC148D1J8gvRPEIvjj7uNOIIAhvy": null,
+                "variable_workflow_01FM7S8W9D3CV5kXsMq1ZxSAldwK47RxXnc": null
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "no_target": true
+              },
+              "workflow_id": "definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FR6WSX7ASOZ5jjEVUdlcNEbjctv2LIiqG",
+            "name": "Set Variables",
+            "title": "Set Variables - output from child",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables - output from child",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc.local.variable_workflow_01FG871VMVM1Q0A6i3ooMpGXODttux9waYw$",
+                  "variable_value_new": "$subworkflow.01FR6PM8FIYGR50T55M7w3sIL4caVsZbKNB.output.01FMDCBXOAQCL4auQMfgTLmAJJFwpQj1Ba6[0].string$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FR74ITVJ6SA7Hw5aimxjkC3zYiVA5kGa0",
+            "name": "Set Variables",
+            "title": "Set Variables - output from child",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables - output from child",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc.local.variable_workflow_01FG871VMVM1Q0A6i3ooMpGXODttux9waYw$",
+                  "variable_value_new": ""
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "triggers": {
+    "triggerevent_01FON7DJWBED545q2lJt72uaKQHKtXek073": {
+      "workflow_id": "definition_workflow_01FG86HNAOAMP4tmckQaoGlR5dRO1ZN1mlc",
+      "name": "RG event",
+      "title": "",
+      "lowercase_name": "event.rg_event",
+      "description": "123",
+      "type": "event",
+      "base_type": "trigger",
+      "ref_id": "event_01FH2QWVICC8729fTpdt6GO1vffEt5BcnPa",
+      "version": "",
+      "disabled": false,
+      "unique_name": "triggerevent_01FON7DJWBED545q2lJt72uaKQHKtXek073",
+      "object_type": "triggerevent"
+    }
+  },
+  "events": {
+    "event_01FH2QWVICC8729fTpdt6GO1vffEt5BcnPa": {
+      "name": "RG gmail event2",
+      "title": "RG gmail event2",
+      "description": "test1",
+      "type": "email.event",
+      "base_type": "event",
+      "object_type": "event",
+      "target_id": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k",
+      "webhook_id": "",
+      "version": "1.0.0",
+      "properties": {
+        "action": "read",
+        "conditions": {
+          "left_operand": {
+            "left_operand": "$output.to$",
+            "operator": "eq",
+            "right_operand": "longhornproj1@gmail.com"
+          },
+          "operator": "and",
+          "right_operand": {
+            "left_operand": "$output.subject$",
+            "operator": "eq",
+            "right_operand": "Test from AO123"
+          }
+        },
+        "description": "test1",
+        "display_name": "RG gmail event2",
+        "download_attachments": true,
+        "folder": "INBOX",
+        "target_id": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k",
+        "title": "RG gmail event2"
+      },
+      "unique_name": "event_01FH2QWVICC8729fTpdt6GO1vffEt5BcnPa"
+    }
+  },
+  "targets": {
+    "definition_target_015BYI133FAY70x33jEwZ59TgqBIYLJ1J6j": {
+      "unique_name": "definition_target_015BYI133FAY70x33jEwZ59TgqBIYLJ1J6j",
+      "name": "CA Internal .127",
+      "title": "CA Internal .127",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "CA Internal .127",
+        "host": "10.88.38.127",
+        "no_runtime_user": true,
+        "path": "/orch-ui/api/v1",
+        "port": 30091,
+        "protocol": "http"
+      }
+    },
+    "definition_target_015EL2NABOPXY7KS8eV2z2F8a29xBdR4UHf": {
+      "unique_name": "definition_target_015EL2NABOPXY7KS8eV2z2F8a29xBdR4UHf",
+      "name": "ry APIC",
+      "title": "ry APIC",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "ry APIC",
+        "host": "aus-194-apic1.tidalsoft.local",
+        "no_runtime_user": false,
+        "protocol": "http"
+      }
+    },
+    "definition_target_015ELK37Q8YK70Qu4la29a6m5FyVSPihHXQ": {
+      "unique_name": "definition_target_015ELK37Q8YK70Qu4la29a6m5FyVSPihHXQ",
+      "name": "TN - SNOW Target",
+      "title": "TN - SNOW Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "test1",
+        "disable_certificate_validation": true,
+        "display_name": "TN - SNOW Target",
+        "host": "dev60864.service-now.com",
+        "no_runtime_user": false,
+        "path": "/api",
+        "port": 345343,
+        "protocol": "https"
+      }
+    },
+    "definition_target_015HN5XYB184S4drYPXjMVXbrERdKBPNEHI": {
+      "unique_name": "definition_target_015HN5XYB184S4drYPXjMVXbrERdKBPNEHI",
+      "name": "Run AO API",
+      "title": "Run AO API",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "test",
+        "disable_certificate_validation": true,
+        "display_name": "Run AO API",
+        "host": "be-console",
+        "no_runtime_user": true,
+        "path": "/api/v1",
+        "port": 8081,
+        "protocol": "https"
+      }
+    },
+    "definition_target_017146I1FIOR73pKwkScPbwkgcocwegP7hy": {
+      "unique_name": "definition_target_017146I1FIOR73pKwkScPbwkgcocwegP7hy",
+      "name": "RG AppD",
+      "title": "RG AppD",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "RG AppD",
+        "host": "cisco1.saas.appdynamics.com",
+        "no_runtime_user": false,
+        "path": "/controller",
+        "protocol": "https"
+      }
+    },
+    "definition_target_0171514BBSF8E69deHs55vXrvk0z8ZhNkQm": {
+      "unique_name": "definition_target_0171514BBSF8E69deHs55vXrvk0z8ZhNkQm",
+      "name": "RG CPO target",
+      "title": "RG CPO target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "test",
+        "disable_certificate_validation": false,
+        "display_name": "RG CPO target",
+        "host": "10.201.113.12",
+        "no_runtime_user": false,
+        "path": "/api/v1",
+        "port": 51527,
+        "protocol": "http"
+      }
+    },
+    "definition_target_0177D73DH541M13oCpagZSnvOlxH5fOgqE8": {
+      "unique_name": "definition_target_0177D73DH541M13oCpagZSnvOlxH5fOgqE8",
+      "name": "InfluxDB",
+      "title": "InfluxDB",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "InfluxDB",
+        "host": "52.15.238.196",
+        "no_runtime_user": true,
+        "port": 8086,
+        "protocol": "http"
+      }
+    },
+    "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa": {
+      "unique_name": "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa",
+      "name": "GOOGLE",
+      "title": "GOOGLE",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "GOOGLE",
+        "host": "www.google.com",
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k": {
+      "unique_name": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k",
+      "name": "RG imap gmail",
+      "title": "RG imap gmail",
+      "type": "email.imap_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG",
+        "description": "test",
+        "display_name": "RG imap gmail",
+        "ignore_certificate_errors": true,
+        "polling_interval": 10,
+        "port": 993,
+        "protocol": "IMAP",
+        "server": "imap.gmail.com",
+        "tls_enabled": true
+      }
+    },
+    "definition_target_01A5GL8XCYYDU3tq8NtjexrASAz5O1OlEcn": {
+      "unique_name": "definition_target_01A5GL8XCYYDU3tq8NtjexrASAz5O1OlEcn",
+      "name": "RG google",
+      "title": "RG google",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "RG1 TEST",
+        "disable_certificate_validation": true,
+        "display_name": "RG google",
+        "host": "google.com",
+        "no_runtime_user": true,
+        "protocol": "http"
+      }
+    },
+    "definition_target_01ANAD8KB5UGQ4Y6EZu4pokE6mbB2FVZq0r": {
+      "unique_name": "definition_target_01ANAD8KB5UGQ4Y6EZu4pokE6mbB2FVZq0r",
+      "name": "RG QETest01 Internal",
+      "title": "RG QETest01 Internal",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG QETest01 Internal",
+        "host": "ao-qetest01.tidalsoft.local",
+        "no_runtime_user": true,
+        "path": "/be-console/api/v1",
+        "port": 31653,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl": {
+      "unique_name": "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl",
+      "name": "RG External CPO ",
+      "title": "RG External CPO ",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "RG External CPO ",
+        "host": "bvt-automation.tidalsoft.local",
+        "no_runtime_user": false,
+        "path": "/api/v1",
+        "port": 51527,
+        "protocol": "http"
+      }
+    },
+    "definition_target_01BAAPR6GRDSQ6MgV7JNZyqxhX3W7UnGxr9": {
+      "unique_name": "definition_target_01BAAPR6GRDSQ6MgV7JNZyqxhX3W7UnGxr9",
+      "name": "World Clock",
+      "title": "World Clock",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "World Clock",
+        "host": "worldtimeapi.org",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "api/timezone",
+        "protocol": "http"
+      }
+    },
+    "definition_target_01DHUPBICXM1Y0IKdIiWMFVje4xnsDvNVhS": {
+      "unique_name": "definition_target_01DHUPBICXM1Y0IKdIiWMFVje4xnsDvNVhS",
+      "name": "Random Number between 1 and 9",
+      "title": "Random Number between 1 and 9",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "Group",
+        "disable_certificate_validation": false,
+        "display_name": "Random Number between 1 and 9",
+        "host": "www.random.org",
+        "no_runtime_user": true,
+        "path": "/integers/?num=1\u0026base=10\u0026col=1\u0026format=plain\u0026rnd=new\u0026min=1\u0026max=9",
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01ENY7B71QN4I5hpsyuFDkR9TU8goAQfujt": {
+      "unique_name": "definition_target_01ENY7B71QN4I5hpsyuFDkR9TU8goAQfujt",
+      "name": "YAHOO",
+      "title": "YAHOO",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "YAHOO",
+        "host": "www.yahoo.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r": {
+      "unique_name": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r",
+      "name": "RG External HTTP ",
+      "title": "RG External HTTP ",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG External HTTP ",
+        "host": "gorest.co.in",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "path": "/public-api/users",
+        "protocol": "https"
+      }
+    },
+    "definition_target_01EYZP4PKHNIL4EnQa18OydGVvL8aRDiabb": {
+      "unique_name": "definition_target_01EYZP4PKHNIL4EnQa18OydGVvL8aRDiabb",
+      "name": "RG HTTP Redirect",
+      "title": "RG HTTP Redirect",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG HTTP Redirect",
+        "host": "dashboard.meraki.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01F4B9AUH4K1S2p5cfVQQYEWlDRySuhB7TN": {
+      "unique_name": "definition_target_01F4B9AUH4K1S2p5cfVQQYEWlDRySuhB7TN",
+      "name": "local_end_point",
+      "title": "local_end_point",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "local_end_point",
+        "host": "dev1-sa.ao-local.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "port": 8445,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01F6PDB4OCAO24gwfrkGeDrTnhy6goal5qU": {
+      "unique_name": "definition_target_01F6PDB4OCAO24gwfrkGeDrTnhy6goal5qU",
+      "name": "CA Securex Internal Target",
+      "title": "CA Securex Internal Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "CA Securex Internal Target",
+        "host": "dev1-sa.ao-local.com",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01FB1EZMIAQGV1qEmYLXPImZhRtio4FboPg": {
+      "unique_name": "definition_target_01FB1EZMIAQGV1qEmYLXPImZhRtio4FboPg",
+      "name": "RG External CPO HTTPS",
+      "title": "RG External CPO HTTPS",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG External CPO HTTPS",
+        "host": "bvt-automation.tidalsoft.local",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "/api/v1",
+        "port": 51526,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01GRPRXQUCM150Yq3NSToUUMddI92Ioa0ED": {
+      "unique_name": "definition_target_01GRPRXQUCM150Yq3NSToUUMddI92Ioa0ED",
+      "name": "CA Dev1",
+      "title": "CA Dev1",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "CA Dev1",
+        "host": "dev1-sa.ao-local.com",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01HI0EUGF9MO10BUr2IKzCDf4S2xAi2iBQZ": {
+      "unique_name": "definition_target_01HI0EUGF9MO10BUr2IKzCDf4S2xAi2iBQZ",
+      "name": "RG target12020-07-24T15:47:19.056438807Z",
+      "title": "RG target12020-07-24T15:47:19.056438807Z",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "RG target12020-07-24T15:47:19.056438807Z",
+        "host": "google.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "http"
+      }
+    },
+    "definition_target_01HI0IRRYH7M63dyrCXuLu6XLhOozzlgxsh": {
+      "unique_name": "definition_target_01HI0IRRYH7M63dyrCXuLu6XLhOozzlgxsh",
+      "name": "RG target12020-07-24T15:52:26.724460702Z",
+      "title": "RG target12020-07-24T15:52:26.724460702Z",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "RG target12020-07-24T15:52:26.724460702Z",
+        "host": "google.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "http"
+      }
+    },
+    "definition_target_01HRJW9YCPJ0A0pzWrOGHojZ22VbDCPISjp": {
+      "unique_name": "definition_target_01HRJW9YCPJ0A0pzWrOGHojZ22VbDCPISjp",
+      "name": "RG Generate Token",
+      "title": "RG Generate Token",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG Generate Token",
+        "host": "jwtbuilder.jamiekurtz.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "/tokens",
+        "protocol": "https"
+      }
+    },
+    "definition_target_01HRKCNJKODLH5E54Xk2x6LU4dYZFaEAUCF": {
+      "unique_name": "definition_target_01HRKCNJKODLH5E54Xk2x6LU4dYZFaEAUCF",
+      "name": "RG SXO Env",
+      "title": "RG SXO Env",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG SXO Env",
+        "host": "dev1-sa.ao-local.com",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01I8J3661BE4Y07gHi4B0aM85GYFAT9Pkcs": {
+      "unique_name": "definition_target_01I8J3661BE4Y07gHi4B0aM85GYFAT9Pkcs",
+      "name": "pt third party swagger",
+      "title": "pt third party swagger",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "pt third party swagger",
+        "host": "petstore.swagger.io",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "/v2",
+        "protocol": "https"
+      }
+    },
+    "definition_target_01J931OQRBW005jGqcmEVhTycmdEBqz0bNU": {
+      "unique_name": "definition_target_01J931OQRBW005jGqcmEVhTycmdEBqz0bNU",
+      "name": "RG http proxy",
+      "title": "RG http proxy",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG http proxy",
+        "host": "yahoo.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https",
+        "proxy_url": "http://18.218.78.168:3128",
+        "proxy_username": "admin"
+      }
+    },
+    "definition_target_01J970QNWIYS53QhelR24hcLgkI3FfAWNie": {
+      "unique_name": "definition_target_01J970QNWIYS53QhelR24hcLgkI3FfAWNie",
+      "name": "test1",
+      "title": "test1",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01J971LIWI4C35w6u4KR08iH4p8g1sT27H8",
+        "disable_certificate_validation": false,
+        "display_name": "test1",
+        "host": "orbital.apjc.amp.cisco.com",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "a;lksdjf;alskdjf;alskdjfa;sldkfj",
+        "port": 999999,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG": {
+      "unique_name": "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG",
+      "name": "RG longhorn gmail",
+      "title": "RG longhorn gmail",
+      "type": "runtime_user.email_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "description": "longhornproj1@gmail.com\nCisco123!",
+        "display_name": "RG longhorn gmail",
+        "password": "*****",
+        "sender": "*****"
+      }
+    },
+    "definition_runtime_user_01J971LIWI4C35w6u4KR08iH4p8g1sT27H8": {
+      "unique_name": "definition_runtime_user_01J971LIWI4C35w6u4KR08iH4p8g1sT27H8",
+      "name": "test1",
+      "title": "test1",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "test1"
+      }
+    }
+  },
+  "target_groups": {
+    "target_group_01JNF2A5T8IM53dvEzWJ7qIGa9wNNxj9Bg7": {
+      "unique_name": "target_group_01JNF2A5T8IM53dvEzWJ7qIGa9wNNxj9Bg7",
+      "name": "Dev_Http_TG ( 35 target )",
+      "title": "Dev_Http_TG ( 35 target )",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": false,
+          "selected_target_ids": [
+            "definition_target_01A5GL8XCYYDU3tq8NtjexrASAz5O1OlEcn",
+            "definition_target_01F6PDB4OCAO24gwfrkGeDrTnhy6goal5qU",
+            "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa",
+            "definition_target_01ENY7B71QN4I5hpsyuFDkR9TU8goAQfujt",
+            "definition_target_01GRPRXQUCM150Yq3NSToUUMddI92Ioa0ED",
+            "definition_target_01DHUPBICXM1Y0IKdIiWMFVje4xnsDvNVhS",
+            "definition_target_01HI0EUGF9MO10BUr2IKzCDf4S2xAi2iBQZ",
+            "definition_target_01HI0IRRYH7M63dyrCXuLu6XLhOozzlgxsh",
+            "definition_target_0177D73DH541M13oCpagZSnvOlxH5fOgqE8",
+            "definition_target_01F4B9AUH4K1S2p5cfVQQYEWlDRySuhB7TN",
+            "definition_target_01ANAD8KB5UGQ4Y6EZu4pokE6mbB2FVZq0r",
+            "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl",
+            "definition_target_01BAAPR6GRDSQ6MgV7JNZyqxhX3W7UnGxr9",
+            "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r",
+            "definition_target_01EYZP4PKHNIL4EnQa18OydGVvL8aRDiabb",
+            "definition_target_01FB1EZMIAQGV1qEmYLXPImZhRtio4FboPg",
+            "definition_target_01HRJW9YCPJ0A0pzWrOGHojZ22VbDCPISjp",
+            "definition_target_01HRKCNJKODLH5E54Xk2x6LU4dYZFaEAUCF",
+            "definition_target_01I8J3661BE4Y07gHi4B0aM85GYFAT9Pkcs",
+            "definition_target_017146I1FIOR73pKwkScPbwkgcocwegP7hy",
+            "definition_target_0171514BBSF8E69deHs55vXrvk0z8ZhNkQm",
+            "definition_target_015BYI133FAY70x33jEwZ59TgqBIYLJ1J6j",
+            "definition_target_015EL2NABOPXY7KS8eV2z2F8a29xBdR4UHf",
+            "definition_target_015ELK37Q8YK70Qu4la29a6m5FyVSPihHXQ",
+            "definition_target_015HN5XYB184S4drYPXjMVXbrERdKBPNEHI",
+            "definition_target_01J931OQRBW005jGqcmEVhTycmdEBqz0bNU",
+            "definition_target_01J970QNWIYS53QhelR24hcLgkI3FfAWNie"
+          ]
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "variables": {
+    "variable_017PH4E8OK3U22Oqw1dQb536dARpFMzbYZW": {
+      "unique_name": "variable_017PH4E8OK3U22Oqw1dQb536dARpFMzbYZW",
+      "properties": {
+        "value": false,
+        "scope": "global",
+        "name": "Boolean Variable_06/06/2019 01:21:13",
+        "type": "datatype.boolean",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb": {
+      "unique_name": "variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb",
+      "schema_id": "tabletype_01FOHND7P2AK25E9GRvJTxy5pTf0cTwC949",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "DATE_OPT": "0001-01-01T00:00:00+00:00",
+              "DATE_REQ": "0001-01-01T00:00:00+00:00",
+              "DECIMAL_REQ": 0,
+              "Decimal_OPT": 0,
+              "INTEGER_OPT": 1,
+              "INTEGER_REQ": 1,
+              "STRING_OPT": "",
+              "STRING_REQ": "name1",
+              "a": ""
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "\u003c\u003cR_test\u003e\u003e",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01HH5LHIKJT5N4x5htDUkyiKBEpvJygaGJ4": {
+      "unique_name": "variable_01HH5LHIKJT5N4x5htDUkyiKBEpvJygaGJ4",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "RG GLOBAL SECURE",
+        "type": "datatype.secure_string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01JQX3O724VP77SMoTx5qMzw3BciPGTg28x": {
+      "unique_name": "variable_01JQX3O724VP77SMoTx5qMzw3BciPGTg28x",
+      "properties": {
+        "value": "",
+        "scope": "global",
+        "name": "RG remove Secure",
+        "type": "datatype.secure_string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ": {
+      "unique_name": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
+      "data_type": "datatype.tabletype",
+      "display_name": "RG child input table",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "string",
+          "title": "string",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01FM7S1LZ58KD2anuqHyRI7PDo1LlrzA8nP": {
+      "unique_name": "tabletype_01FM7S1LZ58KD2anuqHyRI7PDo1LlrzA8nP",
+      "data_type": "datatype.tabletype",
+      "display_name": "New table",
+      "columns": [
+        {
+          "name": "Name",
+          "title": "Name",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01FOHND7P2AK25E9GRvJTxy5pTf0cTwC949": {
+      "unique_name": "tabletype_01FOHND7P2AK25E9GRvJTxy5pTf0cTwC949",
+      "data_type": "datatype.tabletype",
+      "display_name": "R_table\u0026\u0026\u003e\u003e\u003e",
+      "columns": [
+        {
+          "is_required": true,
+          "maxLength": 2000,
+          "maximum": 0,
+          "minimum": 0,
+          "name": "STRING_REQ",
+          "title": "STRING_REQ",
+          "type": "string"
+        },
+        {
+          "name": "a",
+          "title": ".:",
+          "type": "string"
+        },
+        {
+          "name": "DATE_OPT",
+          "title": "DATE_OPT",
+          "type": "date"
+        },
+        {
+          "name": "DATE_REQ",
+          "title": "DATE_REQ",
+          "type": "date"
+        },
+        {
+          "is_required": true,
+          "name": "DECIMAL_REQ",
+          "title": "DECIMAL_REQ",
+          "type": "number"
+        },
+        {
+          "name": "Decimal_OPT",
+          "title": "Decimal_OPT",
+          "type": "number"
+        },
+        {
+          "maxLength": 2000,
+          "maximum": 0,
+          "minimum": 0,
+          "name": "STRING_OPT",
+          "title": "STRING_OPT",
+          "type": "string"
+        },
+        {
+          "name": "INTEGER_OPT",
+          "title": "INTEGER_OPT",
+          "type": "integer"
+        },
+        {
+          "is_required": true,
+          "name": "INTEGER_REQ",
+          "title": "INTEGER_REQ",
+          "type": "integer"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc",
+        "name": "RG Grandchild",
+        "title": "RG Grandchild",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
+            "properties": {
+              "value": [
+                {
+                  "column_data": {
+                    "string": "CHILD1"
+                  }
+                }
+              ],
+              "scope": "input",
+              "name": "child input table",
+              "type": "datatype.table",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01FLAAMNC148D1J8gvRPEIvjj7uNOIIAhvy",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "secure local",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01FLACB7X7N5R122ysf69h44WoIM500Kef0",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure input",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01FLA9AHO81G31whSVWjr7h0VezKRo2wlTT",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.number",
+            "properties": {
+              "value": 0,
+              "scope": "output",
+              "name": "RG dec output1",
+              "type": "datatype.number",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01FR6QQ0I4BAQ4okbpYMkIkpZQQWnAhg610",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.number",
+            "properties": {
+              "value": 0,
+              "scope": "output",
+              "name": "RG dec output",
+              "type": "datatype.number",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01FR6N8KH0XOP1bleeIdew6zaCx3HEHGsOk",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_01FM7S1LZ58KD2anuqHyRI7PDo1LlrzA8nP",
+            "properties": {
+              "value": [
+                {
+                  "column_data": {
+                    "Name": "Childlocal1"
+                  }
+                }
+              ],
+              "scope": "input",
+              "name": "RG non mandatory table",
+              "type": "datatype.table",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01FM7S8W9D3CV5kXsMq1ZxSAldwK47RxXnc",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
+            "properties": {
+              "value": [
+                {
+                  "column_data": {
+                    "string": "TEST"
+                  }
+                },
+                {
+                  "column_data": {
+                    "string": "TEST"
+                  }
+                }
+              ],
+              "scope": "output",
+              "name": "RG output table",
+              "type": "datatype.table",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01FMDCC31JSJ94Qm0BG26xAxa382jwvLwQ5",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "RG Grandchild",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01FLAAP8CBV615USeIqtrOq8tcXLUmCpQNz",
+            "name": "Select from Table",
+            "title": "Select from Table",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Select from Table",
+              "input_table": "$workflow.definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc.input.variable_workflow_01FLAAMNC148D1J8gvRPEIvjj7uNOIIAhvy$",
+              "number_of_rows": {
+                "all_rows": true,
+                "at_most": false
+              },
+              "persist_output": false,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true,
+                "sort_by": false
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FM7SAP2O56R600ruXnfKzXZMo9aupDCfF",
+            "name": "Select from Table",
+            "title": "Select from Table - non mandatory",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Select from Table - non mandatory",
+              "input_table": "$workflow.definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc.input.variable_workflow_01FM7S8W9D3CV5kXsMq1ZxSAldwK47RxXnc$",
+              "number_of_rows": {
+                "all_rows": true,
+                "at_most": false
+              },
+              "persist_output": false,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true,
+                "sort_by": false
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FLAB3FBLWU37PAiClXtRrCl1WaCKQaPdO",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc.local.variable_workflow_01FLACB7X7N5R122ysf69h44WoIM500Kef0$",
+                  "variable_value_new": "$workflow.definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc.input.variable_workflow_01FLA9AHO81G31whSVWjr7h0VezKRo2wlTT$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FMDC3HNV88V7QrePNeYdVFk7aobytosc4",
+            "name": "Add Row to Table",
+            "title": "Add Row to Table",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Add Row to Table",
+              "input_table": "$workflow.definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc.output.variable_workflow_01FMDCC31JSJ94Qm0BG26xAxa382jwvLwQ5$",
+              "row": [
+                {
+                  "key": "string",
+                  "type": "string",
+                  "value": "$workflow.definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc.output.started_by$"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FR6O4VU94K40coLdJN7a1DC0OT4wAd8HV",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01FLA8H29WHIE1Ios5Nr6IUpcsCyKprcltc.output.variable_workflow_01FR6N8KH0XOP1bleeIdew6zaCx3HEHGsOk$",
+                  "variable_value_new": "$global.variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb.global.variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb[0].DECIMAL_REQ$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ]
+}
