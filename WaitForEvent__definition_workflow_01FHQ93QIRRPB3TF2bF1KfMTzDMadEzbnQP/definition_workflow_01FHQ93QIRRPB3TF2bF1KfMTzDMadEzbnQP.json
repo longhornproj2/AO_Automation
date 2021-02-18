@@ -1,0 +1,425 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01FHQ93QIRRPB3TF2bF1KfMTzDMadEzbnQP",
+    "name": "RG Wait for Event - UPDATED",
+    "title": "RG Wait for Event - UPDATED",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "string1",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01FI2NDN4GOFE2iuBrQK48BEFbP4CQ4urIw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "string",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01FHY9MXIX8E4565JPfjwSyAXzl3p1hq1W6",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG Wait for Event - UPDATED",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL",
+          "run_on_all_targets": true,
+          "selected_target_types": [
+            "web-service.endpoint"
+          ]
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01GHF4XR8K4W75eLnmCDlnTBiDik7ojrNwJ",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01GHF4Y3GR9081299YYmpdzp9Izg3gXON6m",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01FHQ95WLZY1I1TSoQ4QxEVoWHLQ7DUalIS",
+                "name": "Wait For Event",
+                "title": "Wait For Event",
+                "type": "task.wait_for_event",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Wait For Event",
+                  "event_info": {
+                    "add_event": true,
+                    "event_definition": {
+                      "action": "read",
+                      "conditions": {
+                        "left_operand": "$output.subject$",
+                        "operator": "eq",
+                        "right_operand": "Test from AO1234"
+                      },
+                      "download_attachments": true,
+                      "folder": "INBOX",
+                      "target_id": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k"
+                    }
+                  },
+                  "event_type": "email.event",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01KXLRIYLMVX63uy0HA1ZeNrd2NplDnJtr8",
+                "name": "For Each",
+                "title": "For Each",
+                "type": "logic.for_each",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "For Each",
+                  "skip_execution": false,
+                  "source_array": "$activity.definition_activity_01FHQ95WLZY1I1TSoQ4QxEVoWHLQ7DUalIS.output.attachments$"
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01KXLRSI4QB1C7EVRcgvlqavdv4mCtOm8ru",
+                    "name": "Send Email",
+                    "title": "Send Email",
+                    "type": "email.smtp_send_email",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "attachments": [
+                        "$activity.definition_activity_01KXLRIYLMVX63uy0HA1ZeNrd2NplDnJtr8.input.source_array[@].file_path$"
+                      ],
+                      "body": "Send Emal - For Loop",
+                      "continue_if_one_address_valid": false,
+                      "continue_on_failure": false,
+                      "display_name": "Send Email",
+                      "from": "longhornproj1@gmail.com",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "subject": "Send Emal - For Loop",
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_01FH01814QR925svPnLh1MZQZczHwylXFwv"
+                      },
+                      "to": "longhornproj1@gmail.com"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01KVUE6EEVQFT4qb10FxY5Ljdbb9910jusj",
+                "name": "Set Variables",
+                "title": "Set Variables1",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables1",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01FHQ93QIRRPB3TF2bF1KfMTzDMadEzbnQP.local.variable_workflow_01FI2NDN4GOFE2iuBrQK48BEFbP4CQ4urIw$",
+                      "variable_value_new": "$activity.definition_activity_01FHQ95WLZY1I1TSoQ4QxEVoWHLQ7DUalIS.output.action$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01KT5GKP3WCHS3iUfdKjnCFExRl65gVMKwQ",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 30
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01FI2N9FO4LBJ5wD8KamFdHPSRiOFyuj4kR",
+                "name": "Set Variables",
+                "title": "Set Variables - Att Raw body",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables - Att Raw body",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01FHQ93QIRRPB3TF2bF1KfMTzDMadEzbnQP.local.variable_workflow_01FHY9MXIX8E4565JPfjwSyAXzl3p1hq1W6$",
+                      "variable_value_new": "$activity.definition_activity_01FHQ95WLZY1I1TSoQ4QxEVoWHLQ7DUalIS.output.attachments[0].attachment_raw_body$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01GHF4Y8F5BR91SmVdj5Nz7A71zTlqDA2Iq",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": true
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01GHF518181D82x2OOeNJkxAcO73f4sqpEe",
+                "name": "Wait For Event",
+                "title": "Wait For Event",
+                "type": "task.wait_for_event",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Wait For Event",
+                  "event_info": {
+                    "add_event": true,
+                    "event_definition": {
+                      "action": "read",
+                      "conditions": {
+                        "left_operand": "$output.attachments[0].is_email_type$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "download_attachments": false,
+                      "folder": "INBOX",
+                      "target_id": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k"
+                    }
+                  },
+                  "event_type": "email.event",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01IQFTA0W2TMV23iQ5cPMwC9VtDU2kfL8zD",
+                "name": "Set Variables",
+                "title": "Set Variables - Att headers",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables - Att headers",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01FHQ93QIRRPB3TF2bF1KfMTzDMadEzbnQP.local.variable_workflow_01FHY9MXIX8E4565JPfjwSyAXzl3p1hq1W6$",
+                      "variable_value_new": "$activity.definition_activity_01GHF518181D82x2OOeNJkxAcO73f4sqpEe.output.attachments[-1].attachment_headers$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01IQFSAHD54ZV6I3RwPsj4QeIbLLsu4B1KT",
+        "name": "Set Variables",
+        "title": "Set Variables - message ID",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables - message ID",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FHQ93QIRRPB3TF2bF1KfMTzDMadEzbnQP.local.variable_workflow_01FHY9MXIX8E4565JPfjwSyAXzl3p1hq1W6$",
+              "variable_value_new": "$activity.definition_activity_01FHQ95WLZY1I1TSoQ4QxEVoWHLQ7DUalIS.output.message_id$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FHY9J67MJ8K0hc3EJIVuFYbe3vjimn9h2",
+        "name": "Set Variables",
+        "title": "Set Variables - number of attachments",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables - number of attachments",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FHQ93QIRRPB3TF2bF1KfMTzDMadEzbnQP.local.variable_workflow_01FHY9MXIX8E4565JPfjwSyAXzl3p1hq1W6$",
+              "variable_value_new": "$activity.definition_activity_01FHQ95WLZY1I1TSoQ4QxEVoWHLQ7DUalIS.output.attachments_count$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k": {
+      "unique_name": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k",
+      "name": "RG imap gmail",
+      "title": "RG imap gmail",
+      "type": "email.imap_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG",
+        "description": "test1",
+        "display_name": "RG imap gmail",
+        "ignore_certificate_errors": true,
+        "polling_interval": 10,
+        "port": 993,
+        "protocol": "IMAP",
+        "server": "imap.gmail.com",
+        "tls_enabled": true
+      }
+    },
+    "definition_target_01FH01814QR925svPnLh1MZQZczHwylXFwv": {
+      "unique_name": "definition_target_01FH01814QR925svPnLh1MZQZczHwylXFwv",
+      "name": "RG smtp",
+      "title": "RG smtp",
+      "type": "email.smtp_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01K5FQH8MQOED2LTFeFdGan598qYpkeKdvV",
+        "description": "RG SMTP1",
+        "display_name": "RG smtp",
+        "no_runtime_user": false,
+        "port": 587,
+        "protocol": "SMTP",
+        "server": "smtp.gmail.com"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG": {
+      "unique_name": "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG",
+      "name": "RG longhorn gmail",
+      "title": "RG longhorn gmail",
+      "type": "runtime_user.email_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "description": "longhornproj1@gmail.com\nCisco123!",
+        "display_name": "RG longhorn gmail",
+        "password": "*****",
+        "sender": "*****"
+      }
+    },
+    "definition_runtime_user_01K5FQH8MQOED2LTFeFdGan598qYpkeKdvV": {
+      "unique_name": "definition_runtime_user_01K5FQH8MQOED2LTFeFdGan598qYpkeKdvV",
+      "name": "RG longhorn gmail updated",
+      "title": "RG longhorn gmail updated",
+      "type": "runtime_user.email_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "description": "save",
+        "display_name": "RG longhorn gmail updated",
+        "password": "*****",
+        "sender": "*****"
+      }
+    }
+  },
+  "target_groups": {
+    "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL": {
+      "unique_name": "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL",
+      "name": "GOOGLE YAHOO",
+      "title": "GOOGLE YAHOO",
+      "description": "Added 2nd target to the Target Group",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "terminal.endpoint",
+          "view_target_type": "terminal.endpoint",
+          "include_all_targets": false,
+          "criteria": [
+            {
+              "left_operand": "$input.display_name$",
+              "operator": "mw",
+              "right_operand": "*RG*"
+            }
+          ]
+        },
+        {
+          "data_target_type": "email.imap_endpoint",
+          "view_target_type": "email.imap_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  }
+}
