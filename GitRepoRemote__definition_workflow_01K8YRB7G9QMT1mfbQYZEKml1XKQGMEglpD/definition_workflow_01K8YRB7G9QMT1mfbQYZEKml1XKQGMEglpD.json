@@ -1,0 +1,817 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD",
+    "name": "Copy-RG http External",
+    "title": "Copy-RG http External",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 100,
+          "scope": "local",
+          "name": "Num",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Copy-RG http External",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MYLMIVK2ZF67jqNfzNmVSkMqc99p7Dhsj",
+        "name": "HTTP Request",
+        "title": " Content Type - XML output",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "accept": "application/xml",
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": " Content Type - XML output",
+          "method": "GET",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01K8YRDN4NDAS4XV6zI6ltS6rx2ymA5F1vo",
+        "name": "HTTP Request",
+        "title": " Content Type - XML output",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "accept": "application/xml",
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer kO_4NRA6-whysg5i3ZVFPu3PnLzILfGXwmjJ"
+            }
+          ],
+          "display_name": " Content Type - XML output",
+          "method": "GET",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01K8YREW89YP50uXt3QNCyCYNoHiWxdU9tf",
+        "name": "HTTP Request",
+        "title": "Negative Scenario - Content Type not rendered by Server",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "accept": "html/text",
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer kO_4NRA6-whysg5i3ZVFPu3PnLzILfGXwmjJ"
+            }
+          ],
+          "display_name": "Negative Scenario - Content Type not rendered by Server",
+          "method": "GET",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01OENUJXL1TMH0Rll1ZhyE3sRysJRhvX8F2",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01OENUJZM6U9A36PnOnfyZZsSJXQBXEwvPF",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "display_name": "Parallel Branch"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01K8YRG3G5S7S2W9LvshkU7pdcbzN4E9a6w",
+                "name": "While Loop",
+                "title": "While Loop",
+                "type": "logic.while",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "While Loop",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01K8YRHB438AO61Kz7hTFDBIj6IYqFH73lg",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$",
+                        "operator": "gte",
+                        "right_operand": 0
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01K8YRIJXDFLE38nkgXLvvXAoT8wKC5ROfF",
+                        "name": "HTTP Request",
+                        "title": "HTTP Request - GET",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer GtL9qVaj9fJ0vjV2b-LSQTbaeD8PDzty0mO9"
+                            }
+                          ],
+                          "display_name": "HTTP Request - GET",
+                          "method": "GET",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target": true,
+                            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01OEO5OR4WDEX55i8tESkZggE9TmlJxaCO1",
+                        "name": "Sleep",
+                        "title": "Sleep",
+                        "type": "core.sleep",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Sleep",
+                          "skip_execution": false,
+                          "sleep_interval": 15
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01K8YRJ8905OO4DdiDRlAAIcLSoMlwOCOJK",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$",
+                              "variable_value_new": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$-1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01OENUK0N7Q395yChat72EW1Q6qBZQrG2p1",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "display_name": "Parallel Branch"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01OENUOPNH6JX2f9u19gVkKENRgl4soOi3A",
+                "name": "While Loop",
+                "title": "While Loop",
+                "type": "logic.while",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "While Loop",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01OENUOQVTTYO76vQFpaMcjMDQaUlEgoRWE",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$",
+                        "operator": "gte",
+                        "right_operand": 0
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01OENUORRFESU035pdX3rY6oBIyAPF3U8KI",
+                        "name": "HTTP Request",
+                        "title": "HTTP Request - GET",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer GtL9qVaj9fJ0vjV2b-LSQTbaeD8PDzty0mO9"
+                            }
+                          ],
+                          "display_name": "HTTP Request - GET",
+                          "method": "GET",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target": true,
+                            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01OEO5RWC20IE6Ut3auPbh8phLLz0Xf38Ng",
+                        "name": "Sleep",
+                        "title": "Sleep",
+                        "type": "core.sleep",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Sleep",
+                          "skip_execution": false,
+                          "sleep_interval": 15
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01OENUOSNAPMZ4tOCQixW6GVJdi7ozt96xp",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$",
+                              "variable_value_new": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$-1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01OENUTFYDDV65W18qMHUPICMWuWPoGKxLC",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01OENUTHB5EVD6ChlkoBgCvKbJ1XGZQLubX",
+                "name": "While Loop",
+                "title": "While Loop",
+                "type": "logic.while",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "While Loop",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01OENUTIEEC0W5sx7vXIgBWtwqZJnTsqwdF",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$",
+                        "operator": "gte",
+                        "right_operand": 0
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01OENUTJEZDXD4qhzplSVu7SjcVVJ2o0s8s",
+                        "name": "HTTP Request",
+                        "title": "HTTP Request - GET",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer GtL9qVaj9fJ0vjV2b-LSQTbaeD8PDzty0mO9"
+                            }
+                          ],
+                          "display_name": "HTTP Request - GET",
+                          "method": "GET",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target": true,
+                            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01OEO5UDZHCRX4xpbeIO7usxwhqjgkgsbw9",
+                        "name": "Sleep",
+                        "title": "Sleep",
+                        "type": "core.sleep",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Sleep",
+                          "skip_execution": false,
+                          "sleep_interval": 15
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01OENUTKJNEKD5mc8cLDhQry8QWvaRR8t1U",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$",
+                              "variable_value_new": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$-1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01OENUV2FUWYF3FxgRwA9KL766KgI6XhvDj",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01OENUV3TOCZY5W1to4hXVxpI4e613qO5aj",
+                "name": "While Loop",
+                "title": "While Loop",
+                "type": "logic.while",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "While Loop",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01OENUV4SJ95M3g13EmSBSlFlboDwJpdpSK",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$",
+                        "operator": "gte",
+                        "right_operand": 0
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01OENUV5QM47O2hNTrs2FW3VkA5HZKDHL3K",
+                        "name": "HTTP Request",
+                        "title": "HTTP Request - GET",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": false,
+                          "custom_headers": [
+                            {
+                              "name": "Authorization",
+                              "value": "Bearer GtL9qVaj9fJ0vjV2b-LSQTbaeD8PDzty0mO9"
+                            }
+                          ],
+                          "display_name": "HTTP Request - GET",
+                          "method": "GET",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target": true,
+                            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01OENUV6NEJLM6l2s14vcawcebfi4lpze8n",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$",
+                              "variable_value_new": "$workflow.definition_workflow_01K8YRB7G9QMT1mfbQYZEKml1XKQGMEglpD.local.variable_workflow_01K8YRB74ZGV63olDTIdjH6SX0uLzGGGBvJ$-1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01K8YRJWQBTOF5qRbHwBPZuzzqEmQ3gkJri",
+        "name": "HTTP Request",
+        "title": "HTTP Request - POST",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\n   \"first_name\": \"R\",\n   \"last_name\": \"G\",\n   \"email\": \"rg@yahoo.com\",\n   \"gender\": \"male\"\n}",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer wfyEZzYhgPuci4YquP54Sq3XSUKot1cKjYkK"
+            }
+          ],
+          "display_name": "HTTP Request - POST",
+          "method": "POST",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01K8YRKKSEUL65FqWNmUYh7lfUyVArygbdQ",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "JSONPath Query",
+          "input_json": "$activity.definition_activity_01K8YRJWQBTOF5qRbHwBPZuzzqEmQ3gkJri.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$..id",
+              "jsonpath_query_name": "ID",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01K8YRL9UQRXQ3C5oNHCrjoFlzEZ2y8P8LC",
+        "name": "HTTP Request",
+        "title": "HTTP Request - GET",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": true,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 487YbLHv5otqott9lsS5Q2y42V7BgECKVSMb"
+            }
+          ],
+          "display_name": "HTTP Request - GET",
+          "method": "GET",
+          "relative_url": "/$activity.definition_activity_01K8YRKKSEUL65FqWNmUYh7lfUyVArygbdQ.output.jsonpath_queries.ID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01K8YRMN3RZYG645ft5cFfzHCU3lAbHZswD",
+        "name": "HTTP Request",
+        "title": "HTTP Request - GET",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": true,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YbLHv5otqott9lsS5Q2y42V7BgECKVSMb"
+            }
+          ],
+          "display_name": "HTTP Request - GET",
+          "method": "GET",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01K8YRNBJXMFJ1UhrsQM0EnWN4OOuuWcNpa",
+        "name": "HTTP Request",
+        "title": "HTTP Request - Options",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": true,
+          "continue_on_failure": true,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 487YbLHv5otqott9lsS5Q2y42V7BgECKVSMb"
+            }
+          ],
+          "display_name": "HTTP Request - Options",
+          "method": "OPTIONS",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01K8YRNZY658Z52FnFj0PcZ2n3tFgCAEliC",
+        "name": "HTTP Request",
+        "title": "HTTP Request - HEAD",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": true,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer x5BQQTpurS76Zxgil0S7RaohmgEQbps76nr4"
+            }
+          ],
+          "display_name": "HTTP Request - HEAD",
+          "method": "HEAD",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r": {
+      "unique_name": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r",
+      "name": "RG External HTTP ",
+      "title": "RG External HTTP ",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "ao_remote_id": "01OEKOJ28D3XK45SYrRMAVuQVtsZgqJf5Kq",
+        "disable_certificate_validation": true,
+        "display_name": "RG External HTTP ",
+        "host": "gorest.co.in",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "path": "/public-api/users",
+        "protocol": "https"
+      }
+    }
+  },
+  "remotemetas": {
+    "remote_meta_01OEKOJ2KCGET7UXCu7Q9r2U3a7yo5RMGWr": {
+      "base_type": "remote_meta",
+      "type": "generic.remote_meta",
+      "name": "RG demo2 - 152",
+      "title": "RG demo2 - 152",
+      "description": "test1",
+      "version": "1.0.0",
+      "properties": {
+        "cloud_type": "vmware",
+        "description": "test1",
+        "display_name": "RG demo2 - 152",
+        "network": {
+          "dns_servers": "64.102.6.247, 72.163.47.11",
+          "gateway": "10.89.44.129",
+          "ip_endpoint": "1.89.44.152/24",
+          "is_static_ip": true
+        },
+        "proxy": {
+          "proxy_url": "socks5://proxy.esl.cisco.com:1080",
+          "require_proxy": true
+        }
+      },
+      "unique_name": "remote_meta_01OEKOJ2KCGET7UXCu7Q9r2U3a7yo5RMGWr",
+      "object_type": "remote_meta"
+    }
+  }
+}
