@@ -7,19 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Bearer ",
-          "scope": "local",
-          "name": "Token ",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01NYASDR1Q5TF6ob6FwwKVWmhAkFaJrKa8U",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "tabletype_01AHAPBR4FV675cgXI0e4HbGK7XYWEIF9sH",
         "properties": {
           "scope": "output",
@@ -34,14 +21,14 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "{\"status\":\"ok\",\"query\":{}}",
+          "value": "Bearer ",
           "scope": "local",
-          "name": "GET Call - Body",
+          "name": "Token ",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01NYASDR1QAAA2Fet2BndAEYWbnL1JxKIIz",
+        "unique_name": "variable_workflow_01NYASDR1Q5TF6ob6FwwKVWmhAkFaJrKa8U",
         "object_type": "variable_workflow"
       },
       {
@@ -55,6 +42,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01NYASDR1QCSJ4DVQMlAB09fisJPkQqeV5X",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "{\"status\":\"ok\",\"query\":{}}",
+          "scope": "local",
+          "name": "GET Call - Body",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01NYASDR1QAAA2Fet2BndAEYWbnL1JxKIIz",
         "object_type": "variable_workflow"
       }
     ],
@@ -1770,7 +1770,7 @@
           "runtime_user": {
             "target_default": true
           },
-          "skip_execution": false,
+          "skip_execution": true,
           "target": {
             "override_workflow_target": true,
             "target_id": "definition_target_01N4NEP8QSMPT79dCbXDMo8H2AYic05s1aW"
@@ -1787,7 +1787,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "Condition Block",
-          "skip_execution": false
+          "skip_execution": true
         },
         "object_type": "definition_activity",
         "blocks": [
@@ -1950,7 +1950,6 @@
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
-        "ao_remote_id": "01OE3LQFL53TQ2FamSdImGZsP3iB1EW9xqT",
         "description": "test",
         "disable_certificate_validation": true,
         "display_name": "SJ_HTTP_Cookie_Remote",
@@ -1970,8 +1969,8 @@
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
-        "ao_remote_id": "01OE3LQFL53TQ2FamSdImGZsP3iB1EW9xqT",
-        "default_runtime_user_id": "definition_runtime_user_01LGSRGRYKMLY4W73QjU1EJVWxr7UvzZvLc",
+        "ao_remote_id": "01OKC16IUPF1W51QJlOUB3W6M6sSsLsYdpU",
+        "default_runtime_user_id": "definition_runtime_user_01J971LIWI4C35w6u4KR08iH4p8g1sT27H8",
         "description": "redirect path options:\n /redirect?url=http://www.google.com\n/https://httpbin.org",
         "disable_certificate_validation": false,
         "display_name": "HTTP Endpoint (Client Certs) with Redirect_Remote",
@@ -1992,7 +1991,7 @@
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
-        "ao_remote_id": "01OE3LQFL53TQ2FamSdImGZsP3iB1EW9xqT",
+        "ao_remote_id": "01OKC16IUPF1W51QJlOUB3W6M6sSsLsYdpU",
         "default_runtime_user_id": "definition_runtime_user_01N4MMAFXE9RS38zeGdziyIPs8RKQivCNJH",
         "disable_certificate_validation": false,
         "display_name": "SJ_Signature_Auth_Key_Target_Remote",
@@ -2012,7 +2011,6 @@
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
-        "ao_remote_id": "01OE3LQFL53TQ2FamSdImGZsP3iB1EW9xqT",
         "disable_certificate_validation": true,
         "display_name": "sj_new_Proxy_target_Remote",
         "host": "www.google.com",
@@ -2024,18 +2022,18 @@
     }
   },
   "runtime_users": {
-    "definition_runtime_user_01LGSRGRYKMLY4W73QjU1EJVWxr7UvzZvLc": {
-      "unique_name": "definition_runtime_user_01LGSRGRYKMLY4W73QjU1EJVWxr7UvzZvLc",
-      "name": "EM HTTP Client Cert Authentication",
-      "title": "EM HTTP Client Cert Authentication",
-      "type": "runtime_user.web-service_client_certificate_credentials",
+    "definition_runtime_user_01J971LIWI4C35w6u4KR08iH4p8g1sT27H8": {
+      "unique_name": "definition_runtime_user_01J971LIWI4C35w6u4KR08iH4p8g1sT27H8",
+      "name": "test1",
+      "title": "test1",
+      "type": "runtime_user.web-service_basic_credentials",
       "base_type": "runtime_user",
       "object_type": "definition_runtime_user",
       "properties": {
-        "crt": "*****",
-        "display_name": "EM HTTP Client Cert Authentication",
-        "key": "*****",
-        "passphrase": "*****"
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "test1"
       }
     },
     "definition_runtime_user_01N4MMAFXE9RS38zeGdziyIPs8RKQivCNJH": {
@@ -2047,6 +2045,7 @@
       "object_type": "definition_runtime_user",
       "properties": {
         "algorithm": "*****",
+        "description": "test",
         "display_name": "SJ_Signature_Auth_Key",
         "key_id": "*****",
         "priv_key": "*****",
@@ -2057,8 +2056,8 @@
   "target_groups": {
     "target_group_01MGOKFOZ0AJA3DrfOz2Xx0TlFi6BQJrnNu": {
       "unique_name": "target_group_01MGOKFOZ0AJA3DrfOz2Xx0TlFi6BQJrnNu",
-      "name": "HTTP Endpoint Target Group_Remote",
-      "title": "HTTP Endpoint Target Group_Remote",
+      "name": "HTTP Endpoint Target Group",
+      "title": "HTTP Endpoint Target Group",
       "type": "generic.target_group",
       "base_type": "target_group",
       "version": "1.0.0",
@@ -2070,8 +2069,8 @@
           "criteria": [
             {
               "left_operand": "$input.description$",
-              "operator": "eqi",
-              "right_operand": "JsonbuilderRemote"
+              "operator": "eq",
+              "right_operand": "HTTP Endpoint"
             }
           ]
         }
@@ -2086,18 +2085,18 @@
       "display_name": "Output Results",
       "columns": [
         {
+          "name": "ActivityName",
+          "title": "Activity Name",
+          "type": "string"
+        },
+        {
           "name": "Message",
           "title": "Message",
           "type": "string"
         },
         {
-          "name": "pass/fail",
-          "title": "Pass /Fail",
-          "type": "string"
-        },
-        {
-          "name": "ActivityName",
-          "title": "Activity Name",
+          "name": "pass_fail",
+          "title": "Pass_Fail",
           "type": "string"
         }
       ],
@@ -2106,19 +2105,19 @@
     }
   },
   "remotemetas": {
-    "remote_meta_01OE3LQFTK4DS4ClibcbMGjfSIRwHAkgXFb": {
+    "remote_meta_01OKC16J499PO7JmBmnIXQK6GegnQxrNUhD": {
       "base_type": "remote_meta",
       "type": "generic.remote_meta",
-      "name": "sj_remote_153",
-      "title": "sj_remote_153",
+      "name": "RG 152 5/20",
+      "title": "RG 152 5/20",
       "version": "1.0.0",
       "properties": {
         "cloud_type": "vmware",
-        "display_name": "sj_remote_153",
+        "display_name": "RG 152 5/20",
         "network": {
-          "dns_servers": "64.102.6.247,72.163.47.11",
+          "dns_servers": "64.102.6.247, 72.163.47.11",
           "gateway": "10.89.44.129",
-          "ip_endpoint": "10.89.44.153/24",
+          "ip_endpoint": "10.89.44.152/24",
           "is_static_ip": true
         },
         "proxy": {
@@ -2126,7 +2125,7 @@
           "require_proxy": true
         }
       },
-      "unique_name": "remote_meta_01OE3LQFTK4DS4ClibcbMGjfSIRwHAkgXFb",
+      "unique_name": "remote_meta_01OKC16J499PO7JmBmnIXQK6GegnQxrNUhD",
       "object_type": "remote_meta"
     }
   }
