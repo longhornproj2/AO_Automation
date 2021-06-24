@@ -1,0 +1,681 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01PF0K31ZIUOM44ZpDJhqePxxPLtDSARWb6",
+    "name": "Workflow with Upper actions",
+    "title": "Workflow with Upper actions",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Workflow with Upper actions",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01EOZMYH25RSG1rDfjUIjQwHEPioIElydk9",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01PF0SM8194SV7iD2UFadGx2c5c74XNUTiD",
+        "name": "While Loop",
+        "title": "While Loop",
+        "type": "logic.while",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "While Loop",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01PF0SMA2NOYH3U6626vpr4qZD08gvepREq",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$env.variable_1BMfMWYx15MVGL1vjWauER9qJ5b.env.variable_1BMfMWYx15MVGL1vjWauER9qJ5b$",
+                "operator": "eq",
+                "right_operand": 500
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01PF0KBB1QG7B4LEbHyqwOBZG6ggiDXRTuW",
+                "name": "Parallel Block",
+                "title": "Parallel Block",
+                "type": "logic.parallel",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Parallel Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01PF0KBCQG1R70p4EVrB9V4Jgmh7bQMZGEw",
+                    "name": "Parallel Branch",
+                    "title": "Parallel Branch",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Parallel Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01PF0KDPUGH4P0YW7APgSZ0pSZvf4r1r0xP",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KJY9MLI00vAWv4C5Woo6BjCqcx14A7",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KJGU13VA7gUJo8WxHEwiPrKzOPNeA4",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KHQJKB466YTpOFj4dCk9LIUJdVx3Se",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KHB4LW0U7QX1KtSzvDdCpxScT8838N",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KGVTIJXR3zZHxXWFofiz3eHuMsGbwJ",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KGHBALG964jKK6z1i7BEJwxnIcx4YR",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01PF0KMW86RZD6KrPEL32Q4gPj0PEQrGmEo",
+                    "name": "Parallel Branch",
+                    "title": "Parallel Branch",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Parallel Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01PF0KMXD9G7A0KdExWuzl7DhwJV5dLm80z",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KMY8472L5MLk250uGE2TAQ9UbfrwEQ",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KMZ2MC9214SJczEhu8T2jwL8M6krbu",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KMZX06WU3Sx7z9qpn5nLS9I16wJhI8",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KN0RP7JS0wmIe3Nifo2SRcraU8jvvr",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KN1M5WSK1gmP6oDOzcL7taaZGyJfv6",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KN2GENXG0LQsq03NZscIADqdadpSpo",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01PF0KNIVN7IU4TDiUY42mIEks7FSakA1vO",
+                    "name": "Parallel Branch",
+                    "title": "Parallel Branch",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Parallel Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01PF0KNJYHYDC5aqTTxI4MLcF8roGk9qyul",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KNKR5GV944kZg57T19g9rUXwXnI8Xd",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KNLL047M1FnvjMg6aSdXGwyu0xEr28",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KNMFKEI95rQe1lphlzdx1gCfYfixLA",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KNN9Q6KY4a9JI2cS7WuPRYT3OXDSCC",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KNO6FGI46IKOAvOsltq3Xuz1BGSq4r",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KNP1IIGD7PsHOaL4ppUz1jGGUmZMAQ",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01PF0KOFOHOVA4Ay8idueGJIllGYhN8oVPf",
+                    "name": "Parallel Branch",
+                    "title": "Parallel Branch",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Parallel Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01PF0KOGTQWKY5wn9Js3rdTOSEXhbtsfiWg",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KOHP6PAX2cTbt1fMChpDG4KLE4MwfI",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KOIK0L9H4bp2qUJqOKlWNltZdjFEdv",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KOJDUEGC30Ugt0yxX6z4CsMNGCBB9X",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KOK87LKH09p8FcUbjFdhUtMOU9Kuar",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KOL29VIL7iSKPMW3KcylaZhKhQ1wRq",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF0KOLVT87U1vLXuvlIPbYK91ozaaNMk1",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01PF2OIZR1LXX0lvFcOn7nc9ETWDCCBHt2b",
+                    "name": "Parallel Branch",
+                    "title": "Parallel Branch",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Parallel Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01PF2OJ0YOEUF4AgzHKA7bAbXciAeVjRUie",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF2OJ1V37NV26nXHOKJyUzjiTjz31dZAJ",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF2OJ2Q9YOS0RLWb0pxotzO9JdPKkRySz",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF2OJ3NJ9V512KgV1g5EVk9WbUD6Sbzx1",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF2OJ4HOCJY50T55dF9bZuo4LfdYgTmKe",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF2OJ5CJ6Y73OCs9RfcgqJeIiSdAbRgAf",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01PF2OJ66Q1S62bFUQPkh93VFXiv7PdRelJ",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "To Upper",
+                          "skip_execution": false,
+                          "source": "test"
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "triggers": {
+    "triggerschedule_01PF70F7NQ8LI7RrD2LPSNa206jkWGkg8mA": {
+      "workflow_id": "definition_workflow_01PF0K31ZIUOM44ZpDJhqePxxPLtDSARWb6",
+      "name": "Run Every day at 10 PM",
+      "title": "",
+      "lowercase_name": "schedule.run_every_day_at_10_pm",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01G5MVOSZTKXO5Taus0OFNaVi4vqleDevDO",
+      "version": "1.0.0",
+      "disabled": false,
+      "unique_name": "triggerschedule_01PF70F7NQ8LI7RrD2LPSNa206jkWGkg8mA",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01G5MVOSZTKXO5Taus0OFNaVi4vqleDevDO": {
+      "unique_name": "schedule_01G5MVOSZTKXO5Taus0OFNaVi4vqleDevDO",
+      "name": "RG run every 1 min - NEW",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "America/Chicago",
+        "starttime": "22:21",
+        "interval_hours": 0,
+        "interval_minutes": 1,
+        "number_of_times": 50,
+        "display_name": "RG run every 1 min - NEW",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  }
+}
