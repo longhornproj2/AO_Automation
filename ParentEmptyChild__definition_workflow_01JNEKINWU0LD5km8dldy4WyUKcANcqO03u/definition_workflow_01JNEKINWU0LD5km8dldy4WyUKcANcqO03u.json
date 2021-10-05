@@ -1,0 +1,492 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01JNEKINWU0LD5km8dldy4WyUKcANcqO03u",
+    "name": "RG parent NEW",
+    "title": "RG parent NEW",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "secure parent local",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JNEP76KDJ8C1k7ivIkjnYukwEtc8q13mU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "RG parent Secure Input",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JNENYATY1HI1SueNBUQ6txkg1VcpFdTzf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "local string",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JQT1VGCI4R90N2jRCZz4TSKQGBm3dWQQc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "string input",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01LWBHUY1721M3KLj7XYBgdYJqqc1rKBHwa",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG parent NEW",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01JQSPX2FB78M2Wsq8fPanTSTFFsqnXN8zp",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query - Scenario 1 - SS",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query - Scenario 1 - SS",
+          "input_json": "{ \"store\": {\n    \"book\": [ \n        { \"category\": \"reference\",\n        \"author\": \"Nigel Rees\",\n        \"title\": \"  \",\n        \"price\": 8.95\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"Evelyn Waugh\",\n        \"title\": \"Sword of Honour\",\n        \"price\": 12.99\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"Herman Melville\",\n        \"title\": \"Moby Dick\",\n        \"isbn\": \"0-553-21311-3\",\n        \"price\": 8.99\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"J. R. R. Tolkien\",\n        \"title\": \"The Lord of the Rings\",\n        \"isbn\": \"0-395-19395-8\",\n        \"price\": 22.99\n      }\n    ],\n    \"bicycle\": {\n      \"color\": \"red\",\n      \"price\": 19.95\n    }\n  }\n}",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$['store']['book'][0].['title']",
+              "jsonpath_query_name": "title",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01LWBIBWD9PWA1x0izDe3RdObUYLZok6lnR",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01LWBIC2CTSQZ49GLx5qNUy5hNEU1fHNYzf",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01JNEKINWU0LD5km8dldy4WyUKcANcqO03u.input.variable_workflow_01LWBHUY1721M3KLj7XYBgdYJqqc1rKBHwa$",
+                "operator": "eq",
+                "right_operand": "Hello"
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01LWBK5RVCONW6B5BQxrwoBDoLoxMYR2gRW",
+                "name": "Sleep",
+                "title": "Sleep",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep",
+                  "skip_execution": false,
+                  "sleep_interval": 1
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01LEKZU521HWJ2gjFG67IutulUQHF86Jaxy",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "$activity.definition_activity_01JQSPX2FB78M2Wsq8fPanTSTFFsqnXN8zp.output.jsonpath_queries.title$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01LEL088J279Y4pPnnY3x9YyL0TKEWjYp3Y",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01JNEKINWU0LD5km8dldy4WyUKcANcqO03u.local.variable_workflow_01JNEP76KDJ8C1k7ivIkjnYukwEtc8q13mU$",
+              "variable_value_new": "$activity.definition_activity_01JQSPX2FB78M2Wsq8fPanTSTFFsqnXN8zp.output.jsonpath_queries.title$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01KZ7NQ690UNF594Dw9mwpd0IudOBR2KKfR",
+        "name": "Read Table from JSON",
+        "title": "Read Table from JSON",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Table from JSON",
+          "input_json": "{ \"store\": {\n    \"book\": [ \n        { \"category\": \"reference\",\n        \"author\": \"Nigel Rees\",\n        \"title\": \"\",\n        \"price\": 8.95\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"Evelyn Waugh\",\n        \"title\": \"Sword of Honour\",\n        \"price\": 12.99\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"Herman Melville\",\n        \"title\": \"Moby Dick\",\n        \"isbn\": \"0-553-21311-3\",\n        \"price\": 8.99\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"J. R. R. Tolkien\",\n        \"title\": \"The Lord of the Rings\",\n        \"isbn\": \"0-395-19395-8\",\n        \"price\": 22.99\n      }\n    ],\n    \"bicycle\": {\n      \"color\": \"red\",\n      \"price\": 19.95\n    }\n  }\n}",
+          "jsonpath_query": "$['store']['book'][0].['title']",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "name",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01LWBYDNZL1ZU5d0N4GPgdOjhkZEV0CqXa7",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01LWBYDU2JFX04rLgCw6KssPmJyercO0Rb6",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01KZ7NQ690UNF594Dw9mwpd0IudOBR2KKfR.output.response_body$",
+                "operator": "eq",
+                "right_operand": "test"
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01JQT5UUNDMR23alPfFVvljjT9FK3jTqox3",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query - Scenario 2 string",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query - Scenario 2 string",
+          "input_json": "{ \"store\": {\n    \"book\": [ \n        { \"category\": \"reference\",\n        \"author\": \"Nigel Rees\",\n        \"title\": \"Sayings of the Century\",\n        \"price\": 8.95\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"Evelyn Waugh\",\n        \"title\": \"Sword of Honour\",\n        \"price\": 12.99\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"Herman Melville\",\n        \"title\": \"Moby Dick\",\n        \"isbn\": \"0-553-21311-3\",\n        \"price\": 8.99\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"J. R. R. Tolkien\",\n        \"title\": \"The Lord of the Rings\",\n        \"isbn\": \"0-395-19395-8\",\n        \"price\": 22.99\n      }\n    ],\n    \"bicycle\": {\n      \"color\": \"red\",\n      \"price\": 19.95\n    }\n  }\n}",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$['store']['book'][0].['title']",
+              "jsonpath_query_name": "title",
+              "jsonpath_query_type": "secure_string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JNEPQHRUJBG64jOURwA98LIiYwJ4cgdW8",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01JNEPR1OUKTP6vBtWW08xlVKUxVSdFlsDf",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01LEL4CWZPVD42Rh1XIlN5O5tg7tkCUFz8O",
+                "name": "RG Child NEW",
+                "title": "RG Child NEW",
+                "type": "workflow.sub_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "RG Child NEW",
+                  "input": {
+                    "variable_workflow_01JNELKAEF8601rVYBG5BsD3je5AJnt8sFP": "$activity.definition_activity_01JQSPX2FB78M2Wsq8fPanTSTFFsqnXN8zp.output.jsonpath_queries.title$"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": true,
+                  "target": {
+                    "target_type": "web-service.endpoint",
+                    "use_workflow_target": true
+                  },
+                  "workflow_id": "definition_workflow_01JNEKWTS9L7S7QYmCLFVKgVeOxq7ueQ7s2"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01KZ39ZSN1Q914iqlRb9Won8xZzpcpG2HFA",
+                "name": "RG Child NEW",
+                "title": "RG Child NEW",
+                "type": "workflow.sub_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "RG Child NEW",
+                  "input": {
+                    "variable_workflow_01JNELKAEF8601rVYBG5BsD3je5AJnt8sFP": "$activity.definition_activity_01JQSPX2FB78M2Wsq8fPanTSTFFsqnXN8zp.output.jsonpath_queries.title$"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa",
+                    "target_type": "web-service.endpoint"
+                  },
+                  "workflow_id": "definition_workflow_01JNEKWTS9L7S7QYmCLFVKgVeOxq7ueQ7s2"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01LEKYWWUKAWZ5lQQJtAXxhjnGocBQyhKAX",
+                "name": "RG Child NEW",
+                "title": "RG Child NEW",
+                "type": "workflow.sub_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "RG Child NEW",
+                  "input": {
+                    "variable_workflow_01JNELKAEF8601rVYBG5BsD3je5AJnt8sFP": "$activity.definition_activity_01JQSPX2FB78M2Wsq8fPanTSTFFsqnXN8zp.output.jsonpath_queries.title$"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa",
+                    "target_type": "web-service.endpoint"
+                  },
+                  "workflow_id": "definition_workflow_01JNEKWTS9L7S7QYmCLFVKgVeOxq7ueQ7s2"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01JNEPR4K3GH96oaoCygOQodobInS9FvG3R",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01JNEPVJUSHU62Y7dFXeMMu9rDspDGcupHl",
+                "name": "RG Child NEW",
+                "title": "RG Child NEW",
+                "type": "workflow.sub_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "RG Child NEW",
+                  "input": {
+                    "variable_workflow_01JNELKAEF8601rVYBG5BsD3je5AJnt8sFP": "$workflow.definition_workflow_01JNEKINWU0LD5km8dldy4WyUKcANcqO03u.input.variable_workflow_01JNENYATY1HI1SueNBUQ6txkg1VcpFdTzf$"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "no_target": true
+                  },
+                  "workflow_id": "definition_workflow_01JNEKWTS9L7S7QYmCLFVKgVeOxq7ueQ7s2"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa": {
+      "unique_name": "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa",
+      "name": "GOOGLE",
+      "title": "GOOGLE",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "GOOGLE",
+        "host": "www.google.com",
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01JNEKWTS9L7S7QYmCLFVKgVeOxq7ueQ7s2",
+        "name": "RG Child NEW",
+        "title": "RG Child NEW",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "secure local",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01JNELZD291YR1KPzio3I1ti8CFXhe2TB6n",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure CHILD",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01JNELKAEF8601rVYBG5BsD3je5AJnt8sFP",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Secure Output",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01JNEOJ27Y4NL0Wi2IXdhWljbQh1g3oJLyo",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "RG Child NEW"
+        },
+        "object_type": "definition_workflow",
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ]
+}
