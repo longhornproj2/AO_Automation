@@ -1,0 +1,1823 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt",
+    "name": "Copy(1)-RG parent inputs dated 9/15 PM",
+    "title": "Copy(1)-RG parent inputs dated 9/15 PM",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "output from child",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01RX69DRUJEYJ6HjzlKa8kObvBEvv34O6dD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 20,
+          "scope": "local",
+          "name": "loop",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01RX69DRUIBWQ6ibMQOHIUOYiwdKleaxNh2",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Test",
+          "scope": "local",
+          "name": "local string",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01RX69DRUHY332a0HpNkpUdm0L2E4VJ2PJ9",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 3,
+          "scope": "local",
+          "name": "loop1",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01RX69DRUIM9E7QID2A0SGgSlDIlmjRnaGk",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "*****",
+          "scope": "input",
+          "name": "SECURE INPUT",
+          "type": "datatype.secure_string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01RX69DRUJ7AW5LGZ6ZgqgDeYJbRcrMX0fN",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "*****",
+          "scope": "input",
+          "name": "secure input",
+          "type": "datatype.secure_string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "*****",
+          "scope": "local",
+          "name": "local secure",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "test",
+      "display_name": "Copy(1)-RG parent inputs dated 9/15 PM",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "terminal.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01RX69GF6NN1P5o8uXhpd3d4FGFofJaFbU4",
+        "name": "RG - Child inputs - I",
+        "title": "RG - Child inputs - I",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "test2",
+          "display_name": "RG - Child inputs - I",
+          "input": {
+            "variable_workflow_01RX69EDMM95B6SOzQZ8KrjlMW5LS8uNQmd": "*****",
+            "variable_workflow_01RX69EDMMIFH3CN6SyPD6HHEquflPLyFy3": "*****",
+            "variable_workflow_01RX69EDMMPG73ec2rR1aQmL2jrEeY5yZWh": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0$",
+            "variable_workflow_01RX69EDMMY873L6LudcYcv9wHWsZTVcGEJ": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+            "variable_workflow_01RX69EDMN8RL5LNkCy82DIAAO1Voeb0NDp": "",
+            "variable_workflow_01RX69EDMNGC64tF29uyLtTOP1IOYXY9RJx": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUJ7AW5LGZ6ZgqgDeYJbRcrMX0fN$",
+            "variable_workflow_01RX69EDMNO4D4XNOhrXgQBz5rBtCuTzCBy": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUJ7AW5LGZ6ZgqgDeYJbRcrMX0fN$",
+            "variable_workflow_01RX69EDMO2YU72D47IePaxSFEVgvrcp5Mg": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+            "variable_workflow_01RX69EDMOBUR1iXBTB9xDrA5uS3AGxSG0Z": "123",
+            "variable_workflow_01RX69EDMOIVP0dFOOG4Taga7RiNAxnI6ev": 0,
+            "variable_workflow_01RX69EDMP27116vyOgXoXAH9Sy6tDDDU2t": "$global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp.global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp$",
+            "variable_workflow_01RX69EDMP8WZ1qRgmqXxtvM60nQq8l3ijg": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+            "variable_workflow_01RX69EDMPMDM4LuMIQhzLksP4A20r1fBSV": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+            "variable_workflow_01RX69EDMPUEY6D9pUhDoemE4ZQQLrx95OU": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+            "variable_workflow_01RX69EDMQ1CM1uSHDaBAWc7jy7vCldcv3h": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+            "variable_workflow_01RX69EDMQ9AF6ODN1hr17ZHUj3fP8toLt4": "mandatory input",
+            "variable_workflow_01RX69EDMQQCC3mf2mU30VraF8Mv9vcErXA": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+            "variable_workflow_01RX69EDMR3F94b53var3Rc5mC1PELWFwL4": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0$",
+            "variable_workflow_01RX69EDMRBRQ0b2WUzsxa2v9jRw9XRaTti": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+            "variable_workflow_01RX69EDMRPRA44aZ8tXen8oBy6ZmiJzmtB": "$global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp.global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp$",
+            "variable_workflow_01RX69EDMRY9W06MWApeYp3MHbQvxn1Kqp6": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+            "variable_workflow_01RX69EDMS7CU4HI5ZB4GkXyqQHuGBkk0uF": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+            "variable_workflow_01RX69EDMSEFP11lyN9z5LKEdlFwUnWoANH": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+            "variable_workflow_01RX69EDMSLZC4tbCxqsfHIjDDtIMtFxh3q": "*****",
+            "variable_workflow_01RX69EDMSS993GJhx7X4kym4sAyzlQwQ0j": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+            "variable_workflow_01RX69EDMT5SZ07KYze9utI0avuQpJBiM76": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+            "variable_workflow_01RX69EDMTC783W9GZovHqCuYA4f533tr1V": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+            "variable_workflow_01RX69EDMTJZ667KHR6xDWF00XJ2HMsvyVX": "test$global.variable_01F8V7Y181KT36Z2SQXfceNU2jgqOjBCPRi.global.variable_01F8V7Y181KT36Z2SQXfceNU2jgqOjBCPRi$$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUHY332a0HpNkpUdm0L2E4VJ2PJ9$",
+            "variable_workflow_01RX69EDMTV0Y5ZLRCESIvL4DfnjJxupFYq": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+            "variable_workflow_01RX69EDMU1XO2RODLcwaTDIQ8Gwkko0Ktf": "test$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.output.instance_id$",
+            "variable_workflow_01RX69EDMU9976eEdgY71MS3kzcJttnK3lO": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+            "variable_workflow_01RX69EDMUFUJ7mgoAyChTA8cIVxZXNakS1": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUHY332a0HpNkpUdm0L2E4VJ2PJ9$",
+            "variable_workflow_01RX69EDMUMPQ1RTtDS7Fe9x2lip7SacB3L": []
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "start_point": "definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv",
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01RX69GTCXM3D6SnfmgidI6GkkH3j2hhRIO",
+        "name": "RG table error1",
+        "title": "RG table error1",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "RG table error1",
+          "input": {
+            "variable_workflow_01RX69E2G1ZF533tvDt5wuqGa3qgXGt7ejR": 0.01,
+            "variable_workflow_01RX69E2G2H243iz4VN9JBaPgEPjoO6vxkD": "*****",
+            "variable_workflow_01RX69E2G2O2T1nnXQQzCgv5Ufktq16v0ZM": "{\n\t\"id\": \"0001\",\n\t\"type\": \"donut\",\n\t\"name\": \"Cake\",\n\t\"ppu\": 0.55,\n\t\"batters\":\n\t\t{\n\t\t\t\"batter\":\n\t\t\t\t[\n\t\t\t\t\t{ \"id\": \"1001\", \"type\": \"Regular\" },\n\t\t\t\t\t{ \"id\": \"1002\", \"type\": \"Chocolate\" },\n\t\t\t\t\t{ \"id\": \"1003\", \"type\": \"Blueberry\" },\n\t\t\t\t\t{ \"id\": \"1004\", \"type\": \"Devil's Food\" }\n\t\t\t\t]\n\t\t},\n\t\"topping\":\n\t\t[\n\t\t\t{ \"id\": \"5001\", \"type\": \"None\" },\n\t\t\t{ \"id\": \"5002\", \"type\": \"Glazed\" },\n\t\t\t{ \"id\": \"5005\", \"type\": \"Sugar\" },\n\t\t\t{ \"id\": \"5007\", \"type\": \"Powdered Sugar\" },\n\t\t\t{ \"id\": \"5006\", \"type\": \"Chocolate with Sprinkles\" },\n\t\t\t{ \"id\": \"5003\", \"type\": \"Chocolate\" },\n\t\t\t{ \"id\": \"5004\", \"type\": \"Maple\" }\n\t\t]\n}",
+            "variable_workflow_01RX69E2G2VPR1r9Nknn3kUZv5Ygg7bHiTI": []
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "execute_on_this_target_group": true,
+            "target_group_id": "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL"
+          },
+          "workflow_id": "definition_workflow_01RX69E0ZT1O70bMf58HyCD149Reydxr0rR"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01RX69GWARUF1015d8SVrpOICL9HewkwCiL",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query",
+          "input_json": "{ \"store\": {\n    \"book\": [ \n        { \"category\": \"reference\",\n        \"author\": \"Nigel Rees\",\n        \"title\": \"Sayings of the Century\",\n        \"price\": 8.95\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"Evelyn Waugh\",\n        \"title\": \"Sword of Honour\",\n        \"price\": 12.99\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"Herman Melville\",\n        \"title\": \"Moby Dick\",\n        \"isbn\": \"0-553-21311-3\",\n        \"price\": 8.99\n      },\n        { \"category\": \"fiction\",\n        \"author\": \"J. R. R. Tolkien\",\n        \"title\": \"The Lord of the Rings\",\n        \"isbn\": \"0-395-19395-8\",\n        \"price\": 22.99\n      }\n    ],\n    \"bicycle\": {\n      \"color\": \"red\",\n      \"price\": 19.95\n    }\n  }\n}",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$['store']['book'][0].['title']",
+              "jsonpath_query_name": "title",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01RX69GYXC6AC5q5npgMrDY6TB3PSLh6zgs",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUHY332a0HpNkpUdm0L2E4VJ2PJ9$",
+              "variable_value_new": "$activity.definition_activity_01RX69GWARUF1015d8SVrpOICL9HewkwCiL.output.jsonpath_queries.title$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01RX69H2DCV4J4jGRFLrvwhOPksOmxc9jaO",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01RX69H4G1NR10QRuEqtezYtZhdmtABkn0I",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01RX69HAE551O3NP2skCmLMfEh5n2O7s1pW",
+                "name": "RG - Child inputs - 2",
+                "title": "RG - Child inputs - 2",
+                "type": "workflow.sub_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "RG - Child inputs - 2",
+                  "input": {
+                    "variable_workflow_01RX69EDMM95B6SOzQZ8KrjlMW5LS8uNQmd": "*****",
+                    "variable_workflow_01RX69EDMMIFH3CN6SyPD6HHEquflPLyFy3": "*****",
+                    "variable_workflow_01RX69EDMMPG73ec2rR1aQmL2jrEeY5yZWh": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMMY873L6LudcYcv9wHWsZTVcGEJ": "$activity.definition_activity_01RX69GF6NN1P5o8uXhpd3d4FGFofJaFbU4.output.variable_workflow_01RX69EDMLUW12EzhK7weR8Ul8H1NFWK55F$",
+                    "variable_workflow_01RX69EDMN8RL5LNkCy82DIAAO1Voeb0NDp": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMNGC64tF29uyLtTOP1IOYXY9RJx": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+                    "variable_workflow_01RX69EDMNO4D4XNOhrXgQBz5rBtCuTzCBy": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMO2YU72D47IePaxSFEVgvrcp5Mg": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0$",
+                    "variable_workflow_01RX69EDMOBUR1iXBTB9xDrA5uS3AGxSG0Z": "123",
+                    "variable_workflow_01RX69EDMOIVP0dFOOG4Taga7RiNAxnI6ev": 0,
+                    "variable_workflow_01RX69EDMP27116vyOgXoXAH9Sy6tDDDU2t": "$global.variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb.global.variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb[0].DECIMAL_REQ$",
+                    "variable_workflow_01RX69EDMP8WZ1qRgmqXxtvM60nQq8l3ijg": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMPMDM4LuMIQhzLksP4A20r1fBSV": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMPUEY6D9pUhDoemE4ZQQLrx95OU": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+                    "variable_workflow_01RX69EDMQ1CM1uSHDaBAWc7jy7vCldcv3h": "$activity.definition_activity_01RX69GF6NN1P5o8uXhpd3d4FGFofJaFbU4.output.variable_workflow_01RX69EDMQWVD6cErei4p61xcIQNC5ztAoJ$",
+                    "variable_workflow_01RX69EDMQ9AF6ODN1hr17ZHUj3fP8toLt4": "mandatory input",
+                    "variable_workflow_01RX69EDMQQCC3mf2mU30VraF8Mv9vcErXA": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMR3F94b53var3Rc5mC1PELWFwL4": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMRBRQ0b2WUzsxa2v9jRw9XRaTti": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMRPRA44aZ8tXen8oBy6ZmiJzmtB": "$global.variable_01FBSIKWJ7A3L0xZYf4fRHpLOZP4unZhPB9.global.variable_01FBSIKWJ7A3L0xZYf4fRHpLOZP4unZhPB9$$global.variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb.global.variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb[0].DATE_OPT$",
+                    "variable_workflow_01RX69EDMRY9W06MWApeYp3MHbQvxn1Kqp6": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0$",
+                    "variable_workflow_01RX69EDMS7CU4HI5ZB4GkXyqQHuGBkk0uF": "$activity.definition_activity_01RX69GWARUF1015d8SVrpOICL9HewkwCiL.output.jsonpath_queries.title$",
+                    "variable_workflow_01RX69EDMSEFP11lyN9z5LKEdlFwUnWoANH": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+                    "variable_workflow_01RX69EDMSLZC4tbCxqsfHIjDDtIMtFxh3q": "*****",
+                    "variable_workflow_01RX69EDMSS993GJhx7X4kym4sAyzlQwQ0j": "$activity.definition_activity_01RX69GF6NN1P5o8uXhpd3d4FGFofJaFbU4.output.variable_workflow_01RX69EDMQWVD6cErei4p61xcIQNC5ztAoJ$",
+                    "variable_workflow_01RX69EDMT5SZ07KYze9utI0avuQpJBiM76": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMTC783W9GZovHqCuYA4f533tr1V": "$global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq.global.variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq$",
+                    "variable_workflow_01RX69EDMTJZ667KHR6xDWF00XJ2HMsvyVX": "test",
+                    "variable_workflow_01RX69EDMTV0Y5ZLRCESIvL4DfnjJxupFYq": "$env.variable_01F8WG39OGJEA3JRzdP2lKY7j5MeNBLGdQz.env.variable_01F8WG39OGJEA3JRzdP2lKY7j5MeNBLGdQz$",
+                    "variable_workflow_01RX69EDMU1XO2RODLcwaTDIQ8Gwkko0Ktf": "found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:16:55Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:16:55Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:17:22Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:17:22Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:17:22Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:17:22Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:17:49Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:17:49Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:17:49Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:17:49Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:18:16Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:18:16Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:18:16Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:18:16Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:18:43Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:18:43Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:18:43Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:18:43Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:19:10Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:19:10Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:19:10Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:19:10Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=",
+                    "variable_workflow_01RX69EDMU9976eEdgY71MS3kzcJttnK3lO": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0$",
+                    "variable_workflow_01RX69EDMUFUJ7mgoAyChTA8cIVxZXNakS1": "$global.variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb.global.variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb[0].DATE_REQ$",
+                    "variable_workflow_01RX69EDMUMPQ1RTtDS7Fe9x2lip7SacB3L": []
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "start_point": "definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv",
+                  "target": {
+                    "no_target": true
+                  },
+                  "workflow_id": "definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01RX69HPP2Y0V3QujIYSLY0pnL4XYkkFgdm",
+                "name": "Sj_Atomic",
+                "title": "Sj_Atomic",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sj_Atomic",
+                  "input": {
+                    "variable_workflow_01JE2L337QV481MMytStRyClUfopXMu2v1h": "*****"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": true,
+                  "target": {
+                    "no_target": true
+                  },
+                  "workflow_id": "definition_workflow_01FHOAYWGI03J6jgWPUnIXkGNy5kRYmjuUa"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01RX69HST8QA91rxa0JRLGNc3TuiQM1sip9",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01RX69HVXRSNM2a6RrOsSj12uGoabzq8wPm",
+                "name": "Parallel Block",
+                "title": "Parallel Block",
+                "type": "logic.parallel",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Parallel Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01RX69HXYTSDQ102VoqBRaPr3vJJBVtiQGe",
+                    "name": "Parallel Branch",
+                    "title": "Parallel Branch",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Parallel Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01RX69I1JDRMP3kCMbm3ViMlJNxYAPbhrq8",
+                        "name": "While Loop",
+                        "title": "While Loop",
+                        "type": "logic.while",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "While Loop",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01RX69I3LANU45DV6Psx9gKoAsN2LLYWS40",
+                            "name": "Condition Branch",
+                            "title": "Condition Branch",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUIM9E7QID2A0SGgSlDIlmjRnaGk$",
+                                "operator": "gt",
+                                "right_operand": 0
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Condition Branch",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01RX69IAG5E913SERNnGWHILimKrdNyTHQo",
+                                "name": "Sj_Atomic",
+                                "title": "Sj_Atomic",
+                                "type": "workflow.atomic_workflow",
+                                "base_type": "subworkflow",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "display_name": "Sj_Atomic",
+                                  "input": {
+                                    "variable_workflow_01JE2L337QV481MMytStRyClUfopXMu2v1h": "*****"
+                                  },
+                                  "runtime_user": {
+                                    "target_default": true
+                                  },
+                                  "skip_execution": true,
+                                  "target": {
+                                    "no_target": true
+                                  },
+                                  "workflow_id": "definition_workflow_01FHOAYWGI03J6jgWPUnIXkGNy5kRYmjuUa"
+                                },
+                                "object_type": "definition_activity"
+                              },
+                              {
+                                "unique_name": "definition_activity_01RX69IDK8FHD1l32K0kwuZqYahYxGtIaEE",
+                                "name": "Set Variables",
+                                "title": "Set Variables",
+                                "type": "core.set_multiple_variables",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "display_name": "Set Variables",
+                                  "skip_execution": true,
+                                  "variables_to_update": [
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUIM9E7QID2A0SGgSlDIlmjRnaGk$",
+                                      "variable_value_new": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUIM9E7QID2A0SGgSlDIlmjRnaGk$-1"
+                                    },
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0$",
+                                      "variable_value_new": "$activity.definition_activity_01RX69IAG5E913SERNnGWHILimKrdNyTHQo.output.variable_workflow_01JGHHBE01HIZ3xxLV9yTQ6Umhbr2qAAQcX$"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01RX69IIX4M3T74lSSrvDUF5Q35cJVHlET1",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$global.variable_01FBSIKWJ7A3L0xZYf4fRHpLOZP4unZhPB9.global.variable_01FBSIKWJ7A3L0xZYf4fRHpLOZP4unZhPB9$",
+                      "variable_value_new": "$global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp.global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01RX69IN7A4S635AtF2cTgpZ0u02nSFUFjq",
+        "name": "Set Variables",
+        "title": "Set Variables - secure input",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables - secure input",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$",
+              "variable_value_new": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.input.variable_workflow_01RX69DRUIXZ63nS5Gyy1QwA1lBdi2qb2vu$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01RX69IQZUJ3D2LgrqhjNGGy2KcFIVPgV3z",
+        "name": "Set Variables",
+        "title": "Set Variables - string o/p from child",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables - string o/p from child",
+          "skip_execution": true,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0$",
+              "variable_value_new": "$activity.definition_activity_01RX69HPP2Y0V3QujIYSLY0pnL4XYkkFgdm.output.variable_workflow_01JGHHBE01HIZ3xxLV9yTQ6Umhbr2qAAQcX$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01RX69IYJZJK250yX2jnVp6KX5pzAVhWJ3L",
+        "name": "Execute Terminal Command(s)",
+        "title": "Execute Terminal Command(s)",
+        "type": "terminal.command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command_timeout": 60,
+          "commands": "df -h",
+          "continue_on_failure": false,
+          "display_name": "Execute Terminal Command(s)",
+          "merge_commands": false,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01F53BPPIV5CG5anser59AwI5Qnn2W865QQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01RX69J194Z7B6hh9rA3YZfybuwPmqtDrhp",
+        "name": "Set Variables",
+        "title": "Secure from child - does not show invalid var ref",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Secure from child - does not show invalid var ref",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01RX69DQCAN4O6u5BAn90mGBrc9tmgTnSqt.local.variable_workflow_01RX69DRUJMAV6wkqeX5D9L7aSUf9FWlGs0$",
+              "variable_value_new": "$activity.definition_activity_01RX69HAE551O3NP2skCmLMfEh5n2O7s1pW.output.variable_workflow_01RX69EDMLUW12EzhK7weR8Ul8H1NFWK55F$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "triggers": {
+    "triggerevent_01S0QGD58W1U854RxCIfbAZgpjfIDPkKfBd": {
+      "workflow_id": "definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv",
+      "name": "RG EVent",
+      "title": "",
+      "lowercase_name": "event.rg_event",
+      "type": "event",
+      "base_type": "trigger",
+      "ref_id": "event_01KYE06WX84BY4McjotgvEq8sjNob4N7rlJ",
+      "version": "1.0.0",
+      "disabled": false,
+      "unique_name": "triggerevent_01S0QGD58W1U854RxCIfbAZgpjfIDPkKfBd",
+      "object_type": "triggerevent"
+    },
+    "triggerschedule_01RX69F1CZ2FX4IkrhnOOp9lNZjpzSAgyA0": {
+      "workflow_id": "definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv",
+      "name": "RG schedule",
+      "title": "",
+      "lowercase_name": "schedule.rg_schedule",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01RXB44N5ZFLK1EeUg3J9mYiQrasIhwhp9h",
+      "version": "",
+      "disabled": false,
+      "unique_name": "triggerschedule_01RX69F1CZ2FX4IkrhnOOp9lNZjpzSAgyA0",
+      "object_type": "triggerschedule"
+    }
+  },
+  "events": {
+    "event_01KYE06WX84BY4McjotgvEq8sjNob4N7rlJ": {
+      "name": "RG Event email test",
+      "title": "RG Event email test",
+      "type": "email.event",
+      "base_type": "event",
+      "object_type": "event",
+      "target_id": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k",
+      "webhook_id": "",
+      "version": "1.0.0",
+      "properties": {
+        "action": "read",
+        "conditions": {
+          "left_operand": "$output.subject$",
+          "operator": "eq",
+          "right_operand": "test target"
+        },
+        "display_name": "RG Event email test",
+        "download_attachments": true,
+        "folder": "INBOX",
+        "target_id": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k",
+        "title": "RG Event email test"
+      },
+      "unique_name": "event_01KYE06WX84BY4McjotgvEq8sjNob4N7rlJ"
+    }
+  },
+  "schedules": {
+    "schedule_01RXB44N5ZFLK1EeUg3J9mYiQrasIhwhp9h": {
+      "unique_name": "schedule_01RXB44N5ZFLK1EeUg3J9mYiQrasIhwhp9h",
+      "name": "RG schedule 1 min 10/13",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "America/Chicago",
+        "starttime": "00:00",
+        "interval_hours": 0,
+        "interval_minutes": 1,
+        "number_of_times": 400,
+        "display_name": "RG schedule 1 min 10/13",
+        "description": ""
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  },
+  "targets": {
+    "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k": {
+      "unique_name": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k",
+      "name": "RG imap gmail",
+      "title": "RG imap gmail",
+      "type": "email.imap_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG",
+        "description": "test1",
+        "display_name": "RG imap gmail",
+        "ignore_certificate_errors": true,
+        "polling_interval": 10,
+        "port": 993,
+        "protocol": "IMAP",
+        "server": "imap.gmail.com",
+        "tls_enabled": true
+      }
+    },
+    "definition_target_01F53BPPIV5CG5anser59AwI5Qnn2W865QQ": {
+      "unique_name": "definition_target_01F53BPPIV5CG5anser59AwI5Qnn2W865QQ",
+      "name": "RG terminal",
+      "title": "RG terminal",
+      "type": "terminal.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01HGIT21ONJK51KZPTst06uVKDjAFeALYRr",
+        "description": "updated test",
+        "display_name": "RG terminal",
+        "host": "3.17.204.145",
+        "port": 22,
+        "prompt_pattern": "\\[ec2-user@ip-172-31-39-32 ~\\]\\$",
+        "protocol": "ssh",
+        "succeeded_prompt_patterns": [
+          ""
+        ]
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG": {
+      "unique_name": "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG",
+      "name": "RG longhorn gmail",
+      "title": "RG longhorn gmail",
+      "type": "runtime_user.email_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "description": "longhornproj1@gmail.com\nCisco123!",
+        "display_name": "RG longhorn gmail",
+        "password": "*****",
+        "sender": "*****"
+      }
+    },
+    "definition_runtime_user_01HGIT21ONJK51KZPTst06uVKDjAFeALYRr": {
+      "unique_name": "definition_runtime_user_01HGIT21ONJK51KZPTst06uVKDjAFeALYRr",
+      "name": "ry ao-terminal ssh",
+      "title": "ry ao-terminal ssh",
+      "type": "runtime_user.terminal_key_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "admin_password": "*****",
+        "description": "test",
+        "display_name": "ry ao-terminal ssh",
+        "key": "*****",
+        "passphrase": "*****",
+        "user": "*****"
+      }
+    }
+  },
+  "target_groups": {
+    "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL": {
+      "unique_name": "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL",
+      "name": "GOOGLE YAHOO",
+      "title": "GOOGLE YAHOO",
+      "description": "Added 2nd target to the Target Group",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "terminal.endpoint",
+          "view_target_type": "terminal.endpoint",
+          "include_all_targets": false,
+          "criteria": [
+            {
+              "operator": "mw",
+              "left_operand": "$input.display_name$",
+              "right_operand": "*RG*"
+            }
+          ]
+        },
+        {
+          "data_target_type": "email.imap_endpoint",
+          "view_target_type": "email.imap_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "variables": {
+    "variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp": {
+      "unique_name": "variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp",
+      "properties": {
+        "value": "test",
+        "scope": "global",
+        "name": "$String",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq": {
+      "unique_name": "variable_01EKXXHQ03O5X01m6Ugdqldrnxo1ayQQ5cq",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "0_sec_str",
+        "type": "datatype.secure_string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01F8V7Y181KT36Z2SQXfceNU2jgqOjBCPRi": {
+      "unique_name": "variable_01F8V7Y181KT36Z2SQXfceNU2jgqOjBCPRi",
+      "properties": {
+        "value": true,
+        "scope": "global",
+        "name": "NKBooleanGlobalVarTrue",
+        "type": "datatype.boolean",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01F8WG39OGJEA3JRzdP2lKY7j5MeNBLGdQz": {
+      "unique_name": "variable_01F8WG39OGJEA3JRzdP2lKY7j5MeNBLGdQz",
+      "properties": {
+        "value": "*****",
+        "scope": "env",
+        "name": "NKSecureStringEnvironmentVar",
+        "type": "datatype.secure_string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01FBSIKWJ7A3L0xZYf4fRHpLOZP4unZhPB9": {
+      "unique_name": "variable_01FBSIKWJ7A3L0xZYf4fRHpLOZP4unZhPB9",
+      "properties": {
+        "scope": "global",
+        "name": "bin str",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb": {
+      "unique_name": "variable_01FOIJWV5E7094ZF7QQ3Gv1fM1hwhSefDPb",
+      "schema_id": "tabletype_01FOHND7P2AK25E9GRvJTxy5pTf0cTwC949",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "DATE_OPT": "0001-01-01T00:00:00+00:00",
+              "DATE_REQ": "0001-01-01T00:00:00+00:00",
+              "DECIMAL_REQ": 0,
+              "Decimal_OPT": 0,
+              "INTEGER_OPT": 1,
+              "INTEGER_REQ": 1,
+              "STRING_OPT": "",
+              "STRING_REQ": "name1",
+              "a": ""
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "\u003c\u003cR_test\u003e\u003e",
+        "type": "datatype.table",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01FCRD79Y79U54JNmfDtuaahfW0xwE1XgYO": {
+      "unique_name": "tabletype_01FCRD79Y79U54JNmfDtuaahfW0xwE1XgYO",
+      "data_type": "datatype.tabletype",
+      "display_name": "RG table",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "String1",
+          "title": "String1",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01FOHND7P2AK25E9GRvJTxy5pTf0cTwC949": {
+      "unique_name": "tabletype_01FOHND7P2AK25E9GRvJTxy5pTf0cTwC949",
+      "data_type": "datatype.tabletype",
+      "display_name": "R_table\u0026\u0026\u003e\u003e\u003e",
+      "columns": [
+        {
+          "name": "INTEGER_OPT",
+          "title": "INTEGER_OPT",
+          "type": "integer"
+        },
+        {
+          "name": "DATE_REQ",
+          "title": "DATE_REQ",
+          "type": "date"
+        },
+        {
+          "name": "a",
+          "title": ".:",
+          "type": "string"
+        },
+        {
+          "name": "DATE_OPT",
+          "title": "DATE_OPT",
+          "type": "date"
+        },
+        {
+          "is_required": true,
+          "name": "DECIMAL_REQ",
+          "title": "DECIMAL_REQ",
+          "type": "number"
+        },
+        {
+          "maxLength": 2000,
+          "maximum": 0,
+          "minimum": 0,
+          "name": "STRING_OPT",
+          "title": "STRING_OPT",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "maxLength": 2000,
+          "maximum": 0,
+          "minimum": 0,
+          "name": "STRING_REQ",
+          "title": "STRING_REQ",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "INTEGER_REQ",
+          "title": "INTEGER_REQ",
+          "type": "integer"
+        },
+        {
+          "name": "Decimal_OPT",
+          "title": "Decimal_OPT",
+          "type": "number"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01HH46FX619ER6At0nkJ3HflagrTNXNE7xM": {
+      "unique_name": "tabletype_01HH46FX619ER6At0nkJ3HflagrTNXNE7xM",
+      "data_type": "datatype.tabletype",
+      "display_name": "nTable",
+      "columns": [
+        {
+          "name": "dec",
+          "title": "dec",
+          "type": "number"
+        },
+        {
+          "name": "dt",
+          "title": "dt",
+          "type": "date"
+        },
+        {
+          "name": "int",
+          "title": "int",
+          "type": "integer"
+        },
+        {
+          "name": "str",
+          "title": "str",
+          "type": "string"
+        },
+        {
+          "name": "bool",
+          "title": "bool",
+          "type": "boolean"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01RX69E0ZT1O70bMf58HyCD149Reydxr0rR",
+        "name": "Copy(1)-RG table error",
+        "title": "Copy(1)-RG table error",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "{\n\t\"id\": \"0001\",\n\t\"type\": \"donut\",\n\t\"name\": \"Cake\",\n\t\"ppu\": 0.55,\n\t\"batters\":\n\t\t{\n\t\t\t\"batter\":\n\t\t\t\t[\n\t\t\t\t\t{ \"id\": \"1001\", \"type\": \"Regular\" },\n\t\t\t\t\t{ \"id\": \"1002\", \"type\": \"Chocolate\" },\n\t\t\t\t\t{ \"id\": \"1003\", \"type\": \"Blueberry\" },\n\t\t\t\t\t{ \"id\": \"1004\", \"type\": \"Devil's Food\" }\n\t\t\t\t]\n\t\t},\n\t\"topping\":\n\t\t[\n\t\t\t{ \"id\": \"5001\", \"type\": \"None\" },\n\t\t\t{ \"id\": \"5002\", \"type\": \"Glazed\" },\n\t\t\t{ \"id\": \"5005\", \"type\": \"Sugar\" },\n\t\t\t{ \"id\": \"5007\", \"type\": \"Powdered Sugar\" },\n\t\t\t{ \"id\": \"5006\", \"type\": \"Chocolate with Sprinkles\" },\n\t\t\t{ \"id\": \"5003\", \"type\": \"Chocolate\" },\n\t\t\t{ \"id\": \"5004\", \"type\": \"Maple\" }\n\t\t]\n}",
+              "scope": "input",
+              "name": "InputString",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69E2G2O2T1nnXQQzCgv5Ufktq16v0ZM",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "Test,1,New,Test\nTest,1,New,Test\nTest,1,New,Test\nTest,1,New,Test",
+              "scope": "static",
+              "name": "TextTable",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69E2G28HO6L2X2lGh6dziddLU69Brmb",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "\u003croot xmlns:foo=\"http://www.foo.org/\" xmlns:bar=\"http://www.bar.org\"\u003e\n  \u003cactors\u003e\n    \u003cactor id=\"1\"\u003eChristian Bale\u003c/actor\u003e\n    \u003cactor id=\"2\"\u003eLiam Neeson\u003c/actor\u003e\n    \u003cactor id=\"3\"\u003eMichael Caine\u003c/actor\u003e\n  \u003c/actors\u003e\n  \u003cfoo:singers\u003e\n    \u003cfoo:singer id=\"4\"\u003eTom Waits\u003c/foo:singer\u003e\n    \u003cfoo:singer id=\"5\"\u003eB.B. King\u003c/foo:singer\u003e\n    \u003cfoo:singer id=\"6\"\u003eRay Charles\u003c/foo:singer\u003e\n  \u003c/foo:singers\u003e\n\u003c/root\u003e",
+              "scope": "local",
+              "name": "InputXML",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69E2G1NU32FKFqoIOazwtyi17sOEmkt",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.number",
+            "properties": {
+              "value": 0.01,
+              "scope": "input",
+              "name": "DecINput",
+              "type": "datatype.number",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69E2G1ZF533tvDt5wuqGa3qgXGt7ejR",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "input",
+              "name": "secure input",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69E2G2H243iz4VN9JBaPgEPjoO6vxkD",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_01HH46FX619ER6At0nkJ3HflagrTNXNE7xM",
+            "properties": {
+              "scope": "input",
+              "name": "InputLocalTable",
+              "type": "datatype.table",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69E2G2VPR1r9Nknn3kUZv5Ygg7bHiTI",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "Copy(1)-RG table error",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "execute_on_target_group": true,
+            "target_group": {
+              "target_group_id": "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL",
+              "run_on_all_targets": true,
+              "selected_target_types": [
+                "web-service.endpoint"
+              ]
+            }
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01RX69EJICCJ15MkwMdze1yAdzXoJUh5wfm",
+            "name": "Completed",
+            "title": "Completed",
+            "type": "logic.completed",
+            "base_type": "activity",
+            "properties": {
+              "completion_type": "succeeded",
+              "continue_on_failure": false,
+              "display_name": "Completed",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    },
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv",
+        "name": "Copy(1)-RG - Child inputs - Event",
+        "title": "Copy(1)-RG - Child inputs - Event",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "input str1",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMRPRA44aZ8tXen8oBy6ZmiJzmtB",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.date",
+            "properties": {
+              "value": "0001-01-01T00:00:00+00:00",
+              "scope": "local",
+              "name": "Local Date",
+              "type": "datatype.date",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMNUXC7XbQoyjQGomTtP2iWOP6Bb",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:16:55Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:16:55Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:17:22Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:17:22Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:17:22Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:17:22Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:17:49Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:17:49Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:17:49Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:17:49Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:18:16Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:18:16Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:18:16Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:18:16Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:18:43Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:18:43Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:18:43Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:18:43Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=\ntime=\"2020-04-06T00:19:10Z\" level=error msg=\"ManageHb error: \u0026status.statusError{Code:2, Message:\\\"ldserror|{\\\\\\\"code\\\\\\\":2,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"rb_completed\\\\\\\":false,\\\\\\\"rb_error\\\\\\\":null,\\\\\\\"src\\\\\\\":\\\\\\\"dbx\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"code\\\\\\\":589826,\\\\\\\"message\\\\\\\":\\\\\\\"db error: document not found\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"src_error\\\\\\\":{\\\\\\\"error\\\\\\\":true,\\\\\\\"code\\\\\\\":404,\\\\\\\"errorNum\\\\\\\":1202,\\\\\\\"errorMessage\\\\\\\":\\\\\\\"document not found\\\\\\\"}}}\\\", Details:[]*any.Any(nil), XXX_NoUnkeyedLiteral:struct {}{}, XXX_unrecognized:[]uint8(nil), XXX_sizecache:0}\" loc=\"grpcclient/heartbeat.go(94)\" tag=\ntime=\"2020-04-06T00:19:10Z\" level=error msg=\"ManageHbOps: LDS errored :db error: document not found\" loc=\"grpcutils/heartbeat.go(39)\" tag=\ntime=\"2020-04-06T00:19:10Z\" level=error msg=\"LDSErrorToConsole: LDS Error not found db error: document not found\" loc=\"grpcutils/error.go(22)\" tag=\ntime=\"2020-04-06T00:19:10Z\" level=error msg=\"StartHbMonitor: update of heartbeat for HostID: 01EU12NTA9BYZ3N7SZqVF0ZMjc8h7S7o02B is errored -\u003e Code: (2721)  Message: Resource not found  Description: not found\" loc=\"hbutils/hbutils.go(89)\" tag=",
+              "scope": "input",
+              "name": "string 24 large",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMU1XO2RODLcwaTDIQ8Gwkko0Ktf",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "input",
+              "name": "Secure String NEW12",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMM95B6SOzQZ8KrjlMW5LS8uNQmd",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "Local string",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMOUEK5OEICI5XWSPP0SLG3c4lka",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure12",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMT5SZ07KYze9utI0avuQpJBiM76",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure9",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMN8RL5LNkCy82DIAAO1Voeb0NDp",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 0,
+              "scope": "input",
+              "name": "Int input",
+              "type": "datatype.integer",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMOIVP0dFOOG4Taga7RiNAxnI6ev",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure8",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMRBRQ0b2WUzsxa2v9jRw9XRaTti",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure13",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMTV0Y5ZLRCESIvL4DfnjJxupFYq",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "child output",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMPFL274Y7ZHKbqvaPU2cq8tK3mt",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure11",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMNO4D4XNOhrXgQBz5rBtCuTzCBy",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure17",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMTC783W9GZovHqCuYA4f533tr1V",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "input",
+              "name": "ss new ss",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMSLZC4tbCxqsfHIjDDtIMtFxh3q",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure10",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMMPG73ec2rR1aQmL2jrEeY5yZWh",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure20",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMPMDM4LuMIQhzLksP4A20r1fBSV",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure15",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMR3F94b53var3Rc5mC1PELWFwL4",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure14",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMP8WZ1qRgmqXxtvM60nQq8l3ijg",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure input ",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMO2YU72D47IePaxSFEVgvrcp5Mg",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "secure output1",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMQWVD6cErei4p61xcIQNC5ztAoJ",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "input secure12",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMMY873L6LudcYcv9wHWsZTVcGEJ",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure3",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMNGC64tF29uyLtTOP1IOYXY9RJx",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "input secure 11",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMQQCC3mf2mU30VraF8Mv9vcErXA",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure6",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMS7CU4HI5ZB4GkXyqQHuGBkk0uF",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "scope": "local",
+              "name": "Num",
+              "type": "datatype.integer",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMSZDH6a4tZlDjnRjdDZMum2XZqH",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "input",
+              "name": "ssnewinput",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMMIFH3CN6SyPD6HHEquflPLyFy3",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure21",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMRY9W06MWApeYp3MHbQvxn1Kqp6",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure22",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMU9976eEdgY71MS3kzcJttnK3lO",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "input",
+              "name": "hil",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMPUEY6D9pUhDoemE4ZQQLrx95OU",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "123",
+              "scope": "input",
+              "name": "parent string1",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMOBUR1iXBTB9xDrA5uS3AGxSG0Z",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "secure input1",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMSEFP11lyN9z5LKEdlFwUnWoANH",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "input string",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMTJZ667KHR6xDWF00XJ2HMsvyVX",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "secure output",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMLUW12EzhK7weR8Ul8H1NFWK55F",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "input",
+              "name": "secure 25 large",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMSS993GJhx7X4kym4sAyzlQwQ0j",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "input string11",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMP27116vyOgXoXAH9Sy6tDDDU2t",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "secure large o/p",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMQJ2X193wugdZiOyr8VA25adNrL",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "output",
+              "name": "secure o/p",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMRJ9149BRgpHZ5HxunW2UUBNsL2",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_01FCRD79Y79U54JNmfDtuaahfW0xwE1XgYO",
+            "properties": {
+              "value": [
+                {
+                  "column_data": {
+                    "String1": "CHiLD1"
+                  }
+                }
+              ],
+              "scope": "input",
+              "name": "RG table",
+              "type": "datatype.table",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMUMPQ1RTtDS7Fe9x2lip7SacB3L",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "input string10",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMUFUJ7mgoAyChTA8cIVxZXNakS1",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "input",
+              "name": "secure7",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMQ1CM1uSHDaBAWc7jy7vCldcv3h",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "mandatory input",
+              "scope": "input",
+              "name": "NEW STRING1",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01RX69EDMQ9AF6ODN1hr17ZHUj3fP8toLt4",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "description": "asd",
+          "display_name": "Copy(1)-RG - Child inputs - Event",
+          "favorite": false,
+          "target": {
+            "no_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01RX69F58AOB46WbxRRgUJCnPDL7BByS2AO",
+            "name": "Select from Table",
+            "title": "Select from Table",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Select from Table",
+              "input_table": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.input.variable_workflow_01RX69EDMUMPQ1RTtDS7Fe9x2lip7SacB3L$",
+              "number_of_rows": {
+                "all_rows": true,
+                "at_most": false
+              },
+              "persist_output": false,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true,
+                "sort_by": false
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01RX69FBBIYX14cQk2efL7evhFcQGySIrsn",
+            "name": "Set Variables",
+            "title": "Set Variables - String",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables - String",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.output.variable_workflow_01RX69EDMPFL274Y7ZHKbqvaPU2cq8tK3mt$",
+                  "variable_value_new": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.local.variable_workflow_01RX69EDMOUEK5OEICI5XWSPP0SLG3c4lka$$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.local.variable_workflow_01RX69EDMSZDH6a4tZlDjnRjdDZMum2XZqH$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01RX69FHQEPFP0w7Ea90gk4WMAIoYkyyMC0",
+            "name": "Set Variables",
+            "title": "Set Variables  - Input from parent",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables  - Input from parent",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.output.variable_workflow_01RX69EDMPFL274Y7ZHKbqvaPU2cq8tK3mt$",
+                  "variable_value_new": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.input.variable_workflow_01RX69EDMTJZ667KHR6xDWF00XJ2HMsvyVX$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01RX69FN5JDZG3gKEXpRyAQe0UZdDihCc7Q",
+            "name": "Set Variables",
+            "title": "Set Variables - Date",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables - Date",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.local.variable_workflow_01RX69EDMNUXC7XbQoyjQGomTtP2iWOP6Bb$",
+                  "variable_value_new": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.local.variable_workflow_01RX69EDMNUXC7XbQoyjQGomTtP2iWOP6Bb$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01RX69FU96WKN2fpP3Bm1XCIVGrvQNPMdFK",
+            "name": "Sj_Atomic",
+            "title": "Sj_Atomic",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Sj_Atomic",
+              "input": {
+                "variable_workflow_01JE2L337QV481MMytStRyClUfopXMu2v1h": "*****"
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "no_target": true
+              },
+              "workflow_id": "definition_workflow_01FHOAYWGI03J6jgWPUnIXkGNy5kRYmjuUa"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01RX69FXKLGJU3IWPC4ngwga9dVannP7vYS",
+            "name": "Set Variables",
+            "title": "Set Variables - Secure",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables - Secure",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.output.variable_workflow_01RX69EDMQJ2X193wugdZiOyr8VA25adNrL$",
+                  "variable_value_new": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.input.variable_workflow_01RX69EDMSS993GJhx7X4kym4sAyzlQwQ0j$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.input.variable_workflow_01RX69EDMNO4D4XNOhrXgQBz5rBtCuTzCBy$",
+                  "variable_value_new": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.output.variable_workflow_01RX69EDMQJ2X193wugdZiOyr8VA25adNrL$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.input.variable_workflow_01RX69EDMQQCC3mf2mU30VraF8Mv9vcErXA$",
+                  "variable_value_new": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.input.variable_workflow_01RX69EDMQQCC3mf2mU30VraF8Mv9vcErXA$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01RX69G0FMH4R6s7gI9aTCwrw5bil8qhCbJ",
+            "name": "Set Variables",
+            "title": "Assign String value to Date",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Assign String value to Date",
+              "skip_execution": true,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.local.variable_workflow_01RX69EDMNUXC7XbQoyjQGomTtP2iWOP6Bb$",
+                  "variable_value_new": "$workflow.definition_workflow_01RX69EC2VX654SCjGaKS2z3ofJ0uy3L6uv.local.variable_workflow_01RX69EDMSZDH6a4tZlDjnRjdDZMum2XZqH$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ],
+  "atomic_workflows": [
+    "definition_workflow_01FHOAYWGI03J6jgWPUnIXkGNy5kRYmjuUa"
+  ]
+}
