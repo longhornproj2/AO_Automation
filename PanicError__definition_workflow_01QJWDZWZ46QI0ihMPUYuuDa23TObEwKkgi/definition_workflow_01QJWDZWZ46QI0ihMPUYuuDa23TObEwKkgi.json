@@ -1,0 +1,362 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi",
+    "name": "A_While Loop",
+    "title": "A_While Loop",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.file",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "InputFile",
+          "type": "datatype.file",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QJYOMQF1I4Z2andrrJ3s93Z6fkEYcGz5r",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01OJKIQC3F5304tzDpj6xD8U4PVrtkoHDaW",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Boolean": false,
+                "Date": "2021-05-24T16:59:52.918526705Z",
+                "Decimal": 12,
+                "Integer": 21,
+                "String": "21"
+              }
+            }
+          ],
+          "scope": "input",
+          "name": "LocalTable",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QJYN1INBEAU4tsLkYa54O4sohZhgbQCjH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "Out",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QJWJ6LHBX8N2UXfu9ZoDfKIwBnhhuLnJS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OutString",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QJYO4FGLMFR5aXcVDNh5cfe30rX6XV5xT",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "0",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QJWEJVQ2X0Z2IZgxba51CeYkQcihqQ2uS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Input",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QJYLH45P3ZD5EuFioE10jFQ7CFrDUphBK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "OutInteger",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QJYOHGCQLY53NlghfpxWzTdYE8PRdxgiA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01T00:00:00+00:00",
+          "scope": "input",
+          "name": "Date",
+          "type": "datatype.date",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01QJYLRJY5N7E7A9fDQFsVNVIS3miCQsUyn",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Core",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "A_While Loop",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01QJWE7V4EJXT1OQBBv8EbxPh8nTi2fOfSJ",
+        "name": "While Loop",
+        "title": "While Loop",
+        "type": "logic.while",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "While Loop",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01QJWE7W2CGIN0e2koTzLxX0JyGOKPwrStA",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.local.variable_workflow_01QJWEJVQ2X0Z2IZgxba51CeYkQcihqQ2uS$",
+                "operator": "ne",
+                "right_operand": 600
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01QJXR7X833TJ7bziOrh4rODtQ6mrDAQfKV",
+                "name": "Parallel Block",
+                "title": "Parallel Block",
+                "type": "logic.parallel",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Parallel Block",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01QJXR7Y3N7UZ2zfxS7nx26Gt2ymfhswGNL",
+                    "name": "Parallel Branch",
+                    "title": "Parallel Branch",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Parallel Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01QJXRB6WHY0C1gOpL0v6uKJstpzZWI32om",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.local.variable_workflow_01QJWEJVQ2X0Z2IZgxba51CeYkQcihqQ2uS$",
+                              "variable_value_new": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.local.variable_workflow_01QJWEJVQ2X0Z2IZgxba51CeYkQcihqQ2uS$+1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01QJXR7ZL5G2L4TB7qfvaIQM10ZGSiTHhjp",
+                    "name": "Parallel Branch",
+                    "title": "Parallel Branch",
+                    "type": "logic.parallel_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Parallel Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01QJXRCLC9R6K2bKvui2ZRV4PsFyRSqfqLk",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.local.variable_workflow_01QJWEJVQ2X0Z2IZgxba51CeYkQcihqQ2uS$",
+                              "variable_value_new": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.local.variable_workflow_01QJWEJVQ2X0Z2IZgxba51CeYkQcihqQ2uS$/1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01QJYN980IZCJ78NhsaKrHVs9ucQpTNMqB2",
+        "name": "For Each",
+        "title": "For Each",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "For Each",
+          "skip_execution": false,
+          "source_array": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.input.variable_workflow_01QJYN1INBEAU4tsLkYa54O4sohZhgbQCjH$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01QJYNQMD0MZA05yZqPRWWyXQJDVyX7myxs",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.output.variable_workflow_01QJYOHGCQLY53NlghfpxWzTdYE8PRdxgiA$",
+                  "variable_value_new": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.output.variable_workflow_01QJYOHGCQLY53NlghfpxWzTdYE8PRdxgiA$*3"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.output.variable_workflow_01QJYO4FGLMFR5aXcVDNh5cfe30rX6XV5xT$",
+                  "variable_value_new": "$workflow.definition_workflow_01QJWDZWZ46QI0ihMPUYuuDa23TObEwKkgi.output.instance_id$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01FzsThUQ3yXAswxOItEqLAIiGLEPlIt0",
+      "category_01HMB3HOH0SM85sfOgPjLNuNCQ8et6qcOwz",
+      "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A"
+    ]
+  },
+  "categories": {
+    "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A": {
+      "unique_name": "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A",
+      "name": "CA Web Services",
+      "title": "CA Web Services",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01HMB3HOH0SM85sfOgPjLNuNCQ8et6qcOwz": {
+      "unique_name": "category_01HMB3HOH0SM85sfOgPjLNuNCQ8et6qcOwz",
+      "name": "Securex",
+      "title": "Securex",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "test",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "table_types": {
+    "tabletype_01OJKIQC3F5304tzDpj6xD8U4PVrtkoHDaW": {
+      "unique_name": "tabletype_01OJKIQC3F5304tzDpj6xD8U4PVrtkoHDaW",
+      "data_type": "datatype.tabletype",
+      "display_name": "All Data Type Table ( option) ",
+      "description": "all data type table all column is option",
+      "columns": [
+        {
+          "name": "Boolean",
+          "title": "Boolean",
+          "type": "boolean"
+        },
+        {
+          "name": "Date",
+          "title": "Date",
+          "type": "date"
+        },
+        {
+          "name": "Decimal",
+          "title": "Decimal",
+          "type": "number"
+        },
+        {
+          "name": "Integer",
+          "title": "Integer",
+          "type": "integer"
+        },
+        {
+          "name": "String",
+          "title": "String",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
