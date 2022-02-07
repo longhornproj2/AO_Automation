@@ -1,0 +1,55 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01UQH5HRU2XMX7RY4RuSXRj7eXgjMfzNN6I",
+    "name": "RG New Cat1",
+    "title": "RG New Cat1",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Nice description",
+      "display_name": "RG New Cat1",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01UQH69S54Z6162VL4y4hpXeMvV2d62wSd4",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01UQH5XIK3X633yvd2FvEt2pu5q8pGLLLMl"
+    ]
+  },
+  "categories": {
+    "category_01UQH5XIK3X633yvd2FvEt2pu5q8pGLLLMl": {
+      "unique_name": "category_01UQH5XIK3X633yvd2FvEt2pu5q8pGLLLMl",
+      "name": "RG Cat1",
+      "title": "RG Cat1",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
