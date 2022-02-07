@@ -1,0 +1,94 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01LELF7COFD2Y6Z8HPiN9PTAspOpg61X6Td",
+    "name": "RG wait for Event1",
+    "title": "RG wait for Event1",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG wait for Event1",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01LELFC7YFXSQ0wj55CFzsev4iqh9XO01U7",
+        "name": "Wait For Event",
+        "title": "Wait For Event",
+        "type": "task.wait_for_event",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Wait For Event",
+          "event_info": {
+            "add_event": true,
+            "event_definition": {
+              "action": "read",
+              "download_attachments": true,
+              "folder": "INBOX",
+              "target_id": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k"
+            }
+          },
+          "event_type": "email.event",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k": {
+      "unique_name": "definition_target_0196OSLLT0VS54UsQ23QuF8SRJ0MFaKfi0k",
+      "name": "RG imap gmail",
+      "title": "RG imap gmail",
+      "type": "email.imap_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG",
+        "description": "test1",
+        "display_name": "RG imap gmail",
+        "ignore_certificate_errors": true,
+        "polling_interval": 10,
+        "port": 993,
+        "protocol": "IMAP",
+        "server": "imap.gmail.com",
+        "tls_enabled": true
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG": {
+      "unique_name": "definition_runtime_user_0196OSECORGZC6ixMrkLrXevXqzyxq2GlIG",
+      "name": "RG longhorn gmail",
+      "title": "RG longhorn gmail",
+      "type": "runtime_user.email_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "description": "longhornproj1@gmail.com\nCisco123!",
+        "display_name": "RG longhorn gmail",
+        "password": "*****",
+        "sender": "*****"
+      }
+    }
+  }
+}
