@@ -34,6 +34,21 @@
           "source": "cisco"
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Z0GZAWPOHHJ0SrLasaC5bbBRCElrDg3hY",
+        "name": "Find String",
+        "title": "Find String",
+        "type": "core.find_string",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Find String",
+          "searched_string": "cisco",
+          "skip_execution": false,
+          "source": "cisco securex"
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
