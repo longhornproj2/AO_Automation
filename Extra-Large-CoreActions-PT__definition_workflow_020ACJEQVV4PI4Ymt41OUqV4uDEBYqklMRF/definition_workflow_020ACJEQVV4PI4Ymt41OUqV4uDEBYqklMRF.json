@@ -7,16 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.integer",
+        "schema_id": "datatype.date",
         "properties": {
-          "value": 0,
+          "value": "0001-01-01T00:00:00+00:00",
           "scope": "local",
-          "name": "Local Loop Limit 10",
-          "type": "datatype.integer",
+          "name": "date_forbranch4",
+          "type": "datatype.date",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_020ACJER460TB69qTOq6Xw2n4PK2RSDQZ10",
+        "unique_name": "variable_workflow_020ACJER4694O0ySrx3LgUZAmSKQRpWQQKa",
         "object_type": "variable_workflow"
       },
       {
@@ -33,16 +33,16 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.date",
+        "schema_id": "datatype.integer",
         "properties": {
-          "value": "0001-01-01T00:00:00+00:00",
+          "value": 0,
           "scope": "local",
-          "name": "date_forbranch4",
-          "type": "datatype.date",
+          "name": "Local Loop Limit 10",
+          "type": "datatype.integer",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_020ACJER4694O0ySrx3LgUZAmSKQRpWQQKa",
+        "unique_name": "variable_workflow_020ACJER460TB69qTOq6Xw2n4PK2RSDQZ10",
         "object_type": "variable_workflow"
       }
     ],
@@ -78,6 +78,20 @@
           "display_name": "Sleep 1",
           "skip_execution": false,
           "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02146IDGCBYOH0hCyDYCahAFxO6wuMWf1WV",
+        "name": "To Upper",
+        "title": "To Upper",
+        "type": "core.string2upper",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Upper",
+          "skip_execution": false,
+          "source": "wwww"
         },
         "object_type": "definition_activity"
       },
