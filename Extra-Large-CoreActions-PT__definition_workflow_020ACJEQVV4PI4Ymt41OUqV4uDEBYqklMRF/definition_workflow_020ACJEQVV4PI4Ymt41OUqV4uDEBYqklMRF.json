@@ -7,19 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.date",
-        "properties": {
-          "value": "0001-01-01T00:00:00+00:00",
-          "scope": "local",
-          "name": "date_forbranch4",
-          "type": "datatype.date",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_020ACJER4694O0ySrx3LgUZAmSKQRpWQQKa",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.integer",
         "properties": {
           "value": 1,
@@ -30,6 +17,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_020ACJER45PDX1sqdjNW3OW6bIqJ3OOUKum",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.date",
+        "properties": {
+          "value": "0001-01-01T00:00:00+00:00",
+          "scope": "local",
+          "name": "date_forbranch4",
+          "type": "datatype.date",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_020ACJER4694O0ySrx3LgUZAmSKQRpWQQKa",
         "object_type": "variable_workflow"
       },
       {
@@ -78,6 +78,20 @@
           "display_name": "Sleep 1",
           "skip_execution": false,
           "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02146IOTH08UR2YttwQt2rxRAzsXutNWggX",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "WERWREWR"
         },
         "object_type": "definition_activity"
       },
