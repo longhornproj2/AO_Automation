@@ -50,16 +50,29 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_0216LAL97KR0D1JmDXrrHF7aKEqzOYMO9ST",
-        "name": "Sleep",
-        "title": "Sleep",
-        "type": "core.sleep",
-        "base_type": "activity",
+        "unique_name": "definition_activity_0216LFFH86G2L6ANZPTS3g7fvYtdi6R65mZ",
+        "name": "Copy(2)-SM-Copy(1)-A- Automation Import/Export Using GIT ✅",
+        "title": "Copy(2)-SM-Copy(1)-A- Automation Import/Export Using GIT ✅",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "Sleep",
+          "display_name": "Copy(2)-SM-Copy(1)-A- Automation Import/Export Using GIT ✅",
+          "input": {
+            "variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv": "Bearer ",
+            "variable_workflow_0216LEXB2ER7X3aNLK4L0WGgjXGUEyi9dG0": "$global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp.global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
           "skip_execution": false,
-          "sleep_interval": 2
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01OM9WAO4CPEI5FPDzH5PQbCZI9awmZKVwn",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN",
+          "workflow_name": "Copy(2)-SM-Copy(1)-A- Automation Import/Export Using GIT ✅"
         },
         "object_type": "definition_activity"
       }
@@ -67,5 +80,1381 @@
     "categories": [
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
-  }
+  },
+  "categories": {
+    "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A": {
+      "unique_name": "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A",
+      "name": "CA Web Services",
+      "title": "CA Web Services",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01OM9WAO4CPEI5FPDzH5PQbCZI9awmZKVwn": {
+      "unique_name": "definition_target_01OM9WAO4CPEI5FPDzH5PQbCZI9awmZKVwn",
+      "name": "18.222.34.169",
+      "title": "18.222.34.169",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "Match1",
+        "disable_certificate_validation": false,
+        "display_name": "18.222.34.169",
+        "host": "18.222.34.169",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "/file-list",
+        "port": 3000,
+        "protocol": "http"
+      }
+    }
+  },
+  "variables": {
+    "variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp": {
+      "unique_name": "variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp",
+      "properties": {
+        "value": "\u003cmeta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"\u003e\u003cdiv dir=\"ltr\"\u003e\u003cbr clear=\"all\"\u003e\u003cdiv\u003e\u003cdiv dir=\"ltr\" class=\"gmail_signature\" data-smartmail=\"gmail_signature\"\u003e\u003cdiv dir=\"ltr\"\u003e\u003cdiv\u003e-\u003c/div\u003eAleksandr Hiltov\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\r\n",
+        "scope": "global",
+        "name": "$String",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN",
+        "name": "Copy(2)-SM-Copy(1)-A- Automation Import/Export Using GIT ✅",
+        "title": "Copy(2)-SM-Copy(1)-A- Automation Import/Export Using GIT ✅",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "Authorization",
+              "scope": "local",
+              "name": "Authorization",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Provide GIT Token Password",
+              "type": "datatype.secure_string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_0216LEXB2ER7X3aNLK4L0WGgjXGUEyi9dG0",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "All Action True/False",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_0216LEXB2DI0D6UYXx3xmOKoA5rkGWPFPHt",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Execution Time",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_0216LEXB2D73L72Q8UmaEzQ0sNkNshVo4iC",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Condition Block 1",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_0216LEXB2DYY63j0ZLpcnRVEdBtEcdLvjrG",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Email Template",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_0216LEXB2DR3T5FJWQKaM4qKBBgEhFYQOMS",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "Bearer ",
+              "scope": "input",
+              "name": "Provide Token include Bearer",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "Copy(2)-SM-Copy(1)-A- Automation Import/Export Using GIT ✅",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "target_type": "web-service.endpoint",
+            "specify_on_workflow_start": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_0216LEXELCSVB4FJKJaXgLtDzKImBmFcNSe",
+            "name": "Group",
+            "title": "Ctreate GIT key and Target",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Ctreate GIT key and Target",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_0216LEXH3G5QD4y18XhtCzuelQpLpJ8qCLw",
+                "name": "HTTP Request",
+                "title": "Create GIT KEY",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "{\n  \"type\": \"runtime_user.git_password_credentials\",\n  \"base_type\": \"runtime_user\",\n  \"name\": \"CA GIT KEY\",\n  \"title\": \"CA GIT KEY\",\n  \"properties\": {\n    \"display_name\": \"CA GIT KEY\",\n    \"username\": \"ChandraAddan\",\n    \"password\": \"$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2ER7X3aNLK4L0WGgjXGUEyi9dG0$\"\n  }\n}",
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Create GIT KEY",
+                  "method": "POST",
+                  "relative_url": "be-console/api/v1/runtime_users",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXIKJ9JM4q8xIAdOZamV3QwyAEQ4bP",
+                "name": "JSONPath Query",
+                "title": "Extarct Git Account Key ID",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extarct Git Account Key ID",
+                  "input_json": "$activity.definition_activity_0216LEXH3G5QD4y18XhtCzuelQpLpJ8qCLw.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..id",
+                      "jsonpath_query_name": "GIT Accountkey ID",
+                      "jsonpath_query_type": "secure_string"
+                    },
+                    {
+                      "jsonpath_query": "$.status.state",
+                      "jsonpath_query_name": "Accountkey Status",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXJV5Z6T5N3X6OM6XIFQU18cXRH82u",
+                "name": "HTTP Request",
+                "title": "Create GIT Target",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "{\n  \"name\": \"CA GIT test Import/Export\",\n  \"title\": \"CA GIT test Import/Export\",\n  \"properties\": {\n    \"no_runtime_user\": false,\n    \"repo_type\": \"github\",\n    \"branch\": \"master\",\n    \"display_name\": \"CA GIT test Import/Export\",\n    \"default_runtime_user_id\": \"$activity.definition_activity_0216LEXIKJ9JM4q8xIAdOZamV3QwyAEQ4bP.output.jsonpath_queries.GIT Accountkey ID$\",\n    \"protocol\": \"https\",\n    \"repo\": \"api.github.com/repos/ChandraAddan/Test\"\n  },\n  \"type\": \"git.repository\",\n  \"base_type\": \"target\"\n}",
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Create GIT Target",
+                  "method": "POST",
+                  "relative_url": "be-console/api/v1/targets",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXKYXBZJ38w1Cpg3dXg4AhRLrpmoES",
+                "name": "JSONPath Query",
+                "title": "Extracting GIT Target ID",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extracting GIT Target ID",
+                  "input_json": "$activity.definition_activity_0216LEXJV5Z6T5N3X6OM6XIFQU18cXRH82u.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..id",
+                      "jsonpath_query_name": "GIT Target ID",
+                      "jsonpath_query_type": "string"
+                    },
+                    {
+                      "jsonpath_query": "$.status.state",
+                      "jsonpath_query_name": "Git Target Status",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_0216LEXM27YU02lK9y4RTEfuNqJzMrpwe9l",
+            "name": "Group",
+            "title": "Import Workflow",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Import Workflow",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_0216LEXNRDZVV6Xa7u1TBkyIdsuCeYz815B",
+                "name": "HTTP Request",
+                "title": "Import Workflow",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "{\n  \"commit_hash\": \"e38bf4371a08e3fbea8743a68e580a605da355b2\",\n  \"target_id\": \"$activity.definition_activity_0216LEXKYXBZJ38w1Cpg3dXg4AhRLrpmoES.output.jsonpath_queries.GIT Target ID$\",\n  \"runtime_users\": [],\n  \"runtime_users_skip_list\": [],\n  \"variables\": [],\n  \"file_name\": \"All-Condition-Blocks\"\n}",
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Import Workflow",
+                  "method": "POST",
+                  "relative_url": "be-importexport/api/v1/workflows/import?create_new=true\u0026from=git\u0026overwrite=false\u0026workflow_unique_name=definition_workflow_01FGA33M6QACA6TvxwlzrJ8x8pli0UwbbvO",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXOW4NE34iaXDvMtC0909pfY1j163R",
+                "name": "Sleep",
+                "title": "Sleep 85 Seconds",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Sleep 85 Seconds",
+                  "skip_execution": false,
+                  "sleep_interval": 65
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D",
+                "name": "JSONPath Query",
+                "title": "Extract Imported workflow ID",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract Imported workflow ID",
+                  "input_json": "$activity.definition_activity_0216LEXNRDZVV6Xa7u1TBkyIdsuCeYz815B.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..id",
+                      "jsonpath_query_name": "Workflow ID",
+                      "jsonpath_query_type": "string"
+                    },
+                    {
+                      "jsonpath_query": "$.status.state",
+                      "jsonpath_query_name": "import status",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXQVRF022xdmB63KSKCSwNU28G0Tlz",
+                "name": "HTTP Request",
+                "title": "GET WF To verify import Status",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "GET WF To verify import Status",
+                  "method": "GET",
+                  "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXS1TX1X4jXhJki3Lq7IRqshaxVdEs",
+                "name": "JSONPath Query",
+                "title": "Extract Imported Status",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract Imported Status",
+                  "input_json": "$activity.definition_activity_0216LEXQVRF022xdmB63KSKCSwNU28G0Tlz.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$.status.state",
+                      "jsonpath_query_name": "Imported Status",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXT5TRJN1Kc2FFyS969cy5UiMHPfVx",
+                "name": "HTTP Request",
+                "title": "Validate Workflow",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Validate Workflow",
+                  "method": "POST",
+                  "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.Workflow ID$/validate",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXUBR2ZH1uBnwnmDxPdiwkrL2aO20Z",
+                "name": "HTTP Request",
+                "title": "Execute Workflow",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Execute Workflow",
+                  "method": "POST",
+                  "relative_url": "be-console/api/v1.1/workflows/ui/start?workflow_id=$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXVJWU851oUXDKHqdr7jqvhEtCyQGy",
+                "name": "JSONPath Query",
+                "title": "Extract instance ID",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract instance ID",
+                  "input_json": "$activity.definition_activity_0216LEXUBR2ZH1uBnwnmDxPdiwkrL2aO20Z.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..id",
+                      "jsonpath_query_name": "Instance ID",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXX5H7H77KGa5N2gFR7DnJKuoHLgO8",
+                "name": "Sleep",
+                "title": "Sleep 15 Seconds",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Sleep 15 Seconds",
+                  "skip_execution": false,
+                  "sleep_interval": 15
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXY1PDDJ1GQtFwGymj5b5rcUemZlSi",
+                "name": "HTTP Request",
+                "title": "Get Instance Info in detail",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Get Instance Info in detail",
+                  "method": "GET",
+                  "relative_url": "be-console/api/v1/instances/$activity.definition_activity_0216LEXVJWU851oUXDKHqdr7jqvhEtCyQGy.output.jsonpath_queries.Instance ID$?detailed=true",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEXZ6O78H5b8aAnSahu6HRJkDqzQUgS",
+                "name": "JSONPath Query",
+                "title": "Extracting Instance status ",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extracting Instance status ",
+                  "input_json": "$activity.definition_activity_0216LEXY1PDDJ1GQtFwGymj5b5rcUemZlSi.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$.status.state",
+                      "jsonpath_query_name": "Workflow Instance Status",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEY0VIJ83326bHF7N7ACt5DaMgWaqGu",
+                "name": "Condition Block",
+                "title": "All Actions Pass/Fail",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "All Actions Pass/Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_0216LEY2M5JNV0a4XF4IBChLdD8tvBUmnKV",
+                    "name": "Condition Branch",
+                    "title": "true == 200",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": {
+                                "left_operand": {
+                                  "left_operand": {
+                                    "left_operand": "$activity.definition_activity_0216LEXIKJ9JM4q8xIAdOZamV3QwyAEQ4bP.output.jsonpath_queries.Accountkey Status$",
+                                    "operator": "eq",
+                                    "right_operand": "created"
+                                  },
+                                  "operator": "and",
+                                  "right_operand": {
+                                    "left_operand": "$activity.definition_activity_0216LEXKYXBZJ38w1Cpg3dXg4AhRLrpmoES.output.jsonpath_queries.Git Target Status$",
+                                    "operator": "mregex",
+                                    "right_operand": "(?:valid|created)"
+                                  }
+                                },
+                                "operator": "and",
+                                "right_operand": {
+                                  "left_operand": "$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.import status$",
+                                  "operator": "eq",
+                                  "right_operand": "import_in_progress"
+                                }
+                              },
+                              "operator": "and",
+                              "right_operand": {
+                                "left_operand": "$activity.definition_activity_0216LEXS1TX1X4jXhJki3Lq7IRqshaxVdEs.output.jsonpath_queries.Imported Status$",
+                                "operator": "eq",
+                                "right_operand": "import_completed"
+                              }
+                            },
+                            "operator": "and",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_0216LEXT5TRJN1Kc2FFyS969cy5UiMHPfVx.output.status_code$",
+                              "operator": "eq",
+                              "right_operand": 200
+                            }
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_0216LEXUBR2ZH1uBnwnmDxPdiwkrL2aO20Z.output.status_code$",
+                            "operator": "eq",
+                            "right_operand": 200
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_0216LEXZ6O78H5b8aAnSahu6HRJkDqzQUgS.output.jsonpath_queries.Workflow Instance Status$",
+                          "operator": "eq",
+                          "right_operand": "success"
+                        }
+                      },
+                      "continue_on_failure": true,
+                      "display_name": "true == 200",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_0216LEY4A3NSQ0PV8df9BrO98GepMO6Maq0",
+                        "name": "Set Variables",
+                        "title": "true == 200",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "true == 200",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.variable_workflow_0216LEXB2DYY63j0ZLpcnRVEdBtEcdLvjrG$",
+                              "variable_value_new": "true"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_0216LEY5VDK960TpNZdrHpvPwIW9OUJqBPv",
+                    "name": "Condition Branch",
+                    "title": "Fail !== 200",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": {
+                                "left_operand": {
+                                  "left_operand": {
+                                    "left_operand": "$activity.definition_activity_0216LEXIKJ9JM4q8xIAdOZamV3QwyAEQ4bP.output.jsonpath_queries.Accountkey Status$",
+                                    "operator": "ne",
+                                    "right_operand": "created"
+                                  },
+                                  "operator": "or",
+                                  "right_operand": {
+                                    "left_operand": "$activity.definition_activity_0216LEXKYXBZJ38w1Cpg3dXg4AhRLrpmoES.output.jsonpath_queries.Git Target Status$",
+                                    "operator": "ne",
+                                    "right_operand": "valid"
+                                  }
+                                },
+                                "operator": "or",
+                                "right_operand": {
+                                  "left_operand": "$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.import status$",
+                                  "operator": "ne",
+                                  "right_operand": "import_in_progress"
+                                }
+                              },
+                              "operator": "or",
+                              "right_operand": {
+                                "left_operand": "$activity.definition_activity_0216LEXS1TX1X4jXhJki3Lq7IRqshaxVdEs.output.jsonpath_queries.Imported Status$",
+                                "operator": "ne",
+                                "right_operand": "import_completed"
+                              }
+                            },
+                            "operator": "or",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_0216LEXT5TRJN1Kc2FFyS969cy5UiMHPfVx.output.status_code$",
+                              "operator": "ne",
+                              "right_operand": 200
+                            }
+                          },
+                          "operator": "or",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_0216LEXUBR2ZH1uBnwnmDxPdiwkrL2aO20Z.output.status_code$",
+                            "operator": "ne",
+                            "right_operand": 200
+                          }
+                        },
+                        "operator": "or",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_0216LEXZ6O78H5b8aAnSahu6HRJkDqzQUgS.output.jsonpath_queries.Workflow Instance Status$",
+                          "operator": "ne",
+                          "right_operand": "success"
+                        }
+                      },
+                      "continue_on_failure": true,
+                      "display_name": "Fail !== 200",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_0216LEY7AK9AQ2QMe9b9SgG54EyZlLmbbuG",
+                        "name": "Set Variables",
+                        "title": "true == 200",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "true == 200",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.variable_workflow_0216LEXB2DYY63j0ZLpcnRVEdBtEcdLvjrG$",
+                              "variable_value_new": "false"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_0216LEY88GXTS2ZpoaKmW1JQh8YeITjNtb4",
+            "name": "Group",
+            "title": "Export Workflow",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Export Workflow",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_0216LEY9UV7TU0Nh2mFLXTJXsnRjqOublw2",
+                "name": "HTTP Request",
+                "title": "Export Workflow",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "{\n  \"target_id\": \"$activity.definition_activity_0216LEXKYXBZJ38w1Cpg3dXg4AhRLrpmoES.output.jsonpath_queries.GIT Target ID$\",\n  \"commit_message\": \"Commit1 : test Export Workflow have All logic Blocks\",\n  \"file_name\": \"Test-Export-Logic-Blocks\"\n}",
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Export Workflow",
+                  "method": "POST",
+                  "relative_url": "be-importexport/api/v1/workflows/export?force=false\u0026to=git\u0026workflow_id=$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYB2MUII7QYRqMF3aBcvWBcyg3w0AL",
+                "name": "Sleep",
+                "title": "Sleep 10 Seconds",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Sleep 10 Seconds",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYBYDWMY0uqxiLVl1yOIiQXEt9rr41",
+                "name": "HTTP Request",
+                "title": "GET  Workflow to verify Status",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "GET  Workflow to verify Status",
+                  "method": "GET",
+                  "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYD4PM083L2VkrbsP6QXUxIW7pRZbU",
+                "name": "JSONPath Query",
+                "title": "Extract Exported Status",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract Exported Status",
+                  "input_json": "$activity.definition_activity_0216LEYBYDWMY0uqxiLVl1yOIiQXEt9rr41.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$.status.state",
+                      "jsonpath_query_name": "Exported Status",
+                      "jsonpath_query_type": "string"
+                    },
+                    {
+                      "jsonpath_query": "$..commited_on",
+                      "jsonpath_query_name": "Commitde on time",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_0216LEYEC5VVP4waiEixNQNLOQV5XqPTjYK",
+            "name": "Group",
+            "title": "Delete Instance, WF,  GIT Key and Target",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Delete Instance, WF,  GIT Key and Target",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_0216LEYG0QMKU6rPDSlQN4Zg9Sc2pOxBqjY",
+                "name": "HTTP Request",
+                "title": "Remove Git from worklfow [PUT]",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "{\n  \"id\": \"$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.Workflow ID$\",\n  \"type\": \"generic.workflow\",\n  \"base_type\": \"workflow\",\n  \"name\": \"Copy(1)-CA Logic Blocks \",\n  \"title\": \"Copy(1)-CA Logic Blocks \",\n  \"valid\": true,\n  \"properties\": {\n    \"atomic\": {\n      \"is_atomic\": false\n    },\n    \"delete_workflow_instance\": false,\n    \"runtime_user\": {\n      \"override_target_runtime_user\": false,\n      \"specify_on_workflow_start\": false,\n      \"target_default\": true\n    },\n    \"target\": {\n      \"no_target\": true\n    },\n    \"display_name\": \"Copy(1)-CA Logic Blocks \"\n  },\n  \"categories\": [],\n  \"variables\": [\n  ],\n  \"metadata\": {\n    \"git_info\": {\n      \"target_id\": \"\",\n      \"commit_hash\": \"\",\n      \"commited_by\": \"38\",\n      \"commited_on\": \"$activity.definition_activity_0216LEYD4PM083L2VkrbsP6QXUxIW7pRZbU.output.jsonpath_queries.Commitde on time$\",\n      \"commit_message\": \"Commit1 : test Export Workflow have All logic Blocks\",\n      \"file_name\": \"Test-Export-Logic-Blocks\"\n    }\n  }\n}",
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Remove Git from worklfow [PUT]",
+                  "method": "PUT",
+                  "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYHFP2F73wNfh3KlGDGTTD2fzvYes7",
+                "name": "HTTP Request",
+                "title": "Delete GIT Target",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Delete GIT Target",
+                  "method": "DELETE",
+                  "relative_url": "be-console/api/v1/targets/$activity.definition_activity_0216LEXKYXBZJ38w1Cpg3dXg4AhRLrpmoES.output.jsonpath_queries.GIT Target ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYIMVIVG2qPjFJFLlOzEqkpUrGd5bl",
+                "name": "HTTP Request",
+                "title": "Delete GIT Key",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Delete GIT Key",
+                  "method": "DELETE",
+                  "relative_url": "be-console/api/v1/runtime_users/$activity.definition_activity_0216LEXIKJ9JM4q8xIAdOZamV3QwyAEQ4bP.output.jsonpath_queries.GIT Accountkey ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYJSTS6Q3sCTUfF0hxaVO4MncLp1Ox",
+                "name": "HTTP Request",
+                "title": "Delete Workflow Instance",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Delete Workflow Instance",
+                  "method": "DELETE",
+                  "relative_url": "be-console/api/v1/instances/$activity.definition_activity_0216LEXVJWU851oUXDKHqdr7jqvhEtCyQGy.output.jsonpath_queries.Instance ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYL02UKN3NyKr2U2UoYhLCPrYmmMra",
+                "name": "Sleep",
+                "title": "Sleep 10",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Sleep 10",
+                  "skip_execution": false,
+                  "sleep_interval": 10
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYLWAA1Q1ymF69FZd7CYeroDW5zg5S",
+                "name": "HTTP Request",
+                "title": "Delete Workflow",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.local.variable_workflow_0216LEXB2E7UV7doZnWq8bmY52vIlStUppe$",
+                      "value": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.input.variable_workflow_0216LEXB2EIMF0S7YWAFRjIA4qGQyoGmiFv$"
+                    }
+                  ],
+                  "display_name": "Delete Workflow",
+                  "method": "DELETE",
+                  "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_0216LEXPQ6BET6xHoYdKtmIr1BD2NWb410D.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_0216LEYN0IO7J0IFHYLpKyAU8W6p3xny591",
+                "name": "Condition Block",
+                "title": "All Actions Pass/Fail",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "All Actions Pass/Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_0216LEYOF10BW7M2UQXRpoi6dM5lgG4ljFd",
+                    "name": "Condition Branch",
+                    "title": "true == 200",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": {
+                                "left_operand": {
+                                  "left_operand": {
+                                    "left_operand": "$activity.definition_activity_0216LEYD4PM083L2VkrbsP6QXUxIW7pRZbU.output.jsonpath_queries.Exported Status$",
+                                    "operator": "eq",
+                                    "right_operand": "export_completed"
+                                  },
+                                  "operator": "and",
+                                  "right_operand": {
+                                    "left_operand": "$activity.definition_activity_0216LEYG0QMKU6rPDSlQN4Zg9Sc2pOxBqjY.output.status_code$",
+                                    "operator": "eq",
+                                    "right_operand": 200
+                                  }
+                                },
+                                "operator": "and",
+                                "right_operand": {
+                                  "left_operand": "$activity.definition_activity_0216LEYHFP2F73wNfh3KlGDGTTD2fzvYes7.output.status_code$",
+                                  "operator": "eq",
+                                  "right_operand": 204
+                                }
+                              },
+                              "operator": "and",
+                              "right_operand": {
+                                "left_operand": "$activity.definition_activity_0216LEYIMVIVG2qPjFJFLlOzEqkpUrGd5bl.output.status_code$",
+                                "operator": "eq",
+                                "right_operand": 204
+                              }
+                            },
+                            "operator": "and",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_0216LEYJSTS6Q3sCTUfF0hxaVO4MncLp1Ox.output.status_code$",
+                              "operator": "eq",
+                              "right_operand": 202
+                            }
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_0216LEYLWAA1Q1ymF69FZd7CYeroDW5zg5S.output.status_code$",
+                            "operator": "eq",
+                            "right_operand": 204
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.variable_workflow_0216LEXB2DYY63j0ZLpcnRVEdBtEcdLvjrG$",
+                          "operator": "eq",
+                          "right_operand": "true"
+                        }
+                      },
+                      "continue_on_failure": true,
+                      "display_name": "true == 200",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_0216LEYPQWUTN2g71ok01V6pS6uQelSHgW6",
+                        "name": "Set Variables",
+                        "title": "All Action Should Pass",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "All Action Should Pass",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.variable_workflow_0216LEXB2DI0D6UYXx3xmOKoA5rkGWPFPHt$",
+                              "variable_value_new": "✔✅All Import/Export Actions Passed"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_0216LEYR94S876zHfih2a6CbQzre7AEnnzu",
+                    "name": "Condition Branch",
+                    "title": "false !== 200",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": {
+                                "left_operand": {
+                                  "left_operand": {
+                                    "left_operand": "$activity.definition_activity_0216LEYD4PM083L2VkrbsP6QXUxIW7pRZbU.output.jsonpath_queries.Exported Status$",
+                                    "operator": "ne",
+                                    "right_operand": "export_failed"
+                                  },
+                                  "operator": "or",
+                                  "right_operand": {
+                                    "left_operand": "$activity.definition_activity_0216LEYG0QMKU6rPDSlQN4Zg9Sc2pOxBqjY.output.status_code$",
+                                    "operator": "ne",
+                                    "right_operand": 200
+                                  }
+                                },
+                                "operator": "or",
+                                "right_operand": {
+                                  "left_operand": "$activity.definition_activity_0216LEYHFP2F73wNfh3KlGDGTTD2fzvYes7.output.status_code$",
+                                  "operator": "ne",
+                                  "right_operand": 204
+                                }
+                              },
+                              "operator": "or",
+                              "right_operand": {
+                                "left_operand": "$activity.definition_activity_0216LEYIMVIVG2qPjFJFLlOzEqkpUrGd5bl.output.status_code$",
+                                "operator": "ne",
+                                "right_operand": 202
+                              }
+                            },
+                            "operator": "or",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_0216LEYJSTS6Q3sCTUfF0hxaVO4MncLp1Ox.output.status_code$",
+                              "operator": "ne",
+                              "right_operand": 202
+                            }
+                          },
+                          "operator": "or",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_0216LEYLWAA1Q1ymF69FZd7CYeroDW5zg5S.output.status_code$",
+                            "operator": "ne",
+                            "right_operand": 204
+                          }
+                        },
+                        "operator": "or",
+                        "right_operand": {
+                          "left_operand": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.variable_workflow_0216LEXB2DYY63j0ZLpcnRVEdBtEcdLvjrG$",
+                          "operator": "eq",
+                          "right_operand": "false"
+                        }
+                      },
+                      "continue_on_failure": true,
+                      "display_name": "false !== 200",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_0216LEYTP2E7E4G9bBA1qEN3gtyHOXCxeDv",
+                        "name": "Set Variables",
+                        "title": "If Any action Fails",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "If Any action Fails",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.variable_workflow_0216LEXB2DI0D6UYXx3xmOKoA5rkGWPFPHt$",
+                              "variable_value_new": "❌⭕Import/Export actions failed Please check The instacne : $workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.instance_id$"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_0216LEYV55NFT3dCSXAhzE7tRr4E2CmGyyK",
+            "name": "Calculate Date Time Difference",
+            "title": "Calculate Date Time Difference",
+            "type": "core.calculate_date_time_difference",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Calculate Date Time Difference",
+              "original_date": "$activity.definition_activity_0216LEYEC5VVP4waiEixNQNLOQV5XqPTjYK.output.end_time$",
+              "skip_execution": false,
+              "subtract_date": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.start_time$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_0216LEYZXFASR6L9ebSwxhkfLrzihMaqrd8",
+            "name": "Set Variables",
+            "title": "Email Template 🟢",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Email Template 🟢",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.variable_workflow_0216LEXB2DR3T5FJWQKaM4qKBBgEhFYQOMS$",
+                  "variable_value_new": "\u003ch2\u003eImport/Eport Using GIT\u003c/h2\u003e\n\u003ctable\u003e\n\u003ctr\u003e\n\u003cth\u003eActivity Name\u003c/th\u003e\n\u003cth\u003eTrue/False\u003c/th\u003e\n\u003cth\u003eError Code\u003c/th\u003e\n\u003cth\u003eError Message\u003c/th\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eCreate GIT Accrountkey\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXIKJ9JM4q8xIAdOZamV3QwyAEQ4bP.output.jsonpath_queries.Accountkey Status$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXH3G5QD4y18XhtCzuelQpLpJ8qCLw.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXH3G5QD4y18XhtCzuelQpLpJ8qCLw.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eCraete GIT Target\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXKYXBZJ38w1Cpg3dXg4AhRLrpmoES.output.jsonpath_queries.Git Target Status$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXJV5Z6T5N3X6OM6XIFQU18cXRH82u.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXJV5Z6T5N3X6OM6XIFQU18cXRH82u.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eImport worklfow\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXNRDZVV6Xa7u1TBkyIdsuCeYz815B.output.succeeded$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXNRDZVV6Xa7u1TBkyIdsuCeYz815B.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXNRDZVV6Xa7u1TBkyIdsuCeYz815B.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eImport WorkflowStatus \u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXS1TX1X4jXhJki3Lq7IRqshaxVdEs.output.jsonpath_queries.Imported Status$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXNRDZVV6Xa7u1TBkyIdsuCeYz815B.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXNRDZVV6Xa7u1TBkyIdsuCeYz815B.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Workflow\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXUBR2ZH1uBnwnmDxPdiwkrL2aO20Z.output.succeeded$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXUBR2ZH1uBnwnmDxPdiwkrL2aO20Z.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXUBR2ZH1uBnwnmDxPdiwkrL2aO20Z.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eWF Instance Run status\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEXZ6O78H5b8aAnSahu6HRJkDqzQUgS.output.jsonpath_queries.Workflow Instance Status$\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExport Workflow \u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEY9UV7TU0Nh2mFLXTJXsnRjqOublw2.output.succeeded$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEY9UV7TU0Nh2mFLXTJXsnRjqOublw2.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEY9UV7TU0Nh2mFLXTJXsnRjqOublw2.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExported Workflow status\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYD4PM083L2VkrbsP6QXUxIW7pRZbU.output.jsonpath_queries.Exported Status$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYBYDWMY0uqxiLVl1yOIiQXEt9rr41.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYBYDWMY0uqxiLVl1yOIiQXEt9rr41.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eDetach GIT Target from Workflow\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYG0QMKU6rPDSlQN4Zg9Sc2pOxBqjY.output.succeeded$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYG0QMKU6rPDSlQN4Zg9Sc2pOxBqjY.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYG0QMKU6rPDSlQN4Zg9Sc2pOxBqjY.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eDelete GIT Target \u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYHFP2F73wNfh3KlGDGTTD2fzvYes7.output.succeeded$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYHFP2F73wNfh3KlGDGTTD2fzvYes7.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYHFP2F73wNfh3KlGDGTTD2fzvYes7.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eDelete Git Key\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYIMVIVG2qPjFJFLlOzEqkpUrGd5bl.output.succeeded$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYIMVIVG2qPjFJFLlOzEqkpUrGd5bl.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYIMVIVG2qPjFJFLlOzEqkpUrGd5bl.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eDelete WF Instance\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYJSTS6Q3sCTUfF0hxaVO4MncLp1Ox.output.succeeded$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYJSTS6Q3sCTUfF0hxaVO4MncLp1Ox.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYJSTS6Q3sCTUfF0hxaVO4MncLp1Ox.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eDelete Workflow\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYLWAA1Q1ymF69FZd7CYeroDW5zg5S.output.succeeded$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYLWAA1Q1ymF69FZd7CYeroDW5zg5S.output.error.code$\u003c/td\u003e\n\u003ctd\u003e$activity.definition_activity_0216LEYLWAA1Q1ymF69FZd7CYeroDW5zg5S.output.error.message$\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003c/table\u003e"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN.output.variable_workflow_0216LEXB2D73L72Q8UmaEzQ0sNkNshVo4iC$",
+                  "variable_value_new": "$activity.definition_activity_0216LEYV55NFT3dCSXAhzE7tRr4E2CmGyyK.output.total_minutes$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A"
+        ]
+      }
+    }
+  ],
+  "dependent_workflows": [
+    "definition_workflow_0216LEXAQLTUR68lVWyS1h6Py8jlamoAbvN"
+  ]
 }
