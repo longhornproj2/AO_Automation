@@ -25,7 +25,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "description": "test - 3",
+      "description": "test - 4",
       "display_name": "SM-NEXTG-23060-test_",
       "runtime_user": {
         "target_default": true
