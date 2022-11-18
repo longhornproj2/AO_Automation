@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_021G1RF13JX5Q1QvvpNL9NVHmAIdJqXkGs2",
-    "name": "SM-NEXTG-23060-test",
-    "title": "SM-NEXTG-23060-test",
+    "name": "SM-NEXTG-23060-test_",
+    "title": "SM-NEXTG-23060-test_",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,8 +11,8 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "description": "test - 3",
-      "display_name": "SM-NEXTG-23060-test",
+      "description": "test - 3 ",
+      "display_name": "SM-NEXTG-23060-test_",
       "runtime_user": {
         "target_default": true
       },
