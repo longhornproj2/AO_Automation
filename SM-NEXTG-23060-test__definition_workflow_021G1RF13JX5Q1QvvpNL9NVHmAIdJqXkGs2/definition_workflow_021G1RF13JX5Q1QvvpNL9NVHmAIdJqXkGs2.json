@@ -5,21 +5,7 @@
     "title": "SM-NEXTG-23060-test_",
     "type": "generic.workflow",
     "base_type": "workflow",
-    "variables": [
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "1",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_021IPXE5AG3VG1CP7xyS0lbxsvu3Pv2tpj1",
-        "object_type": "variable_workflow"
-      }
-    ],
+    "variables": null,
     "properties": {
       "atomic": {
         "is_atomic": false
