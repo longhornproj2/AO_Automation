@@ -22,6 +22,25 @@
     "object_type": "definition_workflow",
     "actions": [
       {
+        "unique_name": "definition_activity_023613V2MVR5L21Y9ahJ6OAPpkzlLwfeuJP",
+        "name": "rk-sub-sleep",
+        "title": "rk-sub-sleep",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "rk-sub-sleep",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_0236126KB9JX02MI2UDjMPAS382ZNEonGgX",
+          "workflow_name": "rk-sub-sleep"
+        },
+        "object_type": "definition_activity"
+      },
+      {
         "unique_name": "definition_activity_0235XVRMOULQ03vMSTVR7l0zTZI4IoIlVLv",
         "name": "Sleep",
         "title": "Sleep",
@@ -53,5 +72,53 @@
     "categories": [
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
-  }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_0236126KB9JX02MI2UDjMPAS382ZNEonGgX",
+        "name": "rk-sub-sleep",
+        "title": "rk-sub-sleep",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": null,
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "rk-sub-sleep",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "no_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_023613DNML2HE4RSkHt4tDt9jWmg9iR2b1j",
+            "name": "Sleep",
+            "title": "Sleep",
+            "type": "core.sleep",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Sleep",
+              "skip_execution": false,
+              "sleep_interval": 5
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ],
+  "dependent_workflows": [
+    "definition_workflow_0236126KB9JX02MI2UDjMPAS382ZNEonGgX"
+  ]
 }
