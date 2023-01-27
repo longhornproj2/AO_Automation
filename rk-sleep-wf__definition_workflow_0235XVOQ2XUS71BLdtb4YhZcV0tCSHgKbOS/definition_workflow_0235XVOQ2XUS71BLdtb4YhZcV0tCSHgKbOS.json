@@ -41,6 +41,20 @@
         "object_type": "definition_activity"
       },
       {
+        "unique_name": "definition_activity_0235XVRMOULQ03vMSTVR7l0zTZI4IoIlVLv",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 5
+        },
+        "object_type": "definition_activity"
+      },
+      {
         "unique_name": "definition_activity_023610W5WR2OI1leFE0l5GbVsHmxK7wZIxB",
         "name": "Sleep",
         "title": "Sleep",
@@ -53,11 +67,44 @@
           "sleep_interval": 5
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02361AYYU1G3O3xsTfVtySzgo26XdWJ8pSI",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp.global.variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp$",
+              "variable_value_new": "$workflow.definition_workflow_0235XVOQ2XUS71BLdtb4YhZcV0tCSHgKbOS.output.start_time$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
+  },
+  "variables": {
+    "variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp": {
+      "unique_name": "variable_01BZTBKTVA8EX2deMwj0w5dxDB2zbXjjKWp",
+      "properties": {
+        "value": "Test from AO123Dev",
+        "scope": "global",
+        "name": "$String",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
   },
   "subworkflows": [
     {
