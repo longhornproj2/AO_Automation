@@ -41,20 +41,6 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_0235XVRMOULQ03vMSTVR7l0zTZI4IoIlVLv",
-        "name": "Sleep",
-        "title": "Sleep",
-        "type": "core.sleep",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "Sleep",
-          "skip_execution": false,
-          "sleep_interval": 5
-        },
-        "object_type": "definition_activity"
-      },
-      {
         "unique_name": "definition_activity_023610W5WR2OI1leFE0l5GbVsHmxK7wZIxB",
         "name": "Sleep",
         "title": "Sleep",
