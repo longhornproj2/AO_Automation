@@ -7,6 +7,18 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
+        "properties": {
+          "scope": "local",
+          "name": "parent table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_0234OUYB1TIKO50O6x3Ra1DTu3owU0xf3Nu",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
@@ -17,18 +29,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_02360DQP2LZQS5We6cYeKFbO0DdIlrwiaNV",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
-        "properties": {
-          "scope": "local",
-          "name": "parent table",
-          "type": "datatype.table",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_0234OUYB1TIKO50O6x3Ra1DTu3owU0xf3Nu",
         "object_type": "variable_workflow"
       }
     ],
@@ -61,9 +61,7 @@
             "variable_workflow_01T0D9T5LNKC84Yd5jFItFIMLJKyODTOrY4": [],
             "variable_workflow_01T0D9T5LNYD94EpYhYU2ufES4rw2FA6WWW": []
           },
-          "runtime_user": {
-            "target_default": true
-          },
+          "runtime_user": {},
           "skip_execution": false,
           "target": {
             "no_target": true
@@ -188,12 +186,6 @@
       "display_name": "R_table\u0026\u0026\u003e\u003e\u003e",
       "columns": [
         {
-          "is_required": true,
-          "name": "DECIMAL_REQ",
-          "title": "DECIMAL_REQ",
-          "type": "number"
-        },
-        {
           "maxLength": 2000,
           "maximum": 0,
           "minimum": 0,
@@ -202,25 +194,13 @@
           "type": "string"
         },
         {
-          "name": "INTEGER_OPT",
-          "title": "INTEGER_OPT",
-          "type": "integer"
-        },
-        {
-          "name": "a",
-          "title": ".:",
-          "type": "string"
-        },
-        {
-          "name": "DATE_REQ",
-          "title": "DATE_REQ",
-          "type": "date"
-        },
-        {
           "is_required": true,
-          "name": "INTEGER_REQ",
-          "title": "INTEGER_REQ",
-          "type": "integer"
+          "maxLength": 2000,
+          "maximum": 0,
+          "minimum": 0,
+          "name": "STRING_REQ",
+          "title": "STRING_REQ",
+          "type": "string"
         },
         {
           "name": "Decimal_OPT",
@@ -233,13 +213,31 @@
           "type": "date"
         },
         {
-          "is_required": true,
-          "maxLength": 2000,
-          "maximum": 0,
-          "minimum": 0,
-          "name": "STRING_REQ",
-          "title": "STRING_REQ",
+          "name": "INTEGER_OPT",
+          "title": "INTEGER_OPT",
+          "type": "integer"
+        },
+        {
+          "name": "a",
+          "title": ".:",
           "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "DECIMAL_REQ",
+          "title": "DECIMAL_REQ",
+          "type": "number"
+        },
+        {
+          "is_required": true,
+          "name": "INTEGER_REQ",
+          "title": "INTEGER_REQ",
+          "type": "integer"
+        },
+        {
+          "name": "DATE_REQ",
+          "title": "DATE_REQ",
+          "type": "date"
         }
       ],
       "base_type": "datatype",
@@ -255,19 +253,6 @@
         "type": "generic.workflow",
         "base_type": "workflow",
         "variables": [
-          {
-            "schema_id": "datatype.number",
-            "properties": {
-              "value": 0,
-              "scope": "output",
-              "name": "RG dec output",
-              "type": "datatype.number",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01T0D9T5LMK0W2zYoYHHWLfZawgKfc5hlBm",
-            "object_type": "variable_workflow"
-          },
           {
             "schema_id": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
             "properties": {
@@ -305,12 +290,12 @@
             "properties": {
               "value": 0,
               "scope": "output",
-              "name": "RG dec output1",
+              "name": "RG dec output",
               "type": "datatype.number",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01T0D9T5LNANW01fp5qXn4vgaMkIVq3gwVt",
+            "unique_name": "variable_workflow_01T0D9T5LMK0W2zYoYHHWLfZawgKfc5hlBm",
             "object_type": "variable_workflow"
           },
           {
@@ -343,6 +328,19 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01T0D9T5LNKC84Yd5jFItFIMLJKyODTOrY4",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.number",
+            "properties": {
+              "value": 0,
+              "scope": "output",
+              "name": "RG dec output1",
+              "type": "datatype.number",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01T0D9T5LNANW01fp5qXn4vgaMkIVq3gwVt",
             "object_type": "variable_workflow"
           },
           {
