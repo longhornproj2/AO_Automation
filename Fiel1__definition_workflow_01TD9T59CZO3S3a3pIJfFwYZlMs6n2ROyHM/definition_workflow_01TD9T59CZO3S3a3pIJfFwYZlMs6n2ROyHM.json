@@ -1,0 +1,319 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01TD9T59CZO3S3a3pIJfFwYZlMs6n2ROyHM",
+    "name": "Apr 3 RG Grandchild",
+    "title": "Apr 3 RG Grandchild",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.number",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "RG dec output",
+          "type": "datatype.number",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01TD9T5AVPFII5L4fvNqIz7gL4JxdA679T2",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.number",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "RG dec output1",
+          "type": "datatype.number",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01TD9T5AVPR820G9G9PiMhBQW1aMORw0APy",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "string": "CHILD1"
+              }
+            }
+          ],
+          "scope": "input",
+          "name": "child input table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01TD9T5AVQIWS73AhWtTn3OGv8vvz90gfJb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "string": "TEST"
+              }
+            },
+            {
+              "column_data": {
+                "string": "TEST"
+              }
+            }
+          ],
+          "scope": "output",
+          "name": "RG output table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01TD9T5AVR2AH6EaqXXnOY1SqvMu6ei2E55",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "secure local",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01TD9T5AVQ9813E6Q8mDaG9LeTyLUzIo4vn",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01FM7S1LZ58KD2anuqHyRI7PDo1LlrzA8nP",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Name": "Childlocal1"
+              }
+            }
+          ],
+          "scope": "input",
+          "name": "RG non mandatory table",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01TD9T5AVQSSH2RTHJdTSSzxXbmSDeCwToX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "string input from parent",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01TD9T5AVQ06C5yNl3Zantl0G6xAAKS6sat",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Apr 3 RG Grandchild",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01WNHVUDY3L250ifFTgyJ3KfMXlcdK2A8Q3",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 3
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "rules": {
+    "ruleevent_024QBRBZ9P11P07qBcgbvam6P2m1YSI0V04": {
+      "name": "RG task",
+      "title": "RG task",
+      "type": "approval_task.rule_event",
+      "rule_type": "rule_event",
+      "base_type": "rule",
+      "object_type": "ruleevent",
+      "version": "1.0.0",
+      "properties": {
+        "conditions": {
+          "left_operand": "$output.assignees[0]$",
+          "operator": "eq",
+          "right_operand": "ramygane@cisco.com"
+        },
+        "description": "",
+        "disabled": false,
+        "display_name": "RG task",
+        "rule_type": "rule_event",
+        "title": "RG task",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "workflow_id": "definition_workflow_01TD9T59CZO3S3a3pIJfFwYZlMs6n2ROyHM",
+            "wf_input_variables": {
+              "variable_workflow_01TD9T5AVQ06C5yNl3Zantl0G6xAAKS6sat": "test"
+            }
+          }
+        ]
+      },
+      "disabled": false,
+      "unique_name": "ruleevent_024QBRBZ9P11P07qBcgbvam6P2m1YSI0V04"
+    },
+    "ruleschedule_024QCLAG93YKS2EJLsCM35av90gzfQTnPk7": {
+      "name": "RG Apr 3 Schedule",
+      "title": "RG Apr 3 Schedule",
+      "type": "schedule.rule_schedule",
+      "rule_type": "rule_schedule",
+      "base_type": "rule",
+      "object_type": "ruleschedule",
+      "version": "1.0.0",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "description": "",
+        "display_name": "RG Apr 3 Schedule",
+        "interval_hours": 0,
+        "interval_minutes": 0,
+        "number_of_times": 1,
+        "rule_type": "rule_schedule",
+        "starttime": "09:59",
+        "timezone": "America/Chicago",
+        "title": "RG Apr 3 Schedule",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "workflow_id": "definition_workflow_01TD9T59CZO3S3a3pIJfFwYZlMs6n2ROyHM",
+            "wf_input_variables": {
+              "variable_workflow_01TD9T5AVQ06C5yNl3Zantl0G6xAAKS6sat": "test"
+            }
+          }
+        ]
+      },
+      "disabled": false,
+      "unique_name": "ruleschedule_024QCLAG93YKS2EJLsCM35av90gzfQTnPk7"
+    }
+  },
+  "events": {
+    "event_024QBRBZ6DY2D45Ff9cv0x6toqmWmFHaQZq": {
+      "name": "RG TASK RULE UPDATED",
+      "title": "RG TASK RULE UPDATED",
+      "type": "approval_task.event",
+      "base_type": "event",
+      "object_type": "event",
+      "rule_id": "ruleevent_024QBRBZ9P11P07qBcgbvam6P2m1YSI0V04",
+      "target_id": "",
+      "webhook_id": "",
+      "version": "1.0.0",
+      "properties": {
+        "conditions": {
+          "left_operand": "$output.assignees[0]$",
+          "operator": "eq",
+          "right_operand": "ramygane@cisco.com"
+        },
+        "description": "",
+        "disabled": false,
+        "display_name": "RG task",
+        "rule_type": "rule_event",
+        "title": "RG TASK RULE UPDATED"
+      },
+      "unique_name": "event_024QBRBZ6DY2D45Ff9cv0x6toqmWmFHaQZq"
+    }
+  },
+  "schedules": {
+    "schedule_024QCLAG525G25lEdPbDq6RUDCtAC4xVZNO": {
+      "unique_name": "schedule_024QCLAG525G25lEdPbDq6RUDCtAC4xVZNO",
+      "name": "RG Apr 3 Schedule",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "object_type": "schedule",
+      "rule_id": "ruleschedule_024QCLAG93YKS2EJLsCM35av90gzfQTnPk7",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "America/Chicago",
+        "starttime": "09:59",
+        "interval_hours": 0,
+        "interval_minutes": 0,
+        "number_of_times": 1,
+        "display_name": "RG Apr 3 Schedule",
+        "description": ""
+      },
+      "version": "1.0.0"
+    }
+  },
+  "table_types": {
+    "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ": {
+      "unique_name": "tabletype_01FLA9SB1Z6K967CcVAoD4KzIlhEvP1aNOJ",
+      "data_type": "datatype.tabletype",
+      "display_name": "RG child input table",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "string",
+          "title": "string",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01FM7S1LZ58KD2anuqHyRI7PDo1LlrzA8nP": {
+      "unique_name": "tabletype_01FM7S1LZ58KD2anuqHyRI7PDo1LlrzA8nP",
+      "data_type": "datatype.tabletype",
+      "display_name": "New table",
+      "columns": [
+        {
+          "name": "Name",
+          "title": "Name",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "wf_rule_trigger": {
+    "triggerevent_024QBRBZCYZKJ1toPSykrGPOBQFvafdTMGX": {
+      "wf_unique_name": "definition_workflow_01TD9T59CZO3S3a3pIJfFwYZlMs6n2ROyHM",
+      "rule_unique_name": "ruleevent_024QBRBZ9P11P07qBcgbvam6P2m1YSI0V04",
+      "trig_unique_name": "triggerevent_024QBRBZCYZKJ1toPSykrGPOBQFvafdTMGX"
+    },
+    "triggerschedule_024QCLAGCFV311iitmDSLMEmRI6o6YKr2Tq": {
+      "wf_unique_name": "definition_workflow_01TD9T59CZO3S3a3pIJfFwYZlMs6n2ROyHM",
+      "rule_unique_name": "ruleschedule_024QCLAG93YKS2EJLsCM35av90gzfQTnPk7",
+      "trig_unique_name": "triggerschedule_024QCLAGCFV311iitmDSLMEmRI6o6YKr2Tq"
+    }
+  }
+}
