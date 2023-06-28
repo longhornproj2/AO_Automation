@@ -1,0 +1,139 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_026RK98I05OXF5EJ4rjENSu6pkpdzFuZQq8",
+    "name": "RG simple module target with ref",
+    "title": "RG simple module target with ref",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Meraki API Key",
+          "type": "datatype.secure_string",
+          "description": "Your Meraki API key. This can be generated in your Meraki dashboard",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_026RK98I95AXS7lY2StnBnU5XeJ27SwDtDb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Organization List",
+          "type": "datatype.string",
+          "description": "The list of organizations the API key provided has access to",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_026RK98I94TY24AZTgCeArsMsQkkQltglUT",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Gets a list of Cisco Meraki organizations that the API key provided has access to.\n\nTarget: HTTP Endpoint for \"api.meraki.com\" with a path of \"/api\"\n\nAccount Key: None (uses an API key)\n\nSteps:\n[] Request a list of organizations\n[] Check if the request was successful:\n[]\u003e If it was, set the output variable\n[]\u003e If it wasn't, return an error\n\nMore information about this API: https://developer.cisco.com/meraki/api-v1/#!get-organizations",
+      "display_name": "RG simple module target with ref",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "$module_target;Meraki;securex:ao:meraki$",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_026RK98NDQKHK0ix3QHS602FdyJz7CZtNky",
+        "name": "HTTP Request",
+        "title": "Get the organization list",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "accept": "application/json",
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "allow_headers_redirect": false,
+          "content_type": "application/json",
+          "continue_on_error_status_code": true,
+          "continue_on_failure": false,
+          "display_name": "Get the organization list",
+          "method": "GET",
+          "relative_url": "v1/organizations",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "$module_target;Meraki;securex:ao:meraki$"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_026RKAIRZ6DJ40GNipmqD0cPOi6A90tUpVE",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_026RK98I05OXF5EJ4rjENSu6pkpdzFuZQq8.output.variable_workflow_026RK98I94TY24AZTgCeArsMsQkkQltglUT$",
+              "variable_value_new": "$workflow.definition_workflow_026RK98I05OXF5EJ4rjENSu6pkpdzFuZQq8.target.01JARTM781BXW6UwUheWkpf08tODXPQNusF.output.metadata.sx_module_info.target_url$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_026RKFPMF0DDN4g8X3rjaACcob6j5m8XcGM",
+        "name": "RG Child Meraki ",
+        "title": "RG Child Meraki ",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "RG Child Meraki ",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "execute_on_this_target": true,
+            "target_id": "$module_target;Meraki;securex:ao:meraki$",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_021MUTEKKIVT02pkFtxvriF9aypR9eAVmXu",
+          "workflow_name": "RG Child Meraki "
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01FzsThUQ3yXAswxOItEqLAIiGLEPlIt0"
+    ]
+  },
+  "dependent_workflows": [
+    "definition_workflow_021MUTEKKIVT02pkFtxvriF9aypR9eAVmXu"
+  ],
+  "module_targets": [
+    {
+      "module_type": "Meraki",
+      "external_id": "securex:ao:meraki"
+    }
+  ]
+}
