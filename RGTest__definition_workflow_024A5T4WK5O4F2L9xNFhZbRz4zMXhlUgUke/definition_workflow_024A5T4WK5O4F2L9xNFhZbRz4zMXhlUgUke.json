@@ -12,6 +12,9 @@
       },
       "delete_workflow_instance": false,
       "display_name": "24098_single-day",
+      "runtime_user": {
+        "target_default": true
+      },
       "target": {
         "no_target": true
       },
@@ -36,6 +39,34 @@
           "display_name": "To Lower",
           "skip_execution": false,
           "source": "Foo"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0281JFF44QC2U32HrSeKTGxU2HM3axyAIMt",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0281JSFRO6P1D7mSE7auuMGsvE3nWC50HgA",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
         },
         "object_type": "definition_activity"
       }
