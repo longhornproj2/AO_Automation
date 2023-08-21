@@ -1,0 +1,324 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_024A5T4WK5O4F2L9xNFhZbRz4zMXhlUgUke",
+    "name": "24098_single-day",
+    "title": "24098_single-day",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "24098_single-day",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL",
+          "run_on_all_targets": false
+        }
+      },
+      "wf_metadata": {
+        "coa": {
+          "observable_types": [
+            "md5"
+          ]
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_024A5TAJ814LV4C7pGLEqw10RWVoh5uHjrX",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "Foo"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_023LH4IGMVAXS5XVIIgBdAsca9QtC71wKk7"
+    ]
+  },
+  "triggers": {
+    "triggerschedule_024MTZXOFU7UE0wudJT0XN1LYgtREULCGOp": {
+      "workflow_id": "definition_workflow_024A5T4WK5O4F2L9xNFhZbRz4zMXhlUgUke",
+      "name": "RG trigger",
+      "title": "",
+      "lowercase_name": "schedule.rg_trigger",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_024A5T3DRQ0IT4biXwiqKeMF7MTxxV4OgaC",
+      "version": "1.0.0",
+      "disabled": false,
+      "unique_name": "triggerschedule_024MTZXOFU7UE0wudJT0XN1LYgtREULCGOp",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_024A5T3DRQ0IT4biXwiqKeMF7MTxxV4OgaC": {
+      "unique_name": "schedule_024A5T3DRQ0IT4biXwiqKeMF7MTxxV4OgaC",
+      "name": "24098_single-day",
+      "description": "test",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "object_type": "schedule",
+      "rule_id": "",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "America/Chicago",
+        "starttime": "09:36",
+        "interval_hours": 0,
+        "interval_minutes": 1,
+        "number_of_times": 10,
+        "display_name": "24098_single-day",
+        "description": "test"
+      },
+      "version": "1.0.0"
+    }
+  },
+  "targets": {
+    "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa": {
+      "unique_name": "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa",
+      "name": "GOOGLE",
+      "title": "GOOGLE",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "GOOGLE",
+        "host": "www.google.com",
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01A5GL8XCYYDU3tq8NtjexrASAz5O1OlEcn": {
+      "unique_name": "definition_target_01A5GL8XCYYDU3tq8NtjexrASAz5O1OlEcn",
+      "name": "RG google",
+      "title": "RG google",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "RG1 TEST",
+        "disable_certificate_validation": true,
+        "display_name": "RG google",
+        "host": "google.com",
+        "no_runtime_user": true,
+        "protocol": "http"
+      }
+    },
+    "definition_target_01BAAPR6GRDSQ6MgV7JNZyqxhX3W7UnGxr9": {
+      "unique_name": "definition_target_01BAAPR6GRDSQ6MgV7JNZyqxhX3W7UnGxr9",
+      "name": "World Clock",
+      "title": "World Clock",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "World Clock",
+        "host": "worldtimeapi.org",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "api/timezone",
+        "protocol": "http"
+      }
+    },
+    "definition_target_01ENY7B71QN4I5hpsyuFDkR9TU8goAQfujt": {
+      "unique_name": "definition_target_01ENY7B71QN4I5hpsyuFDkR9TU8goAQfujt",
+      "name": "YAHOO",
+      "title": "YAHOO",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "YAHOO",
+        "host": "www.yahoo.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01ERJ8MMGZII444qFte1Z0GF5ihdxT0mnzE": {
+      "unique_name": "definition_target_01ERJ8MMGZII444qFte1Z0GF5ihdxT0mnzE",
+      "name": "cisco.com",
+      "title": "cisco.com",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "cisco.com",
+        "host": "cisco.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01F6OUM7LRRSN7mYKK0MKbFKTxY2NJdUpKN": {
+      "unique_name": "definition_target_01F6OUM7LRRSN7mYKK0MKbFKTxY2NJdUpKN",
+      "name": "SJ_HTTP Internal",
+      "title": "SJ_HTTP Internal",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "SJ_HTTP Internal",
+        "host": "dev1-sa.ao-local.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "/be-console/api/",
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01GRPRXQUCM150Yq3NSToUUMddI92Ioa0ED": {
+      "unique_name": "definition_target_01GRPRXQUCM150Yq3NSToUUMddI92Ioa0ED",
+      "name": "CA Dev1",
+      "title": "CA Dev1",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "CA Dev1",
+        "host": "dev1-sa.ao-local.com",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01HRJW9YCPJ0A0pzWrOGHojZ22VbDCPISjp": {
+      "unique_name": "definition_target_01HRJW9YCPJ0A0pzWrOGHojZ22VbDCPISjp",
+      "name": "RG Generate Token",
+      "title": "RG Generate Token",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG Generate Token",
+        "host": "jwtbuilder.jamiekurtz.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "/tokens",
+        "protocol": "https"
+      }
+    },
+    "definition_target_01J931OQRBW005jGqcmEVhTycmdEBqz0bNU": {
+      "unique_name": "definition_target_01J931OQRBW005jGqcmEVhTycmdEBqz0bNU",
+      "name": "RG http proxy",
+      "title": "RG http proxy",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG http proxy",
+        "host": "yahoo.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https",
+        "proxy_url": "http://18.218.78.168:3128",
+        "proxy_username": "admin"
+      }
+    },
+    "definition_target_01JRT69ZOR4WT191kbtnap0hzmcc0VKIEpM": {
+      "unique_name": "definition_target_01JRT69ZOR4WT191kbtnap0hzmcc0VKIEpM",
+      "name": "RG target12020-10-28T19:25:36.194080925Z",
+      "title": "RG target12020-10-28T19:25:36.194080925Z",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "RG target12020-10-28T19:25:36.194080925Z",
+        "host": "google.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "http"
+      }
+    },
+    "definition_target_01JRT9FIM1PCF0LOCOM9W5aTKgNomBvsTRu": {
+      "unique_name": "definition_target_01JRT9FIM1PCF0LOCOM9W5aTKgNomBvsTRu",
+      "name": "RG target12020-10-28T19:29:43.621424088Z",
+      "title": "RG target12020-10-28T19:29:43.621424088Z",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "RG target12020-10-28T19:29:43.621424088Z",
+        "host": "google.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "http"
+      }
+    }
+  },
+  "target_groups": {
+    "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL": {
+      "unique_name": "target_group_01ENY9U675FMD4ez9Lw6JQZhZl1O435piOL",
+      "name": "GOOGLE YAHOO",
+      "title": "GOOGLE YAHOO",
+      "description": "Added 2nd target to the Target Group",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": false,
+          "selected_target_ids": [
+            "definition_target_01A5GL8XCYYDU3tq8NtjexrASAz5O1OlEcn",
+            "definition_target_0192FVT23JP6Z3twdcxyQvoWn9Qs5uTdvFa",
+            "definition_target_01ENY7B71QN4I5hpsyuFDkR9TU8goAQfujt",
+            "definition_target_01GRPRXQUCM150Yq3NSToUUMddI92Ioa0ED",
+            "definition_target_01F6OUM7LRRSN7mYKK0MKbFKTxY2NJdUpKN",
+            "definition_target_01BAAPR6GRDSQ6MgV7JNZyqxhX3W7UnGxr9",
+            "definition_target_01HRJW9YCPJ0A0pzWrOGHojZ22VbDCPISjp",
+            "definition_target_01J931OQRBW005jGqcmEVhTycmdEBqz0bNU",
+            "definition_target_01JRT69ZOR4WT191kbtnap0hzmcc0VKIEpM",
+            "definition_target_01JRT9FIM1PCF0LOCOM9W5aTKgNomBvsTRu",
+            "definition_target_01ERJ8MMGZII444qFte1Z0GF5ihdxT0mnzE"
+          ]
+        },
+        {
+          "data_target_type": "terminal.endpoint",
+          "view_target_type": "terminal.endpoint",
+          "include_all_targets": false,
+          "criteria": [
+            {
+              "operator": "mw",
+              "left_operand": "$input.display_name$",
+              "right_operand": "*RG*"
+            }
+          ]
+        },
+        {
+          "data_target_type": "email.imap_endpoint",
+          "view_target_type": "email.imap_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  }
+}
