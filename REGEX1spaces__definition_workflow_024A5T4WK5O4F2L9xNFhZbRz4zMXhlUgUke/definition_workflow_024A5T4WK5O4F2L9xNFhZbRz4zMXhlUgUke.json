@@ -1,0 +1,129 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_024A5T4WK5O4F2L9xNFhZbRz4zMXhlUgUke",
+    "name": "24098_single-day",
+    "title": "24098_single-day",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "24098_single-day",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      },
+      "wf_metadata": {
+        "coa": {
+          "observable_types": [
+            "md5"
+          ]
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_024A5TAJ814LV4C7pGLEqw10RWVoh5uHjrX",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "Foo"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0281JFF44QC2U32HrSeKTGxU2HM3axyAIMt",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_028269SO5CV846PAkH4E0ahiBeBDyeNtM91",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0281JSFRO6P1D7mSE7auuMGsvE3nWC50HgA",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_023LH4IGMVAXS5XVIIgBdAsca9QtC71wKk7"
+    ]
+  },
+  "triggers": {
+    "triggerschedule_024MTZXOFU7UE0wudJT0XN1LYgtREULCGOp": {
+      "workflow_id": "definition_workflow_024A5T4WK5O4F2L9xNFhZbRz4zMXhlUgUke",
+      "name": "RG trigger",
+      "title": "",
+      "lowercase_name": "schedule.rg_trigger",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_024A5T3DRQ0IT4biXwiqKeMF7MTxxV4OgaC",
+      "version": "1.0.0",
+      "disabled": false,
+      "unique_name": "triggerschedule_024MTZXOFU7UE0wudJT0XN1LYgtREULCGOp",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_024A5T3DRQ0IT4biXwiqKeMF7MTxxV4OgaC": {
+      "unique_name": "schedule_024A5T3DRQ0IT4biXwiqKeMF7MTxxV4OgaC",
+      "name": "24098_single-day",
+      "description": "test",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "object_type": "schedule",
+      "rule_id": "",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "America/Chicago",
+        "starttime": "09:36",
+        "interval_hours": 0,
+        "interval_minutes": 1,
+        "number_of_times": 10,
+        "display_name": "24098_single-day",
+        "description": "test"
+      },
+      "version": "1.0.0"
+    }
+  }
+}
