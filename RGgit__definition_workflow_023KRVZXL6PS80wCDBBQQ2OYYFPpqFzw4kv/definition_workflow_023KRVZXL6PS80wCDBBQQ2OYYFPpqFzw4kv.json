@@ -1,0 +1,250 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_023KRVZXL6PS80wCDBBQQ2OYYFPpqFzw4kv",
+    "name": "RG atomic Oct 18",
+    "title": "RG atomic Oct 18",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "input",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_023KRW9DGDD5K23BjdZnECF8R5AZRssyZxl",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Atomic",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG atomic Oct 18",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_023KRWC3I83605FhYaodgPjwsJkwtu3JYvS",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01ENXQCR0ZZPL58vlxp4HWqeGIXjr5wb55u",
+      "category_01ES7M5QVM8P83k0I8MKChHa3rxZE1Qz7sy",
+      "category_01ESDZ4MTUC0O3ry8t5Oag6S5DNAiSq6Enx",
+      "category_01ET2WZPQK10O0yN3yVRFkmvCro8MiM9M8F",
+      "category_01GSVCJWN055A7N1fAtT7J6p50NetflsunS",
+      "category_01GSVDDUH8JSO6GNvtJK0prjgXbWCZhQrED",
+      "category_01GSVHSJDF1J40lQK9v1qLanTZEztSohnEq",
+      "category_01G6YR6PRYTQO32ByflvpCk1mnyHDu97pqi",
+      "category_01INPS5Z11FSU3ag6ell9lu8Yl23Y7b99vM",
+      "category_01INQATJSKO646eSPnel1yY8mEiICzAUTKs",
+      "category_01INQAU43P4G015OkwFrPSz6xIaYsD1QbEp",
+      "category_01A6G0DX5INHM6ldk8Lqix0oZCVNmTckhEd",
+      "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A",
+      "category_01ES6TAHPJVYJ4FL66AqJ8NEz5Hfahh4LoS",
+      "category_01JFUQPO1XMLT66actth5nIPZxLCRDsgEXd",
+      "category_01NUYYJRWULKG1U0d87tqB85DdskR3IlA9H",
+      "category_01TDYBFZF4JVL2rfHzHh0dxKTbSqKJR2ZlO",
+      "category_01TKZXFRAIT976lXgBdKWwHje1X0UESc1Ge",
+      "category_01WNGJWYE3NE07Sg0jrLiKIQxatOunlpriu"
+    ]
+  },
+  "categories": {
+    "category_01A6G0DX5INHM6ldk8Lqix0oZCVNmTckhEd": {
+      "unique_name": "category_01A6G0DX5INHM6ldk8Lqix0oZCVNmTckhEd",
+      "name": "Regression",
+      "title": "Regression",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01ENXQCR0ZZPL58vlxp4HWqeGIXjr5wb55u": {
+      "unique_name": "category_01ENXQCR0ZZPL58vlxp4HWqeGIXjr5wb55u",
+      "name": "Orbital",
+      "title": "Orbital",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01ES6TAHPJVYJ4FL66AqJ8NEz5Hfahh4LoS": {
+      "unique_name": "category_01ES6TAHPJVYJ4FL66AqJ8NEz5Hfahh4LoS",
+      "name": "RG Automation",
+      "title": "RG Automation",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01ES7M5QVM8P83k0I8MKChHa3rxZE1Qz7sy": {
+      "unique_name": "category_01ES7M5QVM8P83k0I8MKChHa3rxZE1Qz7sy",
+      "name": "SPOT",
+      "title": "SPOT",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01ESDZ4MTUC0O3ry8t5Oag6S5DNAiSq6Enx": {
+      "unique_name": "category_01ESDZ4MTUC0O3ry8t5Oag6S5DNAiSq6Enx",
+      "name": "AO_SMOKE_TEST",
+      "title": "AO_SMOKE_TEST",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01ET2WZPQK10O0yN3yVRFkmvCro8MiM9M8F": {
+      "unique_name": "category_01ET2WZPQK10O0yN3yVRFkmvCro8MiM9M8F",
+      "name": "ExploratoryPrep",
+      "title": "ExploratoryPrep",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01G6YR6PRYTQO32ByflvpCk1mnyHDu97pqi": {
+      "unique_name": "category_01G6YR6PRYTQO32ByflvpCk1mnyHDu97pqi",
+      "name": "VALIDATION",
+      "title": "VALIDATION",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01GSVCJWN055A7N1fAtT7J6p50NetflsunS": {
+      "unique_name": "category_01GSVCJWN055A7N1fAtT7J6p50NetflsunS",
+      "name": "Test Create category 2020-06-25T02:32:34.865457943Z",
+      "title": "TestCreate category 2020-06-25T02:32:34.865457943Z",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01GSVDDUH8JSO6GNvtJK0prjgXbWCZhQrED": {
+      "unique_name": "category_01GSVDDUH8JSO6GNvtJK0prjgXbWCZhQrED",
+      "name": "Test Create category 2020-06-25T02:33:40.120958628Z",
+      "title": "TestCreate category 2020-06-25T02:33:40.120958628Z",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01GSVHSJDF1J40lQK9v1qLanTZEztSohnEq": {
+      "unique_name": "category_01GSVHSJDF1J40lQK9v1qLanTZEztSohnEq",
+      "name": "Test Create category 2020-06-25T02:39:25.415211034Z",
+      "title": "TestCreate category 2020-06-25T02:39:25.415211034Z",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A": {
+      "unique_name": "category_01GUFX9FVCE283ZPiHKK9kqAufyYonIV94A",
+      "name": "CA Web Services",
+      "title": "CA Web Services",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01INPS5Z11FSU3ag6ell9lu8Yl23Y7b99vM": {
+      "unique_name": "category_01INPS5Z11FSU3ag6ell9lu8Yl23Y7b99vM",
+      "name": "incident",
+      "title": "incident",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01INQATJSKO646eSPnel1yY8mEiICzAUTKs": {
+      "unique_name": "category_01INQATJSKO646eSPnel1yY8mEiICzAUTKs",
+      "name": "response",
+      "title": "response",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01INQAU43P4G015OkwFrPSz6xIaYsD1QbEp": {
+      "unique_name": "category_01INQAU43P4G015OkwFrPSz6xIaYsD1QbEp",
+      "name": "metrics",
+      "title": "metrics",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01JFUQPO1XMLT66actth5nIPZxLCRDsgEXd": {
+      "unique_name": "category_01JFUQPO1XMLT66actth5nIPZxLCRDsgEXd",
+      "name": "SecureX TME",
+      "title": "SecureX TME",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01NUYYJRWULKG1U0d87tqB85DdskR3IlA9H": {
+      "unique_name": "category_01NUYYJRWULKG1U0d87tqB85DdskR3IlA9H",
+      "name": "CA Create category 2021-04-19T18:59:30.99678156Z",
+      "title": "CA Create category2021-04-19T18:59:30.99678156Z",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01TDYBFZF4JVL2rfHzHh0dxKTbSqKJR2ZlO": {
+      "unique_name": "category_01TDYBFZF4JVL2rfHzHh0dxKTbSqKJR2ZlO",
+      "name": "Common",
+      "title": "Common",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01TKZXFRAIT976lXgBdKWwHje1X0UESc1Ge": {
+      "unique_name": "category_01TKZXFRAIT976lXgBdKWwHje1X0UESc1Ge",
+      "name": "VaultTesting",
+      "title": "VaultTesting",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01WNGJWYE3NE07Sg0jrLiKIQxatOunlpriu": {
+      "unique_name": "category_01WNGJWYE3NE07Sg0jrLiKIQxatOunlpriu",
+      "name": "HA ATOMICS",
+      "title": "HA ATOMICS",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "system",
+      "object_type": "category"
+    }
+  }
+}
