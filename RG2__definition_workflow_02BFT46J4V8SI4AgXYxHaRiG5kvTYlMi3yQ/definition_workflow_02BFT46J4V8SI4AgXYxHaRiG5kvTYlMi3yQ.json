@@ -1,0 +1,95 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02BFT46J4V8SI4AgXYxHaRiG5kvTYlMi3yQ",
+    "name": "RG Test Jan 12",
+    "title": "RG Test Jan 12",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "automation_rules": {
+        "type": [
+          "incident.rule_event"
+        ]
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG Test Jan 12",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02BFT4AH9CU4P0CqHqyxdO9mujAAIprHJ6V",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02BR6O79HJF840Xit2ljMTjjeYhZgkbyQan",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "rules": {
+    "ruleevent_02BFT4ZF8JTPN2KtUq0dvMHFyWNUorphPP6": {
+      "name": "RG PR2",
+      "title": "RG PR2",
+      "type": "incident.rule_event",
+      "rule_type": "rule_event",
+      "base_type": "rule",
+      "object_type": "ruleevent",
+      "version": "1.0.0",
+      "properties": {
+        "description": "",
+        "disabled": false,
+        "display_name": "RG PR2",
+        "group_by": true,
+        "rule_type": "rule_event",
+        "stop_subsequent_rules": true,
+        "title": "RG PR2",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "ref_id": "definition_workflow_02BFT46J4V8SI4AgXYxHaRiG5kvTYlMi3yQ",
+            "status": {
+              "state": "started-polling",
+              "prev_state": "started-polling",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": false,
+      "unique_name": "ruleevent_02BFT4ZF8JTPN2KtUq0dvMHFyWNUorphPP6"
+    }
+  }
+}
