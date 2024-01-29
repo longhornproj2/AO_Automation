@@ -1,0 +1,59 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02BUBXLL4131438edybS4PXs5BxsfKuYp1Q",
+    "name": "RG parent Jan 29",
+    "title": "RG parent Jan 29",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG parent Jan 29",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02BUBXQ6V0RNH46ILhmKMo7ls9Tdnnqmiu4",
+        "name": "XDR - Restore Systems",
+        "title": "XDR - Restore Systems",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "XDR - Restore Systems",
+          "input": {
+            "variable_workflow_02769R8B8GSYX3EmCfeyPQxqYWf87F4axUg": "",
+            "variable_workflow_02769R8B8H43H4TQ6qrl0jAPuYcGl4fOvOF": "",
+            "variable_workflow_02769R8B8HBSQ1LPiXmBgD7kotw2kvDkFfD": "",
+            "variable_workflow_02769R8B8HSUJ1wMhv5qaqYTP6pthxIAjqb": "",
+            "variable_workflow_02769R8B8I3OP3weYQIwAJ67F9ubni0soby": ""
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "execute_on_this_target_group": true,
+            "target_group_id": "target_group_01HLKTH50I3ZU5IfL3dwQos38eRFcE5gYjM"
+          },
+          "workflow_id": "definition_workflow_0245TUQETEDQ07HIq1IzeEzAluJTi7uOz87",
+          "workflow_name": "XDR - Restore Systems"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "dependent_workflows": [
+    "definition_workflow_0245TUQETEDQ07HIq1IzeEzAluJTi7uOz87"
+  ]
+}
