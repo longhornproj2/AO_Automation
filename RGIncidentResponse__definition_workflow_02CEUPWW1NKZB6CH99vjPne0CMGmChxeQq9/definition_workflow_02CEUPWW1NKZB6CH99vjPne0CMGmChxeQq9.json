@@ -1,0 +1,91 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02CEUPWW1NKZB6CH99vjPne0CMGmChxeQq9",
+    "name": "RG incident response",
+    "title": "RG incident response",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "atomic_group": "Core",
+        "is_atomic": true
+      },
+      "automation_rules": {
+        "type": [
+          "incident.rule_event"
+        ]
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG incident response",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      },
+      "wf_metadata": {
+        "coa": {
+          "action": [
+            "alert",
+            "allow",
+            "augment",
+            "contain",
+            "delete",
+            "deny",
+            "detonate",
+            "distill",
+            "get",
+            "investigate",
+            "locate",
+            "mitigate",
+            "modify",
+            "move",
+            "notify",
+            "other",
+            "pause",
+            "query",
+            "redirect",
+            "remediate",
+            "report",
+            "response",
+            "restore",
+            "resume",
+            "save",
+            "scan",
+            "set",
+            "snapshot",
+            "start",
+            "stop",
+            "substitute",
+            "sync",
+            "throttle",
+            "update"
+          ],
+          "intent": "incident_response"
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02CEUQ19FO8EQ2AeN9XFlT6jA1c7Y2qUCjN",
+        "name": "Completed",
+        "title": "Completed",
+        "type": "logic.completed",
+        "base_type": "activity",
+        "properties": {
+          "completion_type": "succeeded",
+          "continue_on_failure": false,
+          "display_name": "Completed",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ],
+    "template_type": "template_workflow.incident_response"
+  }
+}
