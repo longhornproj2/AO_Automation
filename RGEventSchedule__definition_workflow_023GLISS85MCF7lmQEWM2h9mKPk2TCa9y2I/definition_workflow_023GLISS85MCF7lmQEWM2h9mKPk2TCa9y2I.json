@@ -42,7 +42,10 @@
       },
       "automation_rules": {
         "type": [
-          "email.rule_event"
+          "email.rule_event",
+          "incident.rule_event",
+          "approval_task.rule_event",
+          "schedule.rule_schedule"
         ]
       },
       "delete_workflow_instance": false,
@@ -51,11 +54,34 @@
         "target_default": true
       },
       "target": {
-        "no_target": true
+        "target_type": "web-service.endpoint",
+        "target_id": "$module_target;Meraki;securex:ao:meraki$",
+        "execute_on_workflow_target": true
       }
     },
     "object_type": "definition_workflow",
     "actions": [
+      {
+        "unique_name": "definition_activity_02BQ7827F2H4I0Yrzx5ezhKqiP26yirZON3",
+        "name": "Copy(1)-DarkTrace-Automation TEST WF",
+        "title": "Copy(1)-DarkTrace-Automation TEST WF",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "Copy(1)-DarkTrace-Automation TEST WF",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "execute_on_this_target": true,
+            "target_id": "$module_target;Darktrace DETECT \u0026 RESPOND;securex:ao:darktrace$",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_02BP9LNODSDLE0lMguVhopAdIKW0fsVxDag",
+          "workflow_name": "Copy(1)-DarkTrace-Automation TEST WF"
+        },
+        "object_type": "definition_activity"
+      },
       {
         "unique_name": "definition_activity_023GLISVP90Y51pRCk842pVAOTfWo9jE9GM",
         "name": "Read Table from JSON",
@@ -253,6 +279,158 @@
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
   },
+  "rules": {
+    "ruleevent_028GURINTO3RN3swZ3tQTfVoymZ4aRE8VAd": {
+      "name": "New Rule where does it go? ",
+      "title": "New Rule where does it go? ",
+      "type": "incident.rule_event",
+      "rule_type": "rule_event",
+      "base_type": "rule",
+      "object_type": "ruleevent",
+      "version": "1.0.0",
+      "properties": {
+        "description": "",
+        "disabled": true,
+        "display_name": "New Rule where does it go? ",
+        "group_by": false,
+        "rule_type": "rule_event",
+        "title": "New Rule where does it go? ",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "ref_id": "definition_workflow_024RZL40FY0S018oUTupy5QIk5wuoFJCa2V",
+            "wf_input_variables": {
+              "variable_workflow_02A3G6C8T8MNV7DlFrc7Ldl1kOnFf3RTTn4": ""
+            },
+            "status": {
+              "state": "disabled",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": true,
+      "unique_name": "ruleevent_028GURINTO3RN3swZ3tQTfVoymZ4aRE8VAd"
+    },
+    "ruleevent_02BQ88XPPS9I03UzMhwOLQeSlzwmKQBLNDi": {
+      "name": "Correlation of Events ",
+      "title": "Correlation of Events ",
+      "type": "incident.rule_event",
+      "rule_type": "rule_event",
+      "base_type": "rule",
+      "object_type": "ruleevent",
+      "version": "1.0.0",
+      "properties": {
+        "conditions": {
+          "left_operand": {
+            "left_operand": {
+              "left_operand": "$output.firstEventDate$",
+              "operator": "eq",
+              "right_operand": "2024-01-24T19:35:15.000Z"
+            },
+            "operator": "and",
+            "right_operand": {
+              "left_operand": "$output.source.data[*].value$",
+              "operator": "eq",
+              "right_operand": "Endpoint"
+            }
+          },
+          "operator": "and",
+          "right_operand": {
+            "left_operand": "$output.incident.confidence$",
+            "operator": "eq",
+            "right_operand": "None"
+          }
+        },
+        "description": "",
+        "disabled": false,
+        "display_name": "Correlation of Events ",
+        "group_by": false,
+        "rule_type": "rule_event",
+        "title": "Correlation of Events ",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "ref_id": "definition_workflow_023GLISS85MCF7lmQEWM2h9mKPk2TCa9y2I",
+            "status": {
+              "state": "started-polling",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": false,
+      "unique_name": "ruleevent_02BQ88XPPS9I03UzMhwOLQeSlzwmKQBLNDi"
+    },
+    "ruleevent_02BQL3WYS2E4V0l9r5bi0s1tskaL4H2I6pl": {
+      "name": "Test",
+      "title": "Test",
+      "type": "approval_task.rule_event",
+      "rule_type": "rule_event",
+      "base_type": "rule",
+      "object_type": "ruleevent",
+      "version": "1.0.0",
+      "properties": {
+        "conditions": {
+          "left_operand": "$output.subject_line$",
+          "operator": "eq",
+          "right_operand": "testtstfdgdfgdfg"
+        },
+        "description": "",
+        "disabled": true,
+        "display_name": "Test",
+        "group_by": false,
+        "rule_type": "rule_event",
+        "title": "Test",
+        "workflows_config": [
+          {
+            "disabled": true,
+            "ref_id": "definition_workflow_023GLISS85MCF7lmQEWM2h9mKPk2TCa9y2I",
+            "status": {
+              "state": "disabled",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": true,
+      "unique_name": "ruleevent_02BQL3WYS2E4V0l9r5bi0s1tskaL4H2I6pl"
+    },
+    "ruleschedule_02BQL889GNJLC27bfzfJ7NfopUWwqZcdzpQ": {
+      "name": "TestDelete_25Jan",
+      "title": "TestDelete_25Jan",
+      "description": "Test",
+      "type": "schedule.rule_schedule",
+      "rule_type": "rule_schedule",
+      "base_type": "rule",
+      "object_type": "ruleschedule",
+      "version": "1.0.0",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "description": "Test",
+        "display_name": "TestDelete_25Jan",
+        "interval_hours": 0,
+        "interval_minutes": 0,
+        "number_of_times": 1,
+        "rule_type": "rule_schedule",
+        "starttime": "11:18",
+        "timezone": "Asia/Kolkata",
+        "title": "TestDelete_25Jan",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "ref_id": "definition_workflow_023GLISS85MCF7lmQEWM2h9mKPk2TCa9y2I",
+            "status": {
+              "state": "disabled",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": true,
+      "unique_name": "ruleschedule_02BQL889GNJLC27bfzfJ7NfopUWwqZcdzpQ"
+    }
+  },
   "triggers": {
     "triggerevent_023GQ77C3CR4N7cc98yKAWgUc9fkNJRnmXM": {
       "workflow_id": "definition_workflow_023GLISS85MCF7lmQEWM2h9mKPk2TCa9y2I",
@@ -278,6 +456,19 @@
       "version": "1.0.0",
       "disabled": false,
       "unique_name": "triggerschedule_023GLISV4S0KL6XLzrDRpphWLpx70mnSCSw",
+      "object_type": "triggerschedule"
+    },
+    "triggerschedule_024RZLJ4HD8OG3FS8fdMQewFyO5otexadSC": {
+      "workflow_id": "definition_workflow_024RZL40FY0S018oUTupy5QIk5wuoFJCa2V",
+      "name": "RG schedule",
+      "title": "",
+      "lowercase_name": "schedule.rg_schedule",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_02499F9LEF3DM0j5F2kVK1jJ33alb8Qhe8y",
+      "version": "1.0.0",
+      "disabled": true,
+      "unique_name": "triggerschedule_024RZLJ4HD8OG3FS8fdMQewFyO5otexadSC",
       "object_type": "triggerschedule"
     }
   },
@@ -332,8 +523,27 @@
         "starttime": "00:00",
         "interval_hours": 0,
         "interval_minutes": 5,
-        "number_of_times": 288,
+        "number_of_times": 50,
         "display_name": "Every 5 Min",
+        "description": ""
+      },
+      "version": "1.0.0"
+    },
+    "schedule_02499F9LEF3DM0j5F2kVK1jJ33alb8Qhe8y": {
+      "unique_name": "schedule_02499F9LEF3DM0j5F2kVK1jJ33alb8Qhe8y",
+      "name": "RG new Apr 5",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "object_type": "schedule",
+      "rule_id": "",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "America/Chicago",
+        "starttime": "09:34",
+        "interval_hours": 0,
+        "interval_minutes": 1,
+        "number_of_times": 4,
+        "display_name": "RG new Apr 5",
         "description": ""
       },
       "version": "1.0.0"
@@ -375,11 +585,244 @@
       }
     }
   },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_02BP9LNODSDLE0lMguVhopAdIKW0fsVxDag",
+        "name": "Copy(1)-DarkTrace-Automation TEST WF",
+        "title": "Copy(1)-DarkTrace-Automation TEST WF",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": null,
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "description": "\nWorkflow Properties\nCopy(1)-DarkTrace-Automation TEST WF",
+          "display_name": "Copy(1)-DarkTrace-Automation TEST WF",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "target_type": "web-service.endpoint",
+            "target_id": "$module_target;Darktrace DETECT \u0026 RESPOND;securex:ao:darktrace$",
+            "execute_on_workflow_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02BP9LO3GONXB6pqHwmvxsDe3PIohvCl0eE",
+            "name": "HTTP Request",
+            "title": "HTTP Request (Create Tag)",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "allow_headers_redirect": false,
+              "body": "{\n  \"name\": \"test-tag-$workflow.definition_workflow_02BP9LNODSDLE0lMguVhopAdIKW0fsVxDag.output.start_time$\",\n  \"data\": {}\n}",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "HTTP Request (Create Tag)",
+              "method": "POST",
+              "relative_url": "/tags",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target": true
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02BP9LO9QRKAZ0v4G0zMi8DxTANqZYWsjZc",
+            "name": "JSONPath Query",
+            "title": "Fetch TagID",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Fetch TagID",
+              "input_json": "$activity.definition_activity_02BP9LO3GONXB6pqHwmvxsDe3PIohvCl0eE.output.response_body$      ",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.tid",
+                  "jsonpath_query_name": "tag_ID",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02BP9LOEWTE3H4pKJkmfSMyN6oLD6N0XMjf",
+            "name": "HTTP Request",
+            "title": "HTTP Request (GET ALL Tags)",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "allow_headers_redirect": false,
+              "continue_on_error_status_code": false,
+              "continue_on_failure": true,
+              "display_name": "HTTP Request (GET ALL Tags)",
+              "method": "GET",
+              "relative_url": "/tags",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target": true
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02BP9LOHUTSV33EF3F6iTGvd8qvNAIDfW81",
+            "name": "HTTP Request",
+            "title": "HTTP Request (GET Tag by ID)",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "allow_headers_redirect": false,
+              "continue_on_error_status_code": false,
+              "continue_on_failure": true,
+              "display_name": "HTTP Request (GET Tag by ID)",
+              "method": "GET",
+              "relative_url": "/tags/$activity.definition_activity_02BP9LO9QRKAZ0v4G0zMi8DxTANqZYWsjZc.output.jsonpath_queries.tag_ID$",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target": true
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02BP9LONEY7SD1WUiof9gNI9FQcaYxehMjo",
+            "name": "HTTP Request",
+            "title": "HTTP Request (Delete Tag by ID)",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "allow_headers_redirect": false,
+              "continue_on_error_status_code": false,
+              "continue_on_failure": true,
+              "display_name": "HTTP Request (Delete Tag by ID)",
+              "method": "DELETE",
+              "relative_url": "/tags/$activity.definition_activity_02BP9LO9QRKAZ0v4G0zMi8DxTANqZYWsjZc.output.jsonpath_queries.tag_ID$",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "use_workflow_target": true
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    },
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_024RZL40FY0S018oUTupy5QIk5wuoFJCa2V",
+        "name": "Apr 5 RG schedule",
+        "title": "Apr 5 RG schedule",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "RG Input ",
+              "type": "datatype.string",
+              "is_required": true,
+              "display_on_wizard": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02A3G6C8T8MNV7DlFrc7Ldl1kOnFf3RTTn4",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "automation_rules": {
+            "type": [
+              "incident.rule_event"
+            ]
+          },
+          "delete_workflow_instance": true,
+          "description": "Test\n\nTEST\n\nTEST\n\nTEST\n\nTEST\n\nTEST",
+          "display_name": "Apr 5 RG schedule",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "no_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_024RZLAG9C15R2gujicuQrCsu2BskjPTNOS",
+            "name": "Sleep",
+            "title": "Sleep",
+            "type": "core.sleep",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Sleep",
+              "skip_execution": false,
+              "sleep_interval": 1
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ],
   "atomic_workflows": [
     "definition_workflow_023KRVZXL6PS80wCDBBQQ2OYYFPpqFzw4kv"
   ],
   "dependent_workflows": [
+    "definition_workflow_02BP9LNODSDLE0lMguVhopAdIKW0fsVxDag",
     "definition_workflow_023KRVZXL6PS80wCDBBQQ2OYYFPpqFzw4kv",
     "definition_workflow_024RZL40FY0S018oUTupy5QIk5wuoFJCa2V"
+  ],
+  "module_targets": [
+    {
+      "module_type": "Meraki",
+      "external_id": "securex:ao:meraki"
+    },
+    {
+      "module_type": "Darktrace DETECT \u0026 RESPOND",
+      "external_id": "securex:ao:darktrace"
+    }
   ]
 }
