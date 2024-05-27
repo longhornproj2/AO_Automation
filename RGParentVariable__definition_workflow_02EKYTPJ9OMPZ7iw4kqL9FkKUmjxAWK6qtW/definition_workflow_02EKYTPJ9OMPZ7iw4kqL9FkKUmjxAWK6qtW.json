@@ -1,0 +1,220 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02EKYTPJ9OMPZ7iw4kqL9FkKUmjxAWK6qtW",
+    "name": "RG parent 1",
+    "title": "RG parent 1",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "variable_type_object_02EK3AB59ICRB6vFbZi5zAVV6WxTjOnb5XO",
+        "properties": {
+          "value": {},
+          "scope": "local",
+          "name": "RG Test object ",
+          "type": "datatype.object",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02ENII8QB09PK7T2neeTtHLCh6Eg7fR73MW",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG parent 1",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02EKZ51J0ZYW34WBvENBAFFrR9R1QqSZ3Cn",
+        "name": "RG Var - For Each ",
+        "title": "RG Var - For Each ",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "RG Var - For Each ",
+          "input": {
+            "variable_workflow_02EKZCYVQALAJ3U8EhqIkwtfgH3uoj7QY83": "$workflow.definition_workflow_02EKYTPJ9OMPZ7iw4kqL9FkKUmjxAWK6qtW.output.instance_id$",
+            "variable_workflow_02EKZJHMST2X31vYkVvKtUFf7aeEsvygYXR": [],
+            "variable_workflow_02ENGVBCY5C8D7960BGDLNwqM4dgEQywGyX": [
+              {
+                "booleanField": true,
+                "datetimeField": "2024-05-23T15:30:00Z",
+                "decimalField": 1234.56,
+                "integerField": 42,
+                "stringField": "Sample String"
+              },
+              {
+                "booleanField": false,
+                "datetimeField": "2023-12-25T10:00:00Z",
+                "decimalField": 789.01,
+                "integerField": 7,
+                "stringField": "Another Example"
+              },
+              {
+                "booleanField": true,
+                "datetimeField": "2022-01-01T00:00:00Z",
+                "decimalField": 45.67,
+                "integerField": 100,
+                "stringField": "Happy New Year"
+              }
+            ]
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_02EK3DCJAGDGZ3NyerMtcfn24foFvgHRAbD",
+          "workflow_name": "RG Arr Var - For Each "
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02ENH3RCJFOUY7IefK10Q7aY3u7ItAxPm0T",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$env.variable_02EK3CQO1K8OE6hCL9bm2sPOf6jhBsKBJza.env.variable_02EK3CQO1K8OE6hCL9bm2sPOf6jhBsKBJza$",
+              "variable_value_new": "$activity.definition_activity_02EKZ51J0ZYW34WBvENBAFFrR9R1QqSZ3Cn.output.variable_workflow_02ENH316CQJUP55o9ThBbDmOygq6FywbEMi$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02ENIHTYVQM033iApQ2UexOSIM2RUf1qhVI",
+        "name": "Set Variables",
+        "title": "Set Variables - object",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables - object",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_02EKYTPJ9OMPZ7iw4kqL9FkKUmjxAWK6qtW.local.variable_workflow_02ENII8QB09PK7T2neeTtHLCh6Eg7fR73MW$",
+              "variable_value_new": "$activity.definition_activity_02EKZ51J0ZYW34WBvENBAFFrR9R1QqSZ3Cn.output.variable_workflow_02ENICDS0CZK13UqND621LWOIViSI8TjMT9$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_02EK3CQO1K8OE6hCL9bm2sPOf6jhBsKBJza": {
+      "unique_name": "variable_02EK3CQO1K8OE6hCL9bm2sPOf6jhBsKBJza",
+      "schema_id": "variable_type_array_02EK3BXNVWIMA1L43LlkJA1vFNYUOz3PhiE",
+      "properties": {
+        "value": [
+          {
+            "booleanField": true,
+            "datetimeField": "2024-05-23T15:30:00Z",
+            "decimalField": 1234.56,
+            "integerField": 42,
+            "stringField": "Sample String"
+          },
+          {
+            "booleanField": false,
+            "datetimeField": "2023-12-25T10:00:00Z",
+            "decimalField": 789.01,
+            "integerField": 7,
+            "stringField": "Another Example"
+          },
+          {
+            "booleanField": true,
+            "datetimeField": "2022-01-01T00:00:00Z",
+            "decimalField": 45.67,
+            "integerField": 100,
+            "stringField": "Happy New Year"
+          }
+        ],
+        "scope": "env",
+        "name": "RG Test Array - Env",
+        "type": "datatype.array",
+        "is_required": false,
+        "display_on_wizard": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "variable_types": {
+    "variable_type_array_02EK3BXNVWIMA1L43LlkJA1vFNYUOz3PhiE": {
+      "base_type": "datatype",
+      "name": "RG Test Array",
+      "object_type": "variable_type_array",
+      "properties": {
+        "display_name": "RG Test Array",
+        "elements_type_id": "variable_type_object_02EK3AB59ICRB6vFbZi5zAVV6WxTjOnb5XO"
+      },
+      "title": "RG Test Array",
+      "type": "datatype.arraytype",
+      "unique_name": "variable_type_array_02EK3BXNVWIMA1L43LlkJA1vFNYUOz3PhiE",
+      "variable_type_schema_id": "variable_type_schema_array_02EK3BXNUW2JE0iqZ6nuYbKh1saMtCeCNTQ"
+    },
+    "variable_type_object_02EK3AB59ICRB6vFbZi5zAVV6WxTjOnb5XO": {
+      "base_type": "datatype",
+      "name": "RG Test Object",
+      "object_type": "variable_type_object",
+      "properties": {
+        "display_name": "RG Test Object"
+      },
+      "title": "RG Test Object",
+      "type": "datatype.objecttype",
+      "unique_name": "variable_type_object_02EK3AB59ICRB6vFbZi5zAVV6WxTjOnb5XO",
+      "variable_type_schema_id": "variable_type_schema_object_02EK3AB5866T74GrVzptyjoQaB2vT7cl3lW",
+      "keys": [
+        {
+          "name": "booleanField",
+          "type": "boolean"
+        },
+        {
+          "name": "integerField",
+          "type": "integer"
+        },
+        {
+          "name": "datetimeField",
+          "type": "date"
+        },
+        {
+          "name": "decimalField",
+          "type": "number"
+        },
+        {
+          "name": "stringField",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "dependent_workflows": [
+    "definition_workflow_02EK3DCJAGDGZ3NyerMtcfn24foFvgHRAbD"
+  ]
+}
