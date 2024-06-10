@@ -1,0 +1,155 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02EV5GW4X5YBY2lPFVioNIaucn6p9dPasJN",
+    "name": "RG parent Prompt Scenario 2",
+    "title": "RG parent Prompt Scenario 2",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [
+            "Hello, world!",
+            "This is a test string.",
+            "12345",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "The quick brown fox jumps over the lazy dog.",
+            "Testing 1, 2, 3.",
+            "Strings with different lengths for testing purposes.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare, turpis ut blandit efficitur, elit nisi bibendum orci, nec elementum ipsum risus eget felis."
+          ],
+          "scope": "local",
+          "name": "parent input",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02EV5GW5G4PJ67NqAO5vg8bbbA3ku4OARH6",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG parent Prompt Scenario 2",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02EV5GW6LA88O054lUt3CTiJ1SXeVeIhJ06",
+        "name": "Create Prompt",
+        "title": "Create Prompt",
+        "type": "task.prompt_request",
+        "base_type": "activity",
+        "properties": {
+          "assignee_roles": [
+            "admin",
+            "user"
+          ],
+          "assignees": [
+            "$workflow.definition_workflow_02EV5GW4X5YBY2lPFVioNIaucn6p9dPasJN.output.started_by$",
+            "ramygane@cisco.com"
+          ],
+          "continue_on_failure": false,
+          "display_name": "Create Prompt",
+          "expiration_date": {
+            "is_relative_time": true,
+            "relative_time": {
+              "duration": 72,
+              "time_units": "hours"
+            }
+          },
+          "form_elements": [
+            {
+              "allow_multiselect": false,
+              "form_element": "text",
+              "form_label": "Approve Task",
+              "form_label_text": ""
+            }
+          ],
+          "prompt_body": "# Markdown Testing\n\nThis is a Markdown document created for testing purposes. It contains various Markdown elements to ensure compatibility and proper rendering.",
+          "prompt_title": "Parent Prompt",
+          "show_advanced_options": true,
+          "skip_execution": false,
+          "task_owner": "$workflow.definition_workflow_02EV5GW4X5YBY2lPFVioNIaucn6p9dPasJN.output.started_by$",
+          "task_requestor": "$workflow.definition_workflow_02EV5GW4X5YBY2lPFVioNIaucn6p9dPasJN.output.started_by$",
+          "wait_for_prompt_response": true
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02EV5GW8KMPRB5I1J12ZsBft7dwtsMMvVaV",
+        "name": "RG Prompt Task",
+        "title": "RG Prompt Task",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "RG Prompt Task",
+          "input": {
+            "variable_workflow_02EU24C2ZNQSY4tg1NKydSrczuUwQ5BSIQY": "$workflow.definition_workflow_02EV5GW4X5YBY2lPFVioNIaucn6p9dPasJN.local.variable_workflow_02EV5GW5G4PJ67NqAO5vg8bbbA3ku4OARH6$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_02EU24C2D6SBZ3xUn7N0ceTsuMfV5Zg73In",
+          "workflow_name": "RG Prompt Task - Child"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02EV5GW9FHUM54ZZWTldsjsxCtb9bMyAZAy",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02EV5GWA9ZW2U2oHei0DEovtqIoo2pNqdn1",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_02EV5GW4X5YBY2lPFVioNIaucn6p9dPasJN.local.variable_workflow_02EV5GW5G4PJ67NqAO5vg8bbbA3ku4OARH6$",
+              "variable_value_new": "$activity.definition_activity_02EV5GW8KMPRB5I1J12ZsBft7dwtsMMvVaV.output.variable_workflow_02EV5AHG66OXC1aT11e1wac3dUIlx58e8Ni$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "dependent_workflows": [
+    "definition_workflow_02EU24C2D6SBZ3xUn7N0ceTsuMfV5Zg73In"
+  ]
+}
